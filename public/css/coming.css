@@ -79,7 +79,6 @@ color: #FFFFFF;
     height: 351px;
     left: 32px;
     top: 32px;
-    overflow: hidden;
 }
 
 
@@ -186,6 +185,7 @@ color: #FFFFFF;
     .column{
         justify-content: flex-start;
     }
+    /* okemas */
     .col12{
         margin-top: 60px;
     }
