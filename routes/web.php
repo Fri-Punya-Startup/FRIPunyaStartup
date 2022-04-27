@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/contoh', function () {
     return view('contoh');
 });
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+
