@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::get('/contoh', function () {
     return view('contoh');
 });
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+Route::get('/coming', function () {
+    return view('coming');
+});
