@@ -1,0 +1,67 @@
+.footer{
+    color: #C6C6EE;
+    background-color: #100F32;
+    width: 100%;
+    height: 550px;
+    bottom: 0;
+}
+
+.containerFooter{
+    position: relative;
+    height: 180px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/images/footer/container.svg");
+}
+
+.ready{
+    color: white;
+    padding-top: 55px !important;
+    padding-left: 60px;
+}
+
+.register{
+    border-radius: 10px;
+    color: #AED136;
+    width: 150px;
+    height: 60px;
+    padding-top: 15px;
+    text-align: center;
+    background-color: white;
+    margin-top: 55px;
+    right: 100px;
+    position: absolute;
+}
+
+.contact{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.ijo{
+    color: #AED136;
+}
+
+.contactInfo{
+    display: inline-block;
+}
+
+.medsos{
+    padding: 10px !important;
+}
+
+@media screen and (max-width: 768px){
+    .footer{
+        height: 670px;
+    }
+
+    .containerFooter{
+        height:300px;
+    }
+
+    .register{
+        left: 10px;
+        font-size: 5px;
+    }
+}

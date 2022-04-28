@@ -1,0 +1,217 @@
+.home{
+    height: 2400px ;
+}
+
+.containers{
+    color: white;
+    padding-top: 120px !important;
+    padding: 100px;
+    position: relative;
+    height: 750px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/images/home/Cover.svg");
+}
+
+.containers h1{
+    font-size: 70px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.a{
+    display: inline-block ;
+}
+
+.student{
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 20px  !important;
+    padding: 15px;
+    text-align: center;
+    border-style: solid;
+    border-color: #212069 !important;
+    background-color: #212069;
+}
+
+.alumni{
+    border-style: solid;
+    border-color: #AED136 !important;
+    cursor: pointer;
+    color: #8fac32;
+    border-radius: 10px;
+    margin-right: 20px  !important;
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+}
+
+.more{
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #AED136;
+    width: fit-content;
+    padding: 10px;
+}
+
+.more a{
+    color: #AED136 ;
+}
+
+.activityItem h4{
+    color: #7B7AD6;
+}
+
+.aboutUs{
+    padding: 50px;
+    margin-top: 50px;
+    color: black;
+}
+
+.aboutUs span ,.portofolio span{
+    font-size: 40px;
+    color: #AED136;
+}
+
+.aboutUs h5{
+    margin-top: 30px;
+}
+
+.ourActivity{
+    padding: 60px;
+    margin-top: 50px;
+    color: black;
+}
+
+.ourActivity .row{
+    text-align: center;
+}
+
+.ourActivity span{
+    font-size: 40px;
+    color: #AED136;
+}
+
+.activity{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.activityItem{
+    border-radius: 10px;
+    color: black;
+    margin: auto;
+    width: 70%;
+    height: 270px;
+    padding: 15px !important;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.text{
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 20px;
+
+}
+
+.text p{
+    -webkit-transition: visibility 0s, opacity 0.5s linear; 
+    transition: all 0.5s ease;
+    opacity: 0;
+    font-weight: lighter !important;
+    text-align: left;
+    /* display: none; */
+}
+
+.activityItem:hover {
+    z-index: -1;
+    height: 450px;
+}
+
+.activityItem:hover .text p{
+    opacity: 1;
+}
+
+.activityItem:hover .portofolio{
+    margin-top: 0px !important;
+}
+
+.portofolio{
+    position: absolute;
+    z-index: 100;
+    left:150px;
+    top:1900px
+}
+
+.explore{
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    right: 30px !important;
+    background-color: #212069;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.startup img{
+    border-style: solid;
+    border-color: #AED136;
+}
+
+@media screen and (max-width: 768px) {
+
+    .home{
+        height: 4900px;
+    }
+
+    .containers{
+        padding: 20px;
+        background-color: #212069;
+        width: auto;
+    }
+    .containers h1{
+        font-size: 30px;
+    } 
+
+    .aboutUs{
+        padding: 20px;
+    }
+
+    .ourActivity{
+        padding: 20px;
+    }
+
+    .portofolio{
+        top: 3400px;
+        left: 0px;
+    }
+
+    .portofolio h2{
+        padding-left: 20px;
+    }
+
+    .activityItem{
+        margin-bottom: 20px;
+        height: 450px;
+    }
+
+    .text p{
+        opacity: 1;
+    }
+
+    .startup{
+        margin-bottom: 20px;
+        padding-left: 0px !important;
+        text-align: center;
+    }
+
+    .a{
+        margin-bottom: 20px;
+    }
+}

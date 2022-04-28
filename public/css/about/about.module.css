@@ -1,0 +1,46 @@
+.about{
+    height : 2000px;
+    padding : 75px;
+}
+
+.about span{
+    color : #aed136;
+}
+
+.about h2{
+    color : #100f32;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+}
+
+.about li{
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.about p{
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.activityItem{
+    margin: auto;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.image{
+    text-align: center;
+}
+
+.image h5{
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+.image h6{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
