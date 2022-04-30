@@ -23,6 +23,12 @@ Route::get('/contoh', function () {
 Route::get('/navbar', function () {
     return view('navbar');
 });
+Route::get('/coming', function () {
+    return view('coming');
+}); 
+
+
+
 
 Route::get('/about', function () {
     return view('about');
