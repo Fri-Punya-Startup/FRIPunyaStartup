@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{PortofolioController, TypeController};
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,13 @@ Route::get('/', function () {
 Route::get('/contoh', function () {
     return view('contoh');
 });
+
 Route::get('/navbar', function () {
     return view('navbar');
 });
 
+Route::get('/portofolio', [PortofolioController::class, 'index']);
+
+Route::get('/portofolio/{portofolio:product}', [PortofolioController::class, 'show']);
+
+Route::get('/type/{type:name}', [TypeController::class, 'type']);
