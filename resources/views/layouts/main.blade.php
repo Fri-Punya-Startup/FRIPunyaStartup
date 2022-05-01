@@ -32,7 +32,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light ">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/">
     <img src="/images/logoNavbar.svg" width="300" height="100" class="d-inline-block align-top" alt="">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,10 +42,10 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="menus navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item ">
-        <a class="asu nav-link" href="#">Menu</a>
+        <a class="asu nav-link" href="/">Menu</a>
       </li>
       <li class="nav-item">
-        <a class="asu nav-link" href="#">About Us</a>
+        <a class="asu nav-link" href="/about-us">About Us</a>
       </li>
       <li class="nav-item">
         <a class="asu nav-link" href="#">Our Portofolio</a>

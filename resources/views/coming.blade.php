@@ -11,35 +11,6 @@
     <link rel="stylesheet" href="./css/coming/style.css">
 </head>
 <body>
-         <!-- <div class="header">
-            <div class="hero">
-                <h1>Bootcamp</h1>
-            </div>
-         </div>
-         <div class="story">
-             <div class="card"> 
-                 <div class="column">
-                     <div>
-                        <h2>On Progress...</h2>   
-                        <h6>Coming soon!</h6>
-                     </div>
-                     <div class="col12">
-                        <h7>We are still preparing what is the best for you all.</h7>
-                        <a class='text-light' href='#'>Remind me if it's ready</a>
-                     </div>   
-                 </div>
-                 <div class="imageColumn">
-                     <div>  
-                       <Image src="./images/comingSoon.svg" style="max-width:100%;height:auto;" class="image" />
-                     </div>
-                 </div>
-             </div>
-         </div> -->
-         <!-- <div class="header">
-            <div class="hero">
-                <h1>Bootcamp</h1>
-            </div>
-         </div> -->
          <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="header">
             <h1 class="hero">Bootcamp</h1>
          </div>

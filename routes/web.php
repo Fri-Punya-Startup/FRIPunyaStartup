@@ -23,14 +23,11 @@ Route::get('/contoh', function () {
 Route::get('/navbar', function () {
     return view('navbar');
 });
-Route::get('/coming', function () {
+Route::get('/coming-soon', function () {
     return view('coming');
 }); 
 
-
-
-
-Route::get('/about', function () {
+Route::get('/about-us', function () {
     return view('about');
 });
 

@@ -22,7 +22,7 @@
 }
 
 .about{
-    height : 2000px;
+    height : 1400px;
     padding : 50px;
 }
 
@@ -49,15 +49,16 @@
 }
 
 .image{
+    margin-top: 50px !important;
     margin: auto;
-    width: 100%;
+    width: 90%;
     text-align: center;
-    padding-left: 50px;
+    /* padding-left: 50px; */
 }
 
-.image .col-sm-2{
-    margin-right: 20px;
-    background-color: #f0f0f0;
+.col-sm-2{
+    text-align: center;
+    margin: auto;
     padding: 10px;
     border-radius: 8px;
 }
@@ -70,3 +71,14 @@
     text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+    .us{
+        font-size: 60px !important;
+    }
+
+    .about{
+        height : 3900px;
+    }
+}
+

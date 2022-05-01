@@ -12,7 +12,7 @@
     height: 238px;
     left: 0;
     top: 302px;
-    background-image: url("./images/header.svg");
+    background-image: url("/images/header.svg");
     background-size: cover;
 }
 .hero{
