@@ -54,7 +54,7 @@
     margin-bottom: -40px;
 }
 input[type=text]{
-    width: 100%;
+    width: 50%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -72,4 +72,10 @@ input[type=submit]{
 input[type=submit]:hover{
     background: #4947C7;
     transition: all 0.5s ease;
+}
+
+@media screen and (max-width : 760px){
+    input[type=text]{
+        width: 100%;
+    }
 }
