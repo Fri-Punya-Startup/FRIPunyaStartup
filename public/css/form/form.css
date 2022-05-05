@@ -54,7 +54,7 @@
     margin-bottom: -40px;
 }
 input[type=text]{
-    width: 50%;
+    width: 25%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -76,6 +76,6 @@ input[type=submit]:hover{
 
 @media screen and (max-width : 760px){
     input[type=text]{
-        width: 100%;
+        width: auto;
     }
 }

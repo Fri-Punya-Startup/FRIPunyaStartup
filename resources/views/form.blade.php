@@ -21,11 +21,11 @@
             <h2 class="form-header">Join Us</h2>
             <form action="">
                 <label for="email"><h6>Email Address</h6></label><br>
-                <input type="text" id="mail" name="email" placeholder="Input here"><br>
+                <input type="text" id="mail" name="email" placeholder="Input here" required><br>
                 <label for="fullName"><h6>Fullname</h6></label><br>
-                <input type="text" id="fname" name="fullName" placeholder="Input here"><br>
+                <input type="text" id="fname" name="fullName" placeholder="Input here" required><br>
                 <label for="class"><h6>Class</h6></label><br>
-                <input type="text" id="class" name="class"><br>
+                <input type="text" id="class" name="class" required><br>
                 <label for="checkbox"><h6>Year</h6></label><br>  
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -41,7 +41,7 @@
                     </div><br>
                
                 <label for="year2"><h6>Year</h6></label><br>  
-                <input type="text" id="Year" name="Year"><br>
+                <input type="text" id="Year" name="Year" required><br>
                 <input type="submit" value="Submit">
             </form>
         </div>
