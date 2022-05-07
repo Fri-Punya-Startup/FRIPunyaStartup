@@ -21,10 +21,10 @@
 }
 
 .contacts{
-    height: 600px;
+    height: 700px;
     padding: 50px;
 }
-.contact .row {
+.contacts .row {
     background-color: #f0f0f0;
     text-align: justify;
     padding: 25px;
@@ -32,18 +32,18 @@
     margin: 75px;
 }
 
-.contact h5{
+.contacts h5{
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
 }
 
-.contact h2{
+.contacts h2{
     font-family: 'Work Sans', sans-serif;
     color: #aed136;
     font-weight: bold;
 }
 
-.contact h3{
+.contacts h3{
     font-family: 'Open Sans', sans-serif;
 }
 
