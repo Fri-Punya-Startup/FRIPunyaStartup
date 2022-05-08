@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{PortofolioController, TypeController};
+use App\Http\Controllers\{PortofolioController, TypeController, LoginController};
 
 /*
 |--------------------------------------------------------------------------

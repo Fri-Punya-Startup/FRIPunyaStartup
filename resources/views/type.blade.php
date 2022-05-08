@@ -8,7 +8,6 @@
 </head>
 <body>
     @foreach($type as $p)
-        <h2>{{$p->product}}</h2>
         <p>{{$p->name}}</p>
     @endforeach
 </body>
