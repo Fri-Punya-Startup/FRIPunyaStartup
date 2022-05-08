@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portofolio;
+use App\Models\User;
 use App\Http\Requests\StorePortofolioRequest;
 use App\Http\Requests\UpdatePortofolioRequest;
 
@@ -13,17 +14,23 @@ class PortofolioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Portofolio $portofolio)
     {
         return view('portofolio', [
             // 'porto' => Portofolio::all(),
-            'porto' => Portofolio::latest()->get(),
+            'porto' =>  $portofolio->latest()->filter(request(['search', 'type', 'founder']))->paginate(8)->withQueryString(),
         ]);
     }
 
     public function show(Portofolio $portofolio){
         return view('product', [
-            'portofolio' => $portofolio,
+            'porto' => $portofolio,
+        ]);
+    }
+
+    public function founder(User $user){
+        return view('founder', [
+            'user' => $user->portofolio()->latest()->get()->load('type'),
         ]);
     }
 

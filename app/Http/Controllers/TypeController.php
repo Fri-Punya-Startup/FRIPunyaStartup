@@ -16,8 +16,7 @@ class TypeController extends Controller
     public function type(Type $type)
     {
         return view('type', [
-            'title' => $type->name,
-            'product' => $type->portofolio,
+            'type' => Type::all()
         ]);
     }
 

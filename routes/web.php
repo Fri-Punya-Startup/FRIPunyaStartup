@@ -30,4 +30,6 @@ Route::get('/portofolio', [PortofolioController::class, 'index']);
 
 Route::get('/portofolio/{portofolio:product}', [PortofolioController::class, 'show']);
 
-Route::get('/type/{type:name}', [TypeController::class, 'type']);
+Route::get('/type/', [TypeController::class, 'type']);
+
+Route::get('/login', [LoginController::class, 'showLoginForm']);

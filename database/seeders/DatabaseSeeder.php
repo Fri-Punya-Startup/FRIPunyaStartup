@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
 
             User::factory(5)->create();
             
-            Portofolio::factory(10)->create();
+            Portofolio::factory(1000)->create();
 
             Type::create([
                 'name' => 'Teknologi'
