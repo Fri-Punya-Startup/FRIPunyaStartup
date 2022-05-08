@@ -23,4 +23,17 @@ Route::get('/contoh', function () {
 Route::get('/navbar', function () {
     return view('navbar');
 });
+Route::get('/coming-soon', function () {
+    return view('coming');
+}); 
 
+Route::get('/about-us', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/form', function(){
+    return view('form');
+});
