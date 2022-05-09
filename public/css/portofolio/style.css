@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
 .portofolio{
     height: auto;
     margin-bottom: 100px;
@@ -44,4 +45,60 @@ input{
     height: 50px !important;
     text-align: center;
     width: 50px !important;
+}
+.parent{
+    background: #efefef;
+    border-radius: 8px;
+
+}
+.child{
+    padding: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.responsive{
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.text1{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    color: #AED136;
+
+}
+.text h7{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+}
+.text2{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+    color:  #212069;
+}
+@media screen and (max-width: 980px) {
+    .text1,.text2{
+        font-size: large; 
+    }
+    h7{
+        font-size:x-small;
+    }
+    .child{
+        display:flex;
+        flex-direction: column;
+       
+    }
+    .parent{
+        margin: auto;
+        width: 90%;
+        padding: 10px; 
+        margin: 20px 20px 20px 40px;
+    }
+    
 }

@@ -51,7 +51,19 @@
                             </a>
                         </div>
                     @empty
-                        <h2>No Data</h2>
+                        <div class="parent">
+                            <div class="child">
+                                <div class="text">
+                                    <div class="text-wrap">
+                                        <h2 class="text1">Oops! Data Searching</h2>
+                                        <h2 class="text2">Not Found!</h2>
+                                    </div>
+                                    <h7>The data that you searching for isn't exist,</br>Please try again!</h7>
+                                </div>
+                                <img src="./images/noData.svg" alt="/" class="responsive">
+                            </div>
+                        </div>
+                       
                     @endforelse
                     </div>
                 </div>          
