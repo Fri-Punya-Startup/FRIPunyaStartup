@@ -1,7 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{PortofolioController, TypeController, LoginController};
+use App\Http\Controllers\
+    {
+    PortofolioController, 
+    TypeController, 
+    LoginController, 
+    RegisterController,
+    AdminController,
+    DashboardPostController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -28,11 +36,22 @@ Route::get('/navbar', function () {
 
 Route::get('/portofolio', [PortofolioController::class, 'index']);
 
-Route::get('/portofolio/{portofolio:product}', [PortofolioController::class, 'show']);
+Route::get('/portofolio/{portofolio:slug}', [PortofolioController::class, 'show']);
 
 Route::get('/type/', [TypeController::class, 'type']);
 
-Route::get('/login', [LoginController::class, 'showLoginForm']);
-Route::get('/member', function () {
-    return view('member');
-});
+Route::get('/login', [LoginController::class, 'showLoginForm'])->middleware('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'storeRegistration']);
+
+Route::get('/dashboard', [DashboardPostController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/post/createSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+Route::resource('/admin', AdminController::class)->middleware('admin');
+

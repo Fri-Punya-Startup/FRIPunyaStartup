@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Portofolio>
  */
@@ -16,8 +16,12 @@ class PortofolioFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->sentence(mt_rand(1,3));
+        $slug = Str::slug($title, '-');
+
         return [
-            'product' => $this->faker->sentence(mt_rand(1,3)),
+            'product' => $title,
+            'slug' => $slug,
             'type_id' => $this->faker->numberBetween(1, 3),
             'user_id' => $this->faker->numberBetween(1, 5),
             'description' => $this->faker->paragraph(mt_rand(5,10)),

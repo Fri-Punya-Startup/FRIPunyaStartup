@@ -51,13 +51,16 @@
       </li>
       <li class="nav-item">
         <a class="asu nav-link" href="#">Our Activites</a>
-      </li>  
+      </li>
+      
       <li class="nav-item registers">
         <a class="nav-link " href="/login"> Login </a>
       </li>
+
       <li class="nav-item contactUs">
         <a class="nav-link " href="#"> Contact Us</a>
       </li>
+    
     </ul>
   </div>
 </nav>
