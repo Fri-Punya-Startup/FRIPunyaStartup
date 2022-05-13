@@ -26,7 +26,7 @@
                         </h4>
                     </div>
                     <div class="col md-3">
-                        <form action="/portofolio" method="get">
+                    <form action="/portofolio" method="get">
                         @if (request('type'))
                             <input type="hidden" name="type" value="{{request('type')}}">
                         @elseif (request('founder'))
@@ -43,8 +43,12 @@
                     <div class="row">
                     @forelse($porto as $p)
                         <div class="col-md-3 porto">
-                            <a href="/portofolio/{{$p->product}}">
-                                <img src="images/portofolio/tes.svg" alt="">
+                            <a href="/portofolio/{{$p->slug}}">
+                                @if($p->image)
+                                    <img src="{{'storage/'.$p->image}}" alt="">
+                                @else
+                                    <img src="images/portofolio/tes.svg" alt="">
+                                @endif
                                 <h3>{{$p->product}}</h3>
                                 <h5>{{$p->type->name}}</h5>
                                 <p>{{$p->user->name}}</p>
@@ -55,15 +59,14 @@
                             <div class="child">
                                 <div class="text">
                                     <div class="text-wrap">
-                                        <h2 class="text1">Oops! Data Searching</h2>
-                                        <h2 class="text2">Not Found!</h2>
+                                        <h2 class="text1">Oops!</h2>
+                                        <h1 class="text2"> Data Searching Not Found!</h1>
                                     </div>
                                     <h7>The data that you searching for isn't exist,</br>Please try again!</h7>
                                 </div>
                                 <img src="./images/noData.svg" alt="/" class="responsive">
                             </div>
-                        </div>
-                       
+                        </div> 
                     @endforelse
                     </div>
                 </div>          
@@ -72,4 +75,6 @@
                 {{$porto->links()}}
             </div>
     </div>
+
+
 @endsection

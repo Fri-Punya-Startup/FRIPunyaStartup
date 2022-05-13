@@ -16,9 +16,10 @@ class PortofolioController extends Controller
      */
     public function index(Portofolio $portofolio)
     {
+        // return Portofolio::all();
         return view('portofolio', [
             // 'porto' => Portofolio::all(),
-            'porto' =>  $portofolio->latest()->filter(request(['search', 'type', 'founder']))->paginate(8)->withQueryString(),
+            'porto' =>  $portofolio->latest()->filter(request(['search', 'type', 'founder',]))->paginate(8)->withQueryString(),
         ]);
     }
 

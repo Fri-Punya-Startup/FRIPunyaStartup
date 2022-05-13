@@ -16,12 +16,31 @@
     <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="header">
         <h1 class="hero text-light">Login Form</h1>
     </div>
+    @if(session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+
+    @if(session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{ session('loginError') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
+    
     <div class="story">
         <div class="form">
             <h2 class="form-header">Login</h2>
-            <form action="">
+            <form action="/login" method='post'>
+                @csrf
                 <label for="email"><h6>Email Address</h6></abbr></label><br>
-                <input type="text" id="mail"  name="email" placeholder="Masukan Alamat Email" required><br>
+                <input type="text" id="mail"  name="email" placeholder="Masukan Alamat Email" autofocus required><br>
                 
                 <label for="password"><h6>Password</h6></label><br>
                 <input type="password" id="fname" pattern="[A-Za-z]+" name="password" placeholder="Masukan Password" required><br>

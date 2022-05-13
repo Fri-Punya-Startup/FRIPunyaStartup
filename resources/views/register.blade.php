@@ -19,32 +19,35 @@
     <div class="story">
         <div class="form">
             <h2 class="form-header">Join Us</h2>
-            <form action="">
+            <form action="/register" method="post">
+                @csrf
+                <label for="email"><h6>Nama</h6></abbr></label><br>
+                <input type="text" id="mail" name="name" placeholder="Masukan Nama" required @error('name')is-invalid @enderror><br>
+                @error('name')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
                 <label for="email"><h6>Email Address</h6></abbr></label><br>
-                <input type="text" id="mail"  name="email" placeholder="Masukan Alamat Email" required><br>
-                
+                <input type="text" id="mail" name="email" placeholder="Masukan Alamat Email" required @error('email')is-invalid @enderror><br>
+                @error('email')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
                 <label for="password"><h6>Password</h6></label><br>
                 <input type="password" id="fname" pattern="[A-Za-z]+" name="password" placeholder="Masukan Password" required><br>
-                
-                <label for="class"><h6>Class</h6></label><br>
+                @error('password')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                {{-- <label for="class"><h6>Class</h6></label><br>
                 <input type="text" id="kelas" pattern="[0-9]+"name="class" placeholder="3"required><br>
-                
-                <label for="checkbox"><h6>Year</h6></label><br>  
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Iya
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Tidak
-                        </label>
-                    </div><br>
-               
+                <br>
+           
                 <label for="year2"><h6>Year</h6></label><br>  
-                <input type="number" value="2021" min="2021"id="Year" name="Year" required><br>
+                <input type="number" value="2021" min="2021"id="year" name="year" required><br> --}}
                 
                 <input type="submit" value="Submit">
             </form>
