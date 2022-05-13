@@ -27,6 +27,12 @@
     <div class="desktop">
         <main>
             <div class="parent">
+            <div class="sidebar">
+                <a class="active" href="#home">Home</a>
+                <a href="#news">News</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+            </div>
                 <div class="child">
                         <h5 class="caption">MEMBER</h5>
                         <div class="table-content">
