@@ -54,3 +54,4 @@ Route::resource('/dashboard/post', DashboardPostController::class)->middleware('
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::resource('/admin', AdminController::class)->middleware('admin');
+
