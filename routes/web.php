@@ -33,6 +33,9 @@ Route::get('/contoh', function () {
 Route::get('/navbar', function () {
     return view('navbar');
 });
+Route::get('/member' , function(){
+    return view('member');
+});
 
 Route::get('/portofolio', [PortofolioController::class, 'index']);
 
