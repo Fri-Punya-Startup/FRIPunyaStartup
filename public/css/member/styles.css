@@ -50,18 +50,20 @@
     width: 1440px;
 }
 .btn{
-    display: grid;
-    place-items: center;
-    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: -85px;    
 }
 .btn input{
-    padding: 4px 16px;
+    padding: 8px 16px;
     background: #212069;
     color: #ffffff;
     border-radius: 8px;
+    border: none;
 }
 .btn input:hover{
-    background: #6e6ce9;
+    background: #4e4bff;
     transition: all 0.2s ease-in;
 }
 form{
@@ -192,6 +194,11 @@ table th {
     background: #212069;
     box-shadow: 0px 43px 72px rgba(64, 37, 214, 0.08), 0px 15.6096px 28.3703px rgba(64, 37, 214, 0.0551985), 0px 6.04617px 13.1662px rgba(64, 37, 214, 0.0445033), 0px 1.69431px 5.93674px rgba(64, 37, 214, 0.0354967), 0px 0.0190289px 2.13248px rgba(64, 37, 214, 0.0248015);
     border-radius: 8px;
+    border: none;
+}
+.btn-bottom input:hover{
+    background: #4e4bff;
+    transition: all 0.2s ease;
 }
 @media screen and (max-width: 1000px){
     .header{
