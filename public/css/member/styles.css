@@ -1,0 +1,235 @@
+.header{
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/images/header.svg');
+    height: 200px;
+    background-color: #f5f5f5;
+}
+.hero{
+    display: grid;
+    place-items: start;
+    font-size: 72px;
+    padding: 32px;
+    margin-top: 50px;
+}
+.parent{
+    background: #efefef;
+    padding: 128px 64px 64px 64px;
+}
+
+.caption{
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 40px;
+    /* identical to box height */
+    
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    
+    color: #000000;
+}
+.table-content{
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 19px 25px;
+}
+.find{
+    display: flex;
+    flex-direction: row;
+    width: 1102px;
+    height: 100px;
+    left: 25px;
+    top: 19px;
+}
+.find div{
+    padding-left:20px ;
+    width: 1440px;
+}
+.btn{
+    display: grid;
+    place-items: center;
+    
+}
+.btn input{
+    padding: 4px 16px;
+    background: #212069;
+    color: #ffffff;
+    border-radius: 8px;
+}
+.btn input:hover{
+    background: #6e6ce9;
+    transition: all 0.2s ease-in;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.custom-select {
+    display: flex;
+    margin-top: 30px;
+    position: relative;
+    font-family: Arial;
+    padding-bottom: 30px;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element:*/
+  }
+  
+  /*style the arrow inside the select element:*/
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: rgb(0, 0, 0) transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent rgb(0, 0, 0) transparent;
+    top: 7px;
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-items div,.select-selected {
+    color: #000000;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /*style items (options):*/
+  .select-items {
+    position: absolute  ;
+    background-color: rgb(248, 249, 251);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+table {
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border-bottom: 0.5px solid black;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+.label{
+    color: #9E9E9E;  
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 26px; 
+}
+.form-input input{
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    width: 216px;
+}
+
+.responsive{
+    max-width: 100%;
+    height: auto;
+}
+.btn-bottom{
+    display: flex;
+    justify-content: flex-end;
+    padding: 160px 129px 16px;
+}
+.btn-bottom input{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 16px;
+    color: #ffffff;
+    background: #212069;
+    box-shadow: 0px 43px 72px rgba(64, 37, 214, 0.08), 0px 15.6096px 28.3703px rgba(64, 37, 214, 0.0551985), 0px 6.04617px 13.1662px rgba(64, 37, 214, 0.0445033), 0px 1.69431px 5.93674px rgba(64, 37, 214, 0.0354967), 0px 0.0190289px 2.13248px rgba(64, 37, 214, 0.0248015);
+    border-radius: 8px;
+}
+@media screen and (max-width: 1000px){
+    .header{
+        color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('/images/header.svg');
+        height: 200px;
+        background-color: #f5f5f5;
+    }
+    .hero{
+        display: grid;
+        place-items: start;
+        font-size: 32px;
+        padding: 32px;
+        margin-top: 100px;
+    }
+    /* .parent{
+        display: none;
+    } */
+    .mobile-parent{
+        display: block;
+        padding: 32px;
+        background: #efefef;
+    } 
+    .mobile-child{
+        padding: 32px;
+        background: #ffffff;
+        border-radius: 16px;
+    }
+    .text{
+        margin-bottom: 20px
+    }
+    .sorry{
+        font-size: 32px;
+        color: #aed136;
+    }
+
+
+}
+

@@ -33,3 +33,6 @@ Route::get('/portofolio/{portofolio:product}', [PortofolioController::class, 'sh
 Route::get('/type/', [TypeController::class, 'type']);
 
 Route::get('/login', [LoginController::class, 'showLoginForm']);
+Route::get('/member', function () {
+    return view('member');
+});
