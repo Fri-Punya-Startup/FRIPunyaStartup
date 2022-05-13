@@ -14,46 +14,33 @@
     margin-top: 50px;
 }
 .parent{
+    display: flex;
+    flex-direction: row;
     background: #efefef;
     padding: 128px 64px 64px 64px;
 }
-#mySidenav a {
-    position: absolute;
-    margin-top: 300px;
-    left: -90px;
-    transition: 0.3s;
-    padding: 15px;
-    width: 100px;
-    text-decoration: none;
-    font-size: 20px;
+.navbar2 {
+    width: 100%;
+    background-color: #212069;
+    height: auto;
+    margin-top: 49px;
+}
+  
+.navbar2 a {
+    float: left;
+    padding: 12px;
     color: white;
-    border-radius: 0 5px 5px 0;
-  }
+    text-decoration: none;
+    font-size: 17px;
+}
   
-  #mySidenav a:hover {
-    left: 0;
-  }
+.navbar2 a:hover {
+    background-color: #000;
+}
   
-  #about {
-    top: 20px;
-    background-color: #212069;
-  }
-  
-  #blog {
-    top: 80px;
+.active {
     background-color: #aed136;
-  }
-  
-  #projects {
-    top: 140px;
-    background-color: #212069;
-  }
-  
-  #contact {
-    top: 200px;
-    background-color: #aed136
-  }
-
+}
 .caption{
     font-family: 'Work Sans';
     font-style: normal;

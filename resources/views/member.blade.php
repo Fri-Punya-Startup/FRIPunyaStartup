@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Member</title>
     <link rel="stylesheet" href="./css/member/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div style="padding:15px;text-align:center;" class="header">
@@ -27,11 +28,11 @@
     <div class="desktop">
         <main>
             <div class="parent">
-                <div id="mySidenav" class="sidenav">
-                    <a href="#" id="about">About</a>
-                    <a href="#" id="blog">Blog</a>
-                    <a href="#" id="projects">Projects</a>
-                    <a href="#" id="contact">Contact</a>
+                <div class="navbar2">
+                    <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+                    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+                    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
                 </div>
                 <div class="child">
                         <h5 class="caption">MEMBER</h5>
