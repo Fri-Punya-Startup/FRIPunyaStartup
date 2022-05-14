@@ -10,7 +10,7 @@ const mobile = document.querySelector('.mobile')
         mobile.style.display = 'none'
     }
 
-    var x, i, j, l, ll, selElmnt, a, b, c;
+ var x, i, j, l, ll, selElmnt, a, b, c;
 /*look for any elements with the class "custom-select":*/
 x = document.getElementsByClassName("custom-select");
 l = x.length;
