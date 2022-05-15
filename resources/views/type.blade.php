@@ -9,7 +9,7 @@
 </head>
 <body>
     <div style="padding:15px;text-align:center;" class="header">
-            <h1 class="hero">ADMIN</h1>
+            <h1 class="hero">Type Portfolio</h1>
     </div>
     <div class="parent">
       <div class="child">
