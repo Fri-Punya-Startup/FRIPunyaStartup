@@ -21,7 +21,7 @@
                 <div class="text">
                   <h6><span class="sorry">Sorry</span>,<br> You cannot access this page from mobile</h6>
                 </div>
-                <img src="./images/admin.svg" alt="/" class="responsive">
+                <img src="./images/memberdata.svg" alt="/" class="responsive">
             </div>
         </div>
     </div>
