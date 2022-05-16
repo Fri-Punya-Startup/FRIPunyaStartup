@@ -41,7 +41,7 @@
           <a href="/type">Type Portfolio</a>
           <a href="/">Our Activites</a>
           <div class="button">
-            <a href="/" class="btnOne">Login</a>
+            <a href="/login" class="btnOne">Login</a>
             <a href="/" class="btnTwo">Contact Us</a>
           </div>
         </div>
