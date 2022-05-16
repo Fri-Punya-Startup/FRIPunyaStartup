@@ -12,7 +12,13 @@
         <h1>Improve and</h1>
         <h1>Implement !</h1>
         <br/>
-        <h4>We are FPS, we are a Family</h4>
+        <h4 class="sentence">We are FPS, we are a 
+            <div class="slidingVertical">
+                <span>Family</span>
+                <span>Team</span>
+                <span>Community</span> 
+            </div>
+        </h4>
         <br/>
         <h5>Let's join us and improve your startup with Us  !</h5>
         <br/>
