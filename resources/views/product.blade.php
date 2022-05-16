@@ -20,10 +20,14 @@
             </div>
 
             <div class="row">
-                <div class="column" style="background-color:#aaa;">Image container here
-                <div class="image" style="background:red;">
-                   <p>kene yo oleh</p>
-                </div>
+                <div class="column" style="background-color:#aaa;">
+                    <div class="container gambar">
+                        @if($porto->image != null)
+                            <img src="{{'storage/'.$porto->image}}" alt="">
+                        @else
+                            <img src="../images/portofolio/tes.svg" alt="">
+                        @endif
+                    </div>
                </div>
                 <div class="column">
                    <h3>{{$porto->product}}</h3>

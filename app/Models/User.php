@@ -46,4 +46,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Portofolio::class);
     }
+
+    public function jabatan(){
+        return $this->belongsTo(Jabatan::class);
+    }
 }

@@ -19,12 +19,20 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $role = $this->faker->randomElement(['alumi', 'siswa']);
+        $role = $this->faker->randomElement(['alumni', 'member', 'founder',]);
+        if($role == 'member'){
+            $jabatan = rand(1,5);
+        }
+        else{
+            $jabatan = null;
+        }
+
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
+            'jabatan_id' => $jabatan,
             'email_verified_at' => now(),
-            'password' =>  Hash::make('asu'), // password
+            'password' =>  Hash::make('aaa'), // password
             'role' => $role,
             'remember_token' => Str::random(10),
         ];

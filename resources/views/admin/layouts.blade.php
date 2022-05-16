@@ -1,20 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
-  </head>
-  <body>
-
-    <div class="container">
-        @yield('content')
-    </div>        
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member</title>
+    <link rel="stylesheet" href="../css/member/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div style="padding:15px;text-align:center;" class="header">
+            <h1 class="hero">ADMIN</h1>
+    </div>
+    <div class="mobile"> 
+        <div class="mobile-parent">
+            <div class="mobile-child">
+                <div class="text">
+                  <h6><span class="sorry">Sorry</span>,<br> You cannot access this page from mobile</h6>
+                </div>
+                <img src="./images/admin.svg" alt="/" class="responsive">
+            </div>
+        </div>
+    </div>
+    <div class="desktop">
+        <div class="parent">
+            <div class="navbar2">
+                <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
+                <a href="#"><i class="fa fa-fw fa-search"></i> Search</a> 
+                <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+                <a><i class="fa fa-sign-out"></i>Logout</i>
+                    <form action="/logout" method="post">
+                    @csrf
+                    <button type="submit" class="logout"></button>
+                </form>
+                </a>
+          </div>
+            @yield('content')
+        </div>
+    </div>
+    <script src="../js/member/app.js"></script>
+     
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

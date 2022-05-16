@@ -56,5 +56,5 @@ Route::get('/dashboard/post/createSlug', [DashboardPostController::class, 'check
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
+Route::get('/admin/member', [AdminController::class, 'member'])->middleware('admin');
 Route::resource('/admin', AdminController::class)->middleware('admin');
-

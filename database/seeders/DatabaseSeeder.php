@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\{Type, Portofolio, User};
+use App\Models\{Type, Portofolio, User, Jabatan};
 
 
 class DatabaseSeeder extends Seeder
@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
                     'email' => 'eriscapricron@gmail.com',
                     'role' => 'admin',
                     'password' => bcrypt('aaa'),
+                    'jabatan_id' => null,
             ]);
                 
                 // Portofolio::create([
@@ -49,7 +50,7 @@ class DatabaseSeeder extends Seeder
             //     'contact' => '08123456789',
             // ]);
 
-            User::factory(5)->create();
+            User::factory(7)->create();
             
             Portofolio::factory(1000)->create();
 
@@ -64,5 +65,27 @@ class DatabaseSeeder extends Seeder
             Type::create([
                 'name' => 'Kesehatan'
             ]);
+
+            Jabatan::create([
+                'name' => 'CEO'
+            ]);
+
+            Jabatan::create([
+                'name' => 'CTO'
+            ]);
+
+            Jabatan::create([
+                'name' => 'CMO'
+            ]);
+
+            Jabatan::create([
+                'name' => 'CFO'
+            ]);
+
+            Jabatan::create([
+                'name' => 'COO'
+            ]);
+            
+            
     }
 }

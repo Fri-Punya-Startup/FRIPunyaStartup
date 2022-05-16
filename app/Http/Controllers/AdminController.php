@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Type;
+use App\Models\{
+    Jabatan,
+    User,
+    Type
+};
+
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -22,6 +27,15 @@ class AdminController extends Controller
 
     }
 
+    public function member()
+    {
+        $this->authorize('admin');
+
+        return view('admin.member', [
+            'jabatan' => Jabatan::all(),
+            'users' => User::all(),
+        ]);
+    }
     /**
      * Show the form for creating a new resource.
      *
