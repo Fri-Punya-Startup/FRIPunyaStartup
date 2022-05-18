@@ -16,6 +16,7 @@
     <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="header">
         <h1 class="hero text-light">Login Form</h1>
     </div>
+    
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{ session('success') }}</strong>
