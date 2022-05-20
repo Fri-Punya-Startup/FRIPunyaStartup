@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="css/home/styles.css">
 <div class="home">
     <div class="containers">
+        <br>
+        <br>
         <h1>Learn, Discuss</h1>
         <h1>Improve and</h1>
         <h1>Implement !</h1>
@@ -22,14 +24,6 @@
         <br/>
         <h5>Let's join us and improve your startup with Us  !</h5>
         <br/>
-        <div class="">
-            <a href="" class="student a">
-                <h6>Register as Student</h6>
-            </a>
-            <a href="" class="alumni a">
-                <h6>Register as Alumni</h6>
-            </a>
-        </div>
     </div>
 
     <div class="aboutUs">

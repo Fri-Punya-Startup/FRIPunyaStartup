@@ -100,9 +100,11 @@
                                 <h5>Let's join us!</h5>
                             </div>
                             <div class="col-md-6" >
-                                <div class="register">
+                                <a href="/register">
+                                  <div class="register">
                                     <h5>Register Now!</h5>
-                                </div>
+                                  </div>
+                                </a>
                             </div>
                         </div> 
                     </div>

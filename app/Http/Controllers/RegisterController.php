@@ -13,15 +13,21 @@ class RegisterController extends Controller{
     }
 
     public function storeRegistration(Request $request){
+
         $validate = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|string',
+            'email' => 'required',
+            'password' => 'required|string|min:6',
+            'role' => 'required',
         ]);
         
+        if($validate['role'] == 'Pilih'){
+            return redirect()->back()->withErrors(['role' => 'Pilih Role Terlebih Dahulu']);
+        }
+
         $validate['password'] = Hash::make($validate['password']);
 
-        // return $request->all();
+        // return $validate;
         User::create($validate);
 
         $request->session()->flash('success', 'Berhasil mendaftar');
