@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('role');
             $table->string('verifikasi')->nullable();
+            $table->string('phone')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

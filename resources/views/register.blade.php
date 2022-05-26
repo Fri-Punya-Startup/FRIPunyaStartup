@@ -44,6 +44,8 @@
                     {{ $message }}
                 </div>
                 @enderror
+                <label for="phone"><h5>Masukan No Wa</h5></label><br>
+                <input type="number" id="phone" name="phone" placeholder="Untuk mengirimkan verifikasi akun" required @error('phone')is-invalid @enderror><br>
                 <label for="role">
                     <h5>Daftar Sebagai</h5>
                 </label>

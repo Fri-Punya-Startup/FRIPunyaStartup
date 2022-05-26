@@ -8,7 +8,9 @@ use App\Http\Controllers\
     LoginController, 
     RegisterController,
     AdminController,
-    DashboardPostController
+    EventController,
+    DashboardPostController,
+    waController
 };
 
 /*
@@ -26,8 +28,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/contoh', function () {
-    return view('contoh');
+Route::get("/about", function () {
+    return view('about');
 });
 
 Route::get('/navbar', function () {
@@ -56,5 +58,11 @@ Route::get('/dashboard/post/createSlug', [DashboardPostController::class, 'check
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
+Route::post('/wa/acc', [waController::class, 'acc']);
+
 Route::get('/admin/member', [AdminController::class, 'member'])->middleware('admin');
-Route::resource('/admin', AdminController::class)->middleware('admin');
+Route::get("/admin/edit-member/{id}", [AdminController::class, 'editMember'])->middleware('admin');
+Route::put("/admin/edit-member/{id}", [AdminController::class, 'naikPangkat'])->middleware('admin');
+Route::get('/admin/register-akun', [AdminController::class, 'registerAkun'])->middleware('admin');
+Route::get('/admin/type', [AdminController::class, 'type'])->middleware('admin');
+Route::resource('/admin', EventController::class)->middleware('admin');

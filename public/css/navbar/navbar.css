@@ -1,4 +1,5 @@
 
+
 .responsive{
   height: auto;
   width: 100%;
@@ -17,6 +18,12 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+.navbar-container a{
+  color: white;
+  text-decoration: none;
+}
+
 .img-container{
   padding: 8px;
 }

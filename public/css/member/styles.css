@@ -151,7 +151,7 @@ form{
   .select-items div:hover, .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
   }
-table {
+table{
     border-collapse: collapse;
     margin: 0;
     padding: 0;

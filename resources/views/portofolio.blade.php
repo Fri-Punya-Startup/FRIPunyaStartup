@@ -2,7 +2,6 @@
 
 @section('content')
     <link rel="stylesheet" href="css/portofolio/style.css">
-    <meta charset="UTF-8">
     <style>
         a{
             text-decoration: none;

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Models\User;
 use Illuminate\Support\Facades\Hash;
+use Models\User;
 
 class LoginController extends Controller{
 
@@ -20,9 +20,15 @@ class LoginController extends Controller{
         ]);
 
         if(Auth::attempt($credentials)){
+            
+            if(Auth::user()->verifikasi == null){
+                Auth::logout();
+                return back()->with('akunError', 'Akun Anda Belum Terverifikasi');
+            }
+            
             $request->session()->regenerate();
-
-            if(Auth::user()->name == 'wahyu'){
+            
+            if(Auth::user()->role == 'admin'){
                 return redirect('/admin');
             }else{
                 return redirect('/dashboard');

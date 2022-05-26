@@ -2,103 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{
-    Jabatan,
-    User,
-    Type
-};
-
 use Illuminate\Http\Request;
+use App\Models\{
+    Event,
+    User,
+    Jabatan,
+};
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-
-        $this->authorize('admin');
-        return view('admin.type', [
-            'types' => Type::all(),
-        ]);
-
-    }
-
-    public function member()
-    {
-        $this->authorize('admin');
-
-        return view('admin.member', [
-            'jabatan' => Jabatan::all(),
+    public function member(){
+        return view('admin.member',[
             'users' => User::all(),
+            'member' => User::where('role', 'member')->get(),
         ]);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+
+    public function editMember(Request $request){
+        return view('admin.edit-member',[
+            'member' => User::find($request->id),
+            'jabatan' => Jabatan::all(),
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function naikPangkat(Request $request){
+
+        if($request->has("delete")){
+            $user = User::find($request->id);
+            $user->delete();
+            return redirect()->back()->with('success', 'Berhasil menghapus member');
+        }
+
+        $user = User::find($request->id);
+
+        if($request->jabatan_id == ""){
+            $user->jabatan_id = null;
+        }
+
+        $user->update([
+            'jabatan_id' => $request->jabatan_id,
+        ]);
+
+        return redirect("/admin/member")->with('success', 'Berhasil mengubah jabatan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\type  $type
-     * @return \Illuminate\Http\Response
-     */
-    public function show(type $type)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\type  $type
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(type $type)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\type  $type
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, type $type)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\type  $type
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(type $type)
-    {
-        //
+    public function registerAkun(){
+        return view('admin.register-akun',[
+            'users' => User::where('verifikasi', null)->get(),
+        ]);
     }
 }
+

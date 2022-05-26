@@ -26,7 +26,7 @@
         <br/>
     </div>
 
-    <div class="aboutUs">
+    <div class="aboutUs" id="about">
         <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -43,7 +43,7 @@
                     (Fakultas Rekayasa Industri) dalam penciptaan sebuah inovasi,karya atau ide bisnis.
                 </h5>
                 <div class="more">
-                    <a href="">
+                    <a href="/about">
                         Read More
                     </a>
                 </div>

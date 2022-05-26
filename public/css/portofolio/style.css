@@ -10,7 +10,6 @@
     background-size: cover;
     background-image: url('/images/header.svg');
     height: 200px;
-    background-color: #f5f5f5;
 }
 
 .header .row{
@@ -47,10 +46,9 @@ input{
     width: 50px !important;
 }
 .parent{
-    background: #efefef;
     border-radius: 8px;
-
 }
+
 .child{
     padding: 64px;
     display: flex;
