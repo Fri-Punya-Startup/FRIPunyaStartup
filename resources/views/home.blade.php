@@ -8,25 +8,25 @@
 <link rel="stylesheet" href="css/home/styles.css">
 <div class="home">
     <div class="containers">
+        <br>
+        <br>
         <h1>Learn, Discuss</h1>
         <h1>Improve and</h1>
         <h1>Implement !</h1>
         <br/>
-        <h4>We are FPS, we are a Family</h4>
+        <h4 class="sentence">We are FPS, we are a 
+            <div class="slidingVertical">
+                <span>Family</span>
+                <span>Team</span>
+                <span>Community</span> 
+            </div>
+        </h4>
         <br/>
         <h5>Let's join us and improve your startup with Us  !</h5>
         <br/>
-        <div class="">
-            <a href="" class="student a">
-                <h6>Register as Student</h6>
-            </a>
-            <a href="" class="alumni a">
-                <h6>Register as Alumni</h6>
-            </a>
-        </div>
     </div>
 
-    <div class="aboutUs">
+    <div class="aboutUs" id="about">
         <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -43,7 +43,7 @@
                     (Fakultas Rekayasa Industri) dalam penciptaan sebuah inovasi,karya atau ide bisnis.
                 </h5>
                 <div class="more">
-                    <a href="">
+                    <a href="/about">
                         Read More
                     </a>
                 </div>
