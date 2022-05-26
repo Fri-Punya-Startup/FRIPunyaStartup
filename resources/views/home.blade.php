@@ -56,6 +56,7 @@
         <br>
         <div class="row">
             <div class="col-md-4">
+                <a href="/coming-soon">
                 <div class="activityItem">
                     <img src="/images/home/activity/competion.svg"  />
                     <div class="text">
@@ -63,6 +64,7 @@
                         <p>Ranah bagi anggota FPS untuk menambah insight dan knowledge baru dalam menciptakan sebuah karya atau produk.</p>
                     </div>
                 </div>
+                </a>
             </div>
             
             <div class="col-md-4">
