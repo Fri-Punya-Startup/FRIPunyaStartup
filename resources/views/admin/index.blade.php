@@ -28,7 +28,7 @@
                 {{$events->links()}}
             </div>
             <div class="btn-bottom">
-                <a href="admin/create">
+                <a href="/admin/create">
                     <input type="button" value="Add Event">
                 </a>
             </div>
