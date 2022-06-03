@@ -55,6 +55,7 @@ Route::post('/register', [RegisterController::class, 'storeRegistration']);
 
 Route::get('/event', [EventController::class, 'indexPublic']);
 Route::get('/register-event/{event:slug}', [EventController::class, 'showRegistrationForm']);
+Route::post('/register-event/{event:slug}', [EventController::class, 'peopleRegisterEvent']);
 
 Route::get('/dashboard', [DashboardPostController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/post/createSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');

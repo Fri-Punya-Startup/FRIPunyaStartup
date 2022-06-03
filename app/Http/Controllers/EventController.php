@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Schema;
 
 class EventController extends Controller
 {
@@ -61,7 +65,7 @@ class EventController extends Controller
             'tanggal' => 'required',
             'waktu' => 'required',
             'khusus' => 'required',
-            'grup-wa' => 'required',
+            'grup_wa' => 'required',
         ]);
 
         $validate['key'] = mt_rand(0000, 9999);
@@ -78,9 +82,47 @@ class EventController extends Controller
 
         $validate['poster'] = $request->file('poster')->store('event-images');
 
+        Schema::create($event->slug, function (Blueprint $table) {
+            $table->increments('id');
+            $table->foreignId('event_id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('jurusan');
+            $table->string('kampus');
+        });
+
         $event->create($validate);
-    
+
         return redirect('/admin')->with('success', 'Event berhasil ditambahkan');    
+    }
+
+    public function peopleRegisterEvent(Request $request){
+        $validate = $request->validate([
+            'nama' => 'required',
+            'email' => 'required',
+            'jurusan' => 'required',
+            'kampus' => 'required',
+            'no-wa' => 'required',
+        ]);
+    
+        $event = Event::where('id', $request->id)->first();
+
+        DB::table($event->slug)->insert([
+            'event_id' => $request->id,
+            'name' => $validate['nama'],
+            'email' => $validate['email'],
+            'jurusan' => $validate['jurusan'],
+            'kampus' => $validate['kampus'],
+        ]);
+
+        Http::post('http://localhost:5000/wa/notif/', [
+            'nama' => $validate['nama'],
+            'phone' => $validate['no-wa'],
+            'key' => $event->key,
+            'grup' => $event->grup_wa,
+        ])->json();
+
+        return redirect('/')->with('success', 'Berhasil mendaftar');
     }
 
     /**
