@@ -21,7 +21,9 @@ return new class extends Migration
             $table->string('khusus');
             $table->string('description');
             $table->string('poster');
-            $table->string('grup-wa');
+            $table->string('grup_wa');
+            $table->string('grup_id')->nullable();
+            $table->string('zoom')->nullable();
             $table->string('tanggal');
             $table->string('waktu');
             $table->timestamps();
