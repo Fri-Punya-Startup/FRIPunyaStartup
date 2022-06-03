@@ -17,10 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
+            $table->integer('key');
             $table->string('khusus');
             $table->string('description');
             $table->string('poster');
-            $table->string('tanggl');
+            $table->string('grup-wa');
+            $table->string('tanggal');
             $table->string('waktu');
             $table->timestamps();
         });

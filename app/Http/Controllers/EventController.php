@@ -19,6 +19,22 @@ class EventController extends Controller
         ]);
     }
 
+    public function indexPublic(Event $event)
+    {
+        return view('event', [
+            'events' => $event->latest()->paginate(1)->withQueryString(),
+        ]);
+    }
+
+    public function showRegistrationForm(Event $event)
+    {
+        return view('register-event', [
+            'event' => $event,
+        ]);
+
+        return $event;
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +61,10 @@ class EventController extends Controller
             'tanggal' => 'required',
             'waktu' => 'required',
             'khusus' => 'required',
+            'grup-wa' => 'required',
         ]);
+
+        $validate['key'] = mt_rand(0000, 9999);
 
         $validate['slug'] =   $event->slug = \Str::slug($request['title']);
 
@@ -72,7 +91,7 @@ class EventController extends Controller
      */
     public function show(Event $event)
     {
-        //
+        $event = $event->where('slug', request()->slug)->first();
     }
 
     /**

@@ -31,6 +31,8 @@
             <img src="" alt="" id="poster-preview">
             <label for="description">Deskripsi Event</label>
             <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <label for="grup-wa">Link Grup Wa</label>
+            <input type="text" name="grup-wa" id="" required>
             <label for="date">Tanggal Event</label>
             <input type="date" name="tanggal" id="date">
             <label for="time">Waktu Event</label>

@@ -53,12 +53,16 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'storeRegistration']);
 
+Route::get('/event', [EventController::class, 'indexPublic']);
+Route::get('/register-event/{event:slug}', [EventController::class, 'showRegistrationForm']);
+
 Route::get('/dashboard', [DashboardPostController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/post/createSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::post('/wa/acc', [waController::class, 'acc']);
+Route::post('/wa/regist-event', [waController::class, 'konfirmasi']);
 
 Route::get('/admin/member', [AdminController::class, 'member'])->middleware('admin');
 Route::get("/admin/edit-member/{id}", [AdminController::class, 'editMember'])->middleware('admin');
