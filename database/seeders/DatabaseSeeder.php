@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
                     'role' => 'admin',
                     'password' => bcrypt('aaa'),
                     'jabatan_id' => null,
+                    'verifikasi' => 1,
             ]);
                 
                 // Portofolio::create([
