@@ -27,6 +27,9 @@
 .img-container{
   padding: 8px;
 }
+.img-container img{
+  min-width: 267px;
+}
 .menu-container{
   display: flex;
   align-items: center;
@@ -89,6 +92,7 @@
   .hamburger{
     display: block;
     padding-right: 16px;
+    color: #fff;
   }
   .navbar-container{
     margin: 0;

@@ -1,31 +1,65 @@
+body{
+    background: #F7F7F7;
+}
+
 .header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
-    position: static;
-    height: 238px;
-    width: auto;
-    left: 0px;
-    top: 302px;
+    height: auto;
+    width: 100%;
     background-image: url("/images/header.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
+.heading{
+    font-family: Work Sans;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #212069;
+}
 .container h1{
-    padding-top: 125px;
-    margin-left: 35px;
-    font-size: 70px;
-    font-family: 'Work Sans', sans-serif;
-    font-weight: bold;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
     color: white;
+    padding: 125px 0 16px 0;
 }
-
 .about{
-    height : 1400px;
-    padding : 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
 }
-
+.topContent{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 64px 64px 32px 64px;
+}
+.midBottomWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 64px;
+}
+.midContent{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+.bottomContent{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
 .about span{
     color : #aed136;
 }
@@ -37,25 +71,57 @@
 }
 
 .about li{
-    font-family: 'Open Sans', sans-serif;
-    text-align: justify;
-    font-size: 18px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    font-size: 16px;
 }
 
 .about p{
     font-family: 'Open Sans', sans-serif;
-    text-align: justify;
-    font-size: 18px;
+    font-size: 16px;
 }
+.director{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 32px;
+}
+.BOD{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    width: 220px;
+    height: 277px;
+    border-radius: 8px;
 
+}
+.BOD h3{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    /* identical sto box height, or 162% */
+
+    display: flex;
+    align-items: center;
+}
 .image{
-    margin-top: 50px !important;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
     margin: auto;
-    width: 90%;
-    text-align: center;
-    /* padding-left: 50px; */
+    width: 100%;
+    padding: 64px;
 }
-
+.image span{
+    color: #aed136;
+}
 .col-sm-2{
     text-align: center;
     margin: auto;
@@ -71,13 +137,55 @@
     text-align: center;
     font-family: 'Open Sans', sans-serif;
 }
+@media screen and (max-width: 960px) {
+    .container h1{
+        font-size: 48px;
+    }
+    .director{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 16px;
+        row-gap: 16px;
+    }
+   
+}
 
 @media screen and (max-width: 600px) {
-    .us{
-        font-size: 60px !important;
+    .container h1{
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        padding-left: 32px;
     }
-
     .about{
-        height : 3900px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0;
+    }
+    .midBottomWrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .top{
+        padding-bottom: 0;
+    }
+    .midContent{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .bottomContent{
+        display: flex;
+        flex-direction: column;
+        padding-top: 64px ;
+
+    }
+    .director{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 16px;
     }
 }

@@ -29,14 +29,14 @@
     color: #fff;
 }
 
-.head {
-    left: 64px;
-    top: 64px;
-    padding: 30px;
+.heading{
+    font-family: Work Sans;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.02em;
     text-align: center;
-    font-size: 35px;
-    display: flex;
-    margin-left: -64px;
+    color: #212069;
 }
 .black{
     color: black;
@@ -50,9 +50,13 @@
     font-size: 16px;
     font-weight: 400;
 }
-.container{
+
+.aboutUs{
     padding: 64px;
-    margin-bottom: 64px;
+    border: 1px solid black;
+}
+.containerAbout{
+    padding: 32px;
 }
 /* Container for flexboxes */
 .row {

@@ -17,6 +17,18 @@ box-sizing: border-box;
     background-image: url("/images/header.svg");
     background-size: cover;
 }
+.container h1{
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: white;
+    padding: 125px 0 16px 0;
+}
 .hero{
     display: flex;
     flex-direction: column;
@@ -97,9 +109,30 @@ input:focus:invalid{
     width: 25% !important;
 }
 
-@media screen and (max-width : 760px){
+@media screen and (max-width : 960px){
+    input[type=text]{
+        width: 50%;
+    }
+    input[type=password]{
+        width: 50%;
+    }
+    .container h1{        
+         font-size: 48px;
+    }
+}
+@media screen and (max-width: 650px) {
     input[type=text]{
         width: 100%;
+    }
+    input[type=password]{
+        width: 100%;
+    }
+    .container h1{
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        padding-left: 32px;
     }
 }
 

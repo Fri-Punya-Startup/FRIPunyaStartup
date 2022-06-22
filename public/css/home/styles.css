@@ -1,5 +1,17 @@
+body{
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+    background: #f7f7f7;
+}
 .home{
-    height: 2400px ;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
 }
 
 .containers{
@@ -7,7 +19,7 @@
     padding-top: 120px !important;
     padding: 100px;
     position: relative;
-    height: 750px;
+    height: 760px;
     width: 100%;
     background: linear-gradient(
         45deg, #C0DB64, #4947C7, #171591,#4947C7, #adace6
@@ -30,11 +42,42 @@
     font-size: 70px;
     font-family: 'Work Sans', sans-serif;
 }
-
+.containers h5{
+    font-weight:400;
+    font-size: 20px;
+}
 a{
     text-decoration: none;
 }
+.buttonHome{
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+}
+.button1{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 16px;
+    border: none;
+    background: #212069;
+    /* Shadow/Button/01 */
 
+    box-shadow: 0px 43px 72px rgba(64, 37, 214, 0.08), 0px 15.6096px 28.3703px rgba(64, 37, 214, 0.0551985), 0px 6.04617px 13.1662px rgba(64, 37, 214, 0.0445033), 0px 1.69431px 5.93674px rgba(64, 37, 214, 0.0354967), 0px 0.0190289px 2.13248px rgba(64, 37, 214, 0.0248015);
+    border-radius: 8px;
+}
+.button2{
+    color: #AED136;
+    padding: 8px 16px;
+    background: #FFFFFF;
+    /* Green/500 */
+
+    border: 1px solid #AED136;
+    /* Shadow/Button/02 */
+
+    box-shadow: 0px 133px 118px rgba(159, 241, 42, 0.05), 0px 29.7073px 26.3568px rgba(159, 241, 42, 0.0298054), 0px 8.84464px 7.84712px rgba(159, 241, 42, 0.0201946);
+    border-radius: 8px;
+
+}
 .a{
     display: inline-block ;
 }
@@ -119,7 +162,14 @@ a{
     text-align: center;
     background-color: white;
 }
-
+.heading{
+    font-family: Work Sans;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    color: #212069;
+}
 .more{
     border-radius: 10px;
     border-style: solid;
@@ -131,17 +181,42 @@ a{
 .more a{
     color: #AED136 ;
 }
+.more:hover{
+    color: #ffffff;
+    background: #AED136;
+    transition: all 0.2s ease-in;
+}
+.more a:hover{
+    color: #ffffff;
+    transition: all 0.2s ease-in;
+}
 
 .activityItem h4{
     color: #7B7AD6;
 }
 
 .aboutUs{
-    padding: 50px;
-    margin-top: 50px;
-    color: black;
+    padding: 64px;
 }
-
+.containerAbout{
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    column-gap: 32px;
+}
+.aboutContent{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+.aboutContent p{
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+}
 .aboutUs span ,.portofolio span{
     font-size: 40px;
     color: #AED136;
@@ -150,112 +225,174 @@ a{
 .aboutUs h5{
     margin-top: 30px;
 }
-
 .ourActivity{
-    padding: 60px;
-    margin-top: 50px;
-    color: black;
+    padding: 64px;
 }
-
-.ourActivity .row{
-    text-align: center;
+.activityContent{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+.activityCard{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 80px 0 80px;
+    column-gap: 32px;
 }
 
 .ourActivity span{
     font-size: 40px;
     color: #AED136;
 }
-
-.activity{
-    margin-top: 50px;
-    text-align: center;
+.responsive{
+    width: 100%;
+    height: auto;
+    max-width: 150px;
 }
-
 .activityItem{
+    border: 1px solid #DDDDDD;
     border-radius: 10px;
     color: black;
-    margin: auto;
-    width: 70%;
-    height: 270px;
-    padding: 15px !important;
-    background-color: #f0f0f0;
-    transition: all 0.3s ease;
+    background: #ffffff;
+    padding: 32px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 32px;
+    box-shadow: 0px 31px 46px -22px rgba(123, 97, 255, 0.25);
 }
-
-.text{
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 20px;
-
-}
-
-.text p{
-    -webkit-transition: visibility 0s, opacity 0.5s linear; 
-    transition: all 0.5s ease;
-    opacity: 0;
-    font-weight: lighter !important;
-    text-align: left;
-    /* display: none; */
-}
-
-.activityItem:hover {
-    z-index: -1;
-    height: 450px;
-}
-
-.activityItem:hover .text p{
-    opacity: 1;
-}
-
-.activityItem:hover .portofolio{
-    margin-top: 0px !important;
-}
-
-.portofolio{
-    position: absolute;
-    z-index: 100;
-    left:150px;
-    top:1900px
-}
-
-.explore{
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
-    position: absolute;
-    right: 30px !important;
-    background-color: #212069;
-    width: fit-content;
+.activityItem:hover{
+    transform: scale(1.2);
+    transition: all 0.5s ease-in-out;
     cursor: pointer;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+.text h4{
+    font-family: Work Sans;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+.text p{
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+}
+
+.ourPortofolio{
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+.ourPortofolio span{
+    font-size: 40px;
+    color: #AED136;
+}
+.cardPort{
+    display: flex;
+    flex-direction: row;
+}
+.explore{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    cursor: pointer;
+    padding: 32px;
+}
+.explore button{
+    border: none;
+    background: #212069;
+    color: #FFFFFF;
+    box-shadow: 0px 43px 72px rgba(64, 37, 214, 0.08), 0px 15.6096px 28.3703px rgba(64, 37, 214, 0.0551985), 0px 6.04617px 13.1662px rgba(64, 37, 214, 0.0445033), 0px 1.69431px 5.93674px rgba(64, 37, 214, 0.0354967), 0px 0.0190289px 2.13248px rgba(64, 37, 214, 0.0248015);
+    border-radius: 8px;
+    padding: 10px 16px 4px 16px;
+}
+.explore button:hover{
+    background: #4947C7;
+    transition: all 0.2s ease;
+}
+.explore h6{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .startup img{
-    border-style: solid;
-    border-color: #AED136;
+    border: 0.5px solid #dddd;
+    border-radius: 8px;
+
+}
+@media screen and (max-width: 960px) {
+    .containerAbout{
+        display: flex;
+        flex-direction: column;
+    }
+    .activityCard{
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+    .cardPort{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
 }
 
-@media screen and (max-width: 768px) {
 
-    .home{
-        height: 4900px;
-    }
+@media screen and (max-width:601px)  {
 
     .containers{
-        padding: 20px;
+        padding: 32px 32px 32px 32px;
         background-color: #212069;
-        width: auto;
+        width: 100%;
     }
     .containers h1{
         font-size: 30px;
     } 
-
+    .containers h5{
+        font-size: 14px;
+    }
+    .buttonHome{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        row-gap: 16px;
+    }
     .aboutUs{
-        padding: 20px;
+        padding: 32px;
     }
-
+    .containerAbout{
+        display: flex;
+        flex-direction: column;
+    }
     .ourActivity{
-        padding: 20px;
+        padding: 32px;
     }
-
+    .activityContent{
+        display: flex;
+        flex-direction: column;
+    }
+    .activityCard{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .activityCard:hover{
+        transform: none;
+    }
     .portofolio{
         top: 3400px;
         left: 0px;
@@ -264,23 +401,23 @@ a{
     .portofolio h2{
         padding-left: 20px;
     }
-
+    
     .activityItem{
         margin-bottom: 20px;
         height: 450px;
     }
-
-    .text p{
-        opacity: 1;
+    .cardPort{
+        display: flex;
+        flex-direction: column;
     }
-
     .startup{
         margin-bottom: 20px;
         padding-left: 0px !important;
         text-align: center;
     }
-
-    .a{
-        margin-bottom: 20px;
+    .explore{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }

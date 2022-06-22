@@ -1,21 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
-.portofolio{
-    height: auto;
-    margin-bottom: 100px;
+body{
+    background: #F7F7F7;
 }
-
-.header{
-    color: white;
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    height: auto;
+    width: 100%;
+    background-image: url("/images/header.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/images/header.svg');
-    height: 200px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 125px 0 16px 0;
+}
+.container h1{
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: white;
+}
+.searchBox h4{
+    color: #ffff;
+    font-size: 20px
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
 }
 
-.header .row{
-    padding-left: 20px;
-    padding-top: 100px;
-}
 
 .contents{
     margin-top: 50px;
@@ -99,4 +123,13 @@ input{
         margin: 20px 20px 20px 40px;
     }
     
+}
+@media screen and (max-width: 601px) {
+    .container h1{
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        padding-left: 32px;
+    }
 }

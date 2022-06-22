@@ -13,8 +13,10 @@
 
 </head>
 <body>
-    <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="header">
-        <h1 class="hero text-light">Login Form</h1>
+    <div class="header">
+        <div class="container">
+            <h1 class="us">About Us</h1>
+        </div>
     </div>
     
     @if(session()->has('success'))

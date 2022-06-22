@@ -19,14 +19,14 @@ class EventController extends Controller
     public function index(Event $event)
     {
         return view('admin.index', [
-            'events' => $event->latest()->paginate(1)->withQueryString(),
+            'events' => $event->latest()->paginate(5)->withQueryString(),
         ]);
     }
 
     public function indexPublic(Event $event)
     {
         return view('event', [
-            'events' => $event->latest()->paginate(1)->withQueryString(),
+            'events' => $event->latest()->paginate(5)->withQueryString(),
         ]);
     }
 

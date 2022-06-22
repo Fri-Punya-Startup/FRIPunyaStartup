@@ -1,21 +1,17 @@
 @extends("layouts.main")
 
 @section('content')
+<head>
+    <meta charset="UTF-8">
+    <title>Our Portofolio</title>
     <link rel="stylesheet" href="css/portofolio/style.css">
-    <style>
-        a{
-            text-decoration: none;
-            color: black;
-        }
-        h1{
-            color: white;
-        }
-    </style>
+</head>
+<body>
     <div class="portofolio">
-            <div class="header">
-               <div class="row">
-                    <div class="col-md-9">
-                        <a href="/portofolio"><h1>Our Portofolio</h1></a>
+    <div class="header">
+        <div class="container">
+            <h1 class="us">Our Portfolio</h1>
+            <div class="searchBox">
                         <h4>
                             @if (request('type'))
                                Type : {{request('type')}}
@@ -23,20 +19,18 @@
                                 Type : All
                             @endif
                         </h4>
-                    </div>
-                    <div class="col md-3">
-                    <form action="/portofolio" method="get">
-                        @if (request('type'))
+                        <form action="/portofolio" method="get">
+                            @if (request('type'))
                             <input type="hidden" name="type" value="{{request('type')}}">
-                        @elseif (request('founder'))
+                            @elseif (request('founder'))
                             <input type="hidden" name="founder" value="{{request('founder')}}">
-                        @endif
+                            @endif
                             <input type="text" name="search" placeholder="Search">
                             <button type="submit" class="btn btn-success">Search</button>
                         </form>
                     </div>
-               </div>
-            </div>
+        </div>
+    </div>
             <div class="container">
                 <div class="contents">
                     <div class="row">
@@ -74,6 +68,7 @@
                 {{$porto->links()}}
             </div>
     </div>
+</body>
 
 
 @endsection
