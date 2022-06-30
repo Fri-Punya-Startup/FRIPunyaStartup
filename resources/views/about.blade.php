@@ -19,30 +19,32 @@
         </div>
     </div>
     <div class="about">
-        <h1><span>|</span> Our Story</h1>
-        <p>Kami bermula dari kesadaran akan banyaknya minat mahasiswa/i Fakultas Rekayasa Industri
-            dalam pengembangan bisnis digital dan startup. Pada awal terbentuknya, FPS bermula sebagai 
-            sebuah kompetisi startup di FRI untuk melombakan sekaligus mengembangkan startup mereka. 
-            Kompetisi tersebut sudah berlangsung selama dua kali dalam kurun waktu tahun 2020 hingga 2021. 
-            Pada kompetisi tersebut, kami mengundang beberapa praktisi sebagai coach yang memberikan materi 
-            sekaligus melakukan penilaian kepada tim yang mengikuti FPS.</p>
-        <p>Tingginya minat dan rasa ingin tahu mahasiswa/i Fakultas Rekayasa Industri terhadap dunia startup 
-            membuat kami ingin melebarkan sayap untuk memperoleh peluang-peluang lain dengan mengembangkan sebuah komunitas FPS ini. 
-            Sehingga saat ini FPS dapat menjadi sebuah komunitas yang dibentuk dengan tujuan berkembang dan belajar bersama dalam menciptakan 
-            sebuah ide bisnis atau startup. Anggota dapat menjalin relasi sesama anggota maupun alumni dan berkembang bersama untuk 
-            menciptakan karya - karya unggulan di bawah naungan Fakultas Rekayasa Industri. FPS menjadi sarana untuk mahasiswa FRI 
-            (Fakultas Rekayasa Industri) dalam penciptaan sebuah inovasi,karya atau ide bisnis.</p>
-        <br/><br/><br/><br/><br/>
-        <div class="row">
-            <div class="col-md-6">
-                <h1><span>|</span> Our Vision</h1>
+        <div class="topContent">
+            <h1 class="heading"><span>|</span> Our Story</h1>
+            <p>Kami bermula dari kesadaran akan banyaknya minat mahasiswa/i Fakultas Rekayasa Industri
+                dalam pengembangan bisnis digital dan startup. Pada awal terbentuknya, FPS bermula sebagai 
+                sebuah kompetisi startup di FRI untuk melombakan sekaligus mengembangkan startup mereka. 
+                Kompetisi tersebut sudah berlangsung selama dua kali dalam kurun waktu tahun 2020 hingga 2021. 
+                Pada kompetisi tersebut, kami mengundang beberapa praktisi sebagai coach yang memberikan materi 
+                sekaligus melakukan penilaian kepada tim yang mengikuti FPS.</p>
+            <p>Tingginya minat dan rasa ingin tahu mahasiswa/i Fakultas Rekayasa Industri terhadap dunia startup 
+                membuat kami ingin melebarkan sayap untuk memperoleh peluang-peluang lain dengan mengembangkan sebuah komunitas FPS ini. 
+                Sehingga saat ini FPS dapat menjadi sebuah komunitas yang dibentuk dengan tujuan berkembang dan belajar bersama dalam menciptakan 
+                sebuah ide bisnis atau startup. Anggota dapat menjalin relasi sesama anggota maupun alumni dan berkembang bersama untuk 
+                menciptakan karya - karya unggulan di bawah naungan Fakultas Rekayasa Industri. FPS menjadi sarana untuk mahasiswa FRI 
+                (Fakultas Rekayasa Industri) dalam penciptaan sebuah inovasi,karya atau ide bisnis.</p>
+            
+        </div>
+        <div class="midBottomWrapper">
+            <div class="midContent">
+                <h1 class="heading"><span>|</span> Our Vision</h1>
                 <p>“Menciptakan komunitas unggul dan berprestasi dalam menciptakan sebuah karya/produk, inovasi, dan kompetisi 
                     baik di dalam kampus maupun luar kampus serta menjadi wadah dalam meningkatkan kemampuan baik hardskill 
                     maupun softskill untuk menciptakan inovasi yang unggul dan membuat dampak kepada society di Era Revolusi Industri 
                     yang terus berkembang.”</p>
             </div>
-            <div class="col-md-6">
-                <h1><span>|</span> Our Mission</h1>
+            <div class="bottomContent">
+                <h1 class="heading"><span>|</span> Our Mission</h1>
                 <ul>
                     <li>Meningkatkan kapasitas dan kapabilitas anggota FPS.</li>
                     <li>Memudahkan anggota FPS untuk menjalin kerjasama dalam menciptakan sebuah Karya,Produk, atau Inovasi.</li>
@@ -52,29 +54,30 @@
                 </ul>
             </div>
         </div>
-        <br/><br/><br/><br/><br/>
-        <h1><span>|</span> Our Board of Director</h1>
+        </div>
+        
         <div class="image">
-            <div class="row director">
-                <div class="col-sm-2">
+            <h1 class="heading"><span>|</span> Our Board of Director</h1>
+            <div class="director">
+                <div class="BOD">
                     <img src="images/about/ceo.png" alt="profile Pic" height="200" width="200">
-                    <h2>Kemal Aziz</h2>
+                    <h3>Kemal Aziz</h3>
                 </div>
-                <div class="col-sm-2">
+                <div class="BOD">
                     <img src="images/about/coo.png" alt="profile Pic" height="200" width="200">
-                    <h2>Stefanus Ricardo M</h2>
+                    <h3>Stefanus Ricardo M</h3>
                 </div>
-                <div class="col-sm-2">
+                <div class="BOD" >
                     <img src="images/about/cto.png" alt="profile Pic" height="200" width="200">
-                    <h2>Wahyudi Khoeris S</h2>
+                    <h3>Wahyudi Khoeris S</h3>
                 </div>
-                <div class="col-sm-2">
+                <div class="BOD">
                     <img src="images/about/cmo.png" alt="profile Pic" height="200" width="200">
-                    <h2>Fransiscus Michael</h2>
+                    <h3>Fransiscus Michael</h3>
                 </div>
-                <div class="col-sm-2">
+                <div class="BOD">
                     <img src="images/about/cfo.png" alt="profile Pic" height="200" width="200">
-                    <h2>Andrian Firmansyah</h2>
+                    <h3>Andrian Firmansyah</h3>
                 </div>
             </div>
         </div>

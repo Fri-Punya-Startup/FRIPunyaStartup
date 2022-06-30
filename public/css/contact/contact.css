@@ -10,7 +10,22 @@
     background-image: url("/images/header.svg");
     background-size: cover;
 }
-
+.story{
+    padding: 64px;
+    width: 100%;
+    left: 0;
+    top: 302px;
+    background-color: #F2F2F2;
+}
+.card{
+    padding: 64px;
+    background-color: #fff;
+    height: auto;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: #9f9d9d;
+}
 .container h1{
     padding-top: 125px;
     margin-left: 35px;
@@ -37,7 +52,10 @@
     font-weight: normal;
 }
 
-.contacts h2{
+
+//.contacts h2{
+
+.head{
     font-family: 'Work Sans', sans-serif;
     color: #aed136;
     font-weight: bold;
