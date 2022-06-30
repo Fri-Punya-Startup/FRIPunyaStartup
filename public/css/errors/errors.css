@@ -1,0 +1,46 @@
+.container {
+    height: auto;
+    padding: 100px;
+}
+
+.row {
+    background-color: #f0f0f0;
+    padding: 50px;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.row h1{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+    color: #AED136;
+}
+
+.row h5{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color: #d1d1d1;
+}
+
+.row a:hover{
+    color: #AED136;
+}
+
+.row a{
+    background-color: #212069;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    font-size: 16px;
+    margin: 4px 2px;
+    /* cursor: pointer; */
+    font-family: 'Open Sans', sans-serif;
+}
+
+.align {
+    padding-top: 0px;
+    text-align: right;
+}
