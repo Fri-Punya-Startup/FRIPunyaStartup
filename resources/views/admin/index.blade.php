@@ -1,39 +1,37 @@
 @extends("admin.layouts")
 @section('content')
-    <style>
-        .select-items{
-            width: 200px !important;
-        }
-        .caption{
-            margin-left: 25px;
-        }
-        .table-content{
-            margin-top: -20px;
-            padding-top: 50px;
-        }
-    </style>
-    <div class="child">
-        <h5 class="caption">Home</h5>
+    {{-- buat tabel untuk list user --}}
+    <div class="table">
         <div class="table-content">
-            <table>
-                @foreach($events as $e)
+            <div class="header-table">
+                <div class="row">
+                    <div class="col-6">
+                        <h3>List Pendaftar FPS</h3>
+                    </div>
+                    <div class="col-6 header-table-right">.col-6</div>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
                     <tr>
-                        <td><img src="/storage/{{$e->poster}}" alt=""></td>
-                        <td data-label="NAMA">{{$e->title}}</td>
-                        <td data-label="description">{{$e->description}}</td>   
+                        <th scope="col">No</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
                     </tr>
-                @endforeach
-            </table>
-            <div class="d-flex justify-content-center">
-                {{$events->links()}}
-            </div>
-            <div class="btn-bottom">
-                <a href="admin/create">
-                    <input type="button" value="Add Event">
-                </a>
-            </div>
+                </thead>
+                <tbody>
+                    @foreach ($users as $user)
+                    <tr>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>
+                            <a href="/admin/user/{{ $user->id }}" class="btn btn-primary">Detail</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
         </div>
-    </div>
-    </div>
     </div>
 @endsection

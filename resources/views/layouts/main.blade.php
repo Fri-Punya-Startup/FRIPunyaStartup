@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>FRI Punya Startup</title>
-
-    <title>Fri Punya Startup</title>
-
+    <link rel="preload" as="image" href="/images/logoNavbar.svg">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Open+Sans&family=Poppins:ital@1&display=swap" rel="stylesheet" />
     
     <!-- <link rel="stylesheet" href="/css/navbar/navbar.css"> -->
-    <link rel="stylesheet" href="../css/footer/styles.css">
+    <link rel="stylesheet" href="../../../css/footer/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/navbar/navbar.css">
-    
+    <link rel="stylesheet" href="../../../css/navbar/navbar.css">
+
     <style>
       /* .content{
         margin-top: -80px;
@@ -35,18 +33,20 @@
      <div class="parent">
        <div class="navbar-container">
         <div class="img-container">
-          <img src="/images/logoNavbar.svg" alt="/" class="responsive">
+          <a href="/">
+            <img src="/images/logoNavbar.svg" alt="/" class="responsive">
+          </a>
         </div>
         <div class="menu-container" id="mySidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <a href="/">Menu</a>
           <a href="/about">About Us</a>
-          <a href="/portofolio">Our Portfolio</a>
-          <a href="/type">Type Portfolio</a>
-          <a href="/">Our Activites</a>
+          {{-- <a href="/portofolio">Our Portfolio</a> --}}
+          {{-- <a href="/type">Type Portfolio</a> --}}
+          <a href="/#startup">Our Startup</a>
           <div class="button">
             <a href="/login" class="btnOne">Login</a>
-            <a href="/" class="btnTwo">Contact Us</a>
+            <a href="/#contact" class="btnTwo">Contact Us</a>
           </div>
         </div>
         <span class="hamburger" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
@@ -74,7 +74,7 @@
                         </div> 
                     </div>
                 </div>
-                <div class="contact">
+                <div  id="contact" class="contact">
                     <Image src="/images/footer/fps-white.svg" width="120" height="120" />
                     <h6 class="ijo">FRI Punya Startup</h6>
                     <br>
@@ -83,11 +83,11 @@
                     <h6>Telkom University</h6>
                     <br/>
                     <div class="contactInfo">
-                      <a  href="#">
+                      <a  href="https://discord.gg/z8VHqt8X7s">
                           <Image class="medsos" src="/images/footer/discord.svg" width="50" height="50"/>
                       </a>
 
-                      <a  href="#">
+                      <a  href="https://www.instagram.com/fps.telkom/">
                           <Image class="medsos" src="/images/footer/instagram.svg" width="50" height="50"/>
                       </a>    
                 
@@ -95,7 +95,7 @@
                           <Image class="medsos" src="/images/footer/facebook.svg" width="50" height="50"/>
                       </a>                  
                 
-                      <a  href="#">
+                      <a  href="https://www.linkedin.com/company/fps-fri-punya-startup/">
                           <Image class="medsos" src="/images/footer/linkedin.svg" width="50" height="50"/>
                       </a>
                         

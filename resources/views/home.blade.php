@@ -4,7 +4,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
-
+<style>
+    .col-sm img{
+        width: 225px;
+        height: 225px;
+    }
+</style>
 <link rel="stylesheet" href="css/home/styles.css">
 <body>
     <div class="home">
@@ -26,8 +31,9 @@
             <h5>Let's join us and improve your startup with Us  !</h5>
             <br/>
             <div class="buttonHome">
-                <button type="submit" class="button1">Register as Student</button>
-                <button type="submit" class="button2">Register as Alumni</button>
+                <a href="/register">
+                    <button type="submit" class="button2">Register Now</button>
+                </a>
             </div>
         </div>
 
@@ -82,31 +88,29 @@
             </div>
         </div>
 
-        <div class="ourPortofolio">
-            <h2 class="heading"><span>|</span> Our Portofolio</h2>
-            <div class="cardPort">
-                <div class="col-md-2 startup">
-                    <img src="images/home/activity/card.svg" alt="">
+        <div id="startup" class="ourPortofolio">
+            <h2 class="heading"><span>|</span> Our Startup</h2>
+            <div class="row">
+                <div class="col-sm text-center">
+                    <a href="/startup/kiri">
+                        <img src="images/kiri.jpg" alt="">
+                    </a>
                 </div>
-                <div class="col-md-2 startup">
-                    <img src="images/home/activity/card.svg" alt="">
+                <div class="col-sm text-center">
+                    <a href="/startup/feelsbox">
+                        <img src="images/feelsbox.png" alt="">
+                    </a>
                 </div>
-                <div class="col-md-2 startup">
-                    <img src="images/home/activity/card.svg" alt="">
-                </div>
-                <div class="col-md-2 startup">
-                    <img src="images/home/activity/card.svg" alt="">
-                </div>
-                <div class="col-md-2 startup">
-                    <img src="images/home/activity/card.svg" alt="">
-                </div>
-                <div class="col-md-2 startup">
-                    <img src="images/home/activity/card.svg" alt="">
+                <div class="col-sm text-center">
+                    <a href="/startup/sport-gather">
+                        <img src="images/sport.png" alt="">
+                    </a>
                 </div>
             </div>
-            <div class="explore">
+            <br>
+            {{-- <div class="explore">
                 <button><h6>Explore More</h6></button>
-            </div>
+            </div> --}}
         </div>
     </div>
     <footer>

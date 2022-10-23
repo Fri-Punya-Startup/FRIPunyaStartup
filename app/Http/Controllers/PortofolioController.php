@@ -29,6 +29,14 @@ class PortofolioController extends Controller
         ]);
     }
 
+    public function feelsbox(){
+        return view('startup.feelsbox');
+    }
+
+    public function kiri(){
+        return view('startup.kiri');
+    }
+
     public function founder(User $user){
         return view('founder', [
             'user' => $user->portofolio()->latest()->get()->load('type'),

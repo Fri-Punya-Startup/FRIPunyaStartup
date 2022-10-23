@@ -6,10 +6,10 @@ use App\Http\Controllers\
     PortofolioController, 
     TypeController, 
     LoginController, 
-    RegisterController,
     AdminController,
     EventController,
     DashboardPostController,
+    RegistrationController,
     waController
 };
 
@@ -41,7 +41,8 @@ Route::get('/member' , function(){
 
 Route::get('/portofolio', [PortofolioController::class, 'index']);
 
-Route::get('/portofolio/{portofolio:slug}', [PortofolioController::class, 'show']);
+Route::get('/startup/feelsbox', [PortofolioController::class, 'feelsbox']);
+Route::get('/startup/kiri', [PortofolioController::class, 'kiri']);
 
 Route::get('/type/', [TypeController::class, 'type']);
 
@@ -49,25 +50,25 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->middleware('log
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->middleware('guest');
-Route::post('/register', [RegisterController::class, 'storeRegistration']);
+Route::resource('/register', RegistrationController::class);
+// Route::get('/event', [EventController::class, 'indexPublic']);
+// Route::get('/register-event/{event:slug}', [EventController::class, 'showRegistrationForm']);
+// Route::post('/register-event/{event:slug}', [EventController::class, 'peopleRegisterEvent']);
 
-Route::get('/event', [EventController::class, 'indexPublic']);
-Route::get('/register-event/{event:slug}', [EventController::class, 'showRegistrationForm']);
-Route::post('/register-event/{event:slug}', [EventController::class, 'peopleRegisterEvent']);
+// Route::get('/dashboard', [DashboardPostController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard/post/createSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
+// Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
+// Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
-Route::get('/dashboard', [DashboardPostController::class, 'index'])->middleware('auth');
-Route::get('/dashboard/post/createSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/dashboard/post', DashboardPostController::class)->middleware('auth');
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+// Route::post('/wa/acc', [waController::class, 'acc']);
+// Route::post('/wa/regist-event', [waController::class, 'konfirmasi']);
 
-Route::post('/wa/acc', [waController::class, 'acc']);
-Route::post('/wa/regist-event', [waController::class, 'konfirmasi']);
-
-Route::get('/admin/member', [AdminController::class, 'member'])->middleware('admin');
-Route::get("/admin/edit-member/{id}", [AdminController::class, 'editMember'])->middleware('admin');
-Route::put("/admin/edit-member/{id}", [AdminController::class, 'naikPangkat'])->middleware('admin');
-Route::get('/admin/register-akun', [AdminController::class, 'registerAkun'])->middleware('admin');
-Route::get('/admin/type', [AdminController::class, 'type'])->middleware('admin');
-Route::resource('/admin', EventController::class)->middleware('admin');
+// Route::get('/admin/member', [AdminController::class, 'member'])->middleware('admin');
+// Route::get("/admin/edit-member/{id}", [AdminController::class, 'editMember'])->middleware('admin');
+// Route::put("/admin/edit-member/{id}", [AdminController::class, 'naikPangkat'])->middleware('admin');
+// Route::get('/admin/register-akun', [AdminController::class, 'registerAkun'])->middleware('admin');
+// Route::get('/admin/type', [AdminController::class, 'type'])->middleware('admin');
+Route::resource('/admin', AdminController::class)->middleware('admin');
+Route::resource('/admin/user', AdminController::class)->middleware('admin');

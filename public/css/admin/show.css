@@ -1,45 +1,4 @@
 
-   
-* {
-box-sizing: border-box;
-}
-  
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    position: static;
-    width: auto;
-    height: 238px;
-    left: 0;
-    top: 302px;
-    background-image: url("/images/header.svg");
-    background-size: cover;
-}
-.container h1{
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 72px;
-    line-height: 84px;
-    display: flex;
-    align-items: center;
-    letter-spacing: -0.02em;
-    color: white;
-    padding: 125px 0 16px 0;
-}
-.hero{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 64px;
-    position: absolute;
-    width:100%;
-    height: 148px;
-    left: 0px;
-    top: 90px;
-}
 .story{
     padding: 64px;
     width: 100%;
@@ -47,16 +6,11 @@ box-sizing: border-box;
     top: 302px;
     background-color: #efefef;
 }
-.form-header{
-    color: #212069;  
-    font-family: Work Sans;
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 40px;
-    letter-spacing: -0.02em;
-    text-align: left;
 
+.form-header{
+    margin-bottom: 20px;
 }
+
 .form h6{
     font-family: Open Sans;
     font-size: 14px;

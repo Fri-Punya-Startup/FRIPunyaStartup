@@ -7,10 +7,26 @@ use App\Models\{
     Event,
     User,
     Jabatan,
+    Registration
 };
 
 class AdminController extends Controller
 {
+
+    public function index(Event $event)
+    {
+        return view('admin.index', [
+            'users' => Registration::all(),
+        ]);
+    }
+
+    public function show($id)
+    {
+        return view('admin.register-detail', [
+            'user' => Registration::find($id),
+        ]);
+    }
+
     public function member(){
         return view('admin.member',[
             'users' => User::all(),

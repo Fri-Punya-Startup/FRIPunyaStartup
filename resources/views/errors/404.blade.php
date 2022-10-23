@@ -6,9 +6,44 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
         <link rel="stylesheet" href="./css/errors/errors.css">
         <title>Page Not Found</title> 
+
+        <style>
+            .containers{
+                color: white;
+                padding-top: 120px !important;
+                padding: 100px;
+                position: relative;
+                height: 760px;
+                width: 100%;
+                background: linear-gradient(
+                    45deg, #C0DB64, #4947C7, #171591,#4947C7, #adace6
+                );
+                background-size: 400% 400%;
+                animation: animate-background 10s infinite ease-in-out;
+            }
+            @keyframes animate-background {
+                0% {
+                    background-position: 0 100% ;
+                }
+                50% {
+                    background-position: 100% 50%   ;
+                }
+                100% {
+                    background-position: 0 100%;
+                }
+            }
+
+            .row{
+                background-color: rgba(255,255,255,0.7)
+            }
+
+            h5{
+                color: black !important;
+            }
+        </style>
     </head> 
 <body> 
-    <div class="container">
+    <div class="containers">
         <div class="row">
             <div class="col-sm-6">
                 <h1>404 Not Found</h1>
@@ -19,7 +54,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="align">
-                    <img src="images/notfound.svg" height="352" width="320">
+                    <img src="../../../../../../../../../../../images/notfound.svg" height="352" width="320">
                 </div>
             </div>
         </div>
