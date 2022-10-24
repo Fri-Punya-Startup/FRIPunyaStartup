@@ -23,15 +23,6 @@ class DatabaseSeeder extends Seeder
             //     'email' => 'rizki@gmail.com',
             //     'password' => bcrypt('123456'),
             // ]);
-            
-            User::create([
-                    'name' => 'Admin',
-                    'email' => 'adminfps@gmail.com',
-                    'role' => 'admin',
-                    'password' => bcrypt('startup.Fr1web'),
-                    'jabatan_id' => null,
-                    'verifikasi' => 1,
-            ]);
                 
                 // Portofolio::create([
                     //     'product' => 'Startup',

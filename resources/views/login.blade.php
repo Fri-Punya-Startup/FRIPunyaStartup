@@ -53,7 +53,7 @@
                 <input type="text" id="mail"  name="email" placeholder="Masukan Alamat Email" autofocus required><br>
                 
                 <label for="password"><h6>Password</h6></label><br>
-                <input type="password" id="fname" pattern="[A-Za-z]+" name="password" placeholder="Masukan Password" required><br>
+                <input type="password" id="fname" name="password" placeholder="Masukan Password" required><br>
                 <br>
                 <input type="submit" value="Submit">
             </form>
