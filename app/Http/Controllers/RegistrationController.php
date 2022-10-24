@@ -48,7 +48,7 @@ class RegistrationController extends Controller
             "role" => "required",
             "skill" => "required",
             "startup" => "required",
-            "cv" => "required|mimes:pdf",
+            "cv" => "required|mimes:pdf|max:10000",
             "follow" => "required",
         ]); 
 

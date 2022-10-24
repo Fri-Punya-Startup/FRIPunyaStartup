@@ -37,6 +37,10 @@ class PortofolioController extends Controller
         return view('startup.kiri');
     }
 
+    public function sport(){
+        return view('startup.sport');
+    }
+
     public function founder(User $user){
         return view('founder', [
             'user' => $user->portofolio()->latest()->get()->load('type'),

@@ -22,18 +22,18 @@
             <div class="row">
                 <div class="column" >
                     <div class="container gambar">
-                        <img src="../images/kiri.png" alt="">
+                        <img src="../images/sport.png" alt="">
                     </div>
                </div>
                 <div class="column">
-                   <h3>Kiri</h3>
-                   <p class="type">Type: &nbsp Transportasi Publik</p>
-                   <p class="founder">Founder: Farhan Pratama</a> </p>
-                   <h5>Kiri merupakan startup yang bergerak di bidang transportasi publik dengan tujuan menciptakan transportasi publik yang aman, nyaman, dan mudah diakses oleh masyarakat</h5>
+                   <h3>Sportgather</h3>
+                   <p class="type">Type: &nbsp Olahraga</p>
+                   <p class="founder">Founder: Kemal Aziz</a> </p>
+                   <h5>Sportgather merupakan platform digital olahraga yang mewadahi para penggiat olahraga untuk dapat menentukan jadwal tanding, menemukan lawan tanding, serta memberikan rekomendasi venue olahraga.</h5>
                    <br>
                    <div class="button">
-                    <a href="" class="button-dark">Visit Website</a>
-                    <a href="mailto:this.mahanran@gmail.com" class="button-light">Contact Founder</a>
+                    <a href="https://sportgather-landing.vercel.app" class="button-dark">Visit Website</a>
+                    <a href="mailto:azizkemal599@gmail.com" class="button-light">Contact Founder</a>
                 </div>
                 </div>
                

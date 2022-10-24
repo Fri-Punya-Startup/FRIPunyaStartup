@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
             // ]);
             
             User::create([
-                    'name' => 'wahyu',
-                    'email' => 'admin@gmail.com',
+                    'name' => 'Admin',
+                    'email' => 'adminfps@gmail.com',
                     'role' => 'admin',
-                    'password' => bcrypt('aaa'),
+                    'password' => bcrypt('startup.Fr1web'),
                     'jabatan_id' => null,
                     'verifikasi' => 1,
             ]);

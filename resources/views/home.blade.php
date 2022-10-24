@@ -93,7 +93,7 @@
             <div class="row">
                 <div class="col-sm text-center">
                     <a href="/startup/kiri">
-                        <img src="images/kiri.jpg" alt="">
+                        <img src="images/kiri.png" alt="">
                     </a>
                 </div>
                 <div class="col-sm text-center">

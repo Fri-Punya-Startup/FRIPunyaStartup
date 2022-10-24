@@ -43,6 +43,8 @@ Route::get('/portofolio', [PortofolioController::class, 'index']);
 
 Route::get('/startup/feelsbox', [PortofolioController::class, 'feelsbox']);
 Route::get('/startup/kiri', [PortofolioController::class, 'kiri']);
+Route::get('/startup/sport-gather', [PortofolioController::class, 'sport']);
+
 
 Route::get('/type/', [TypeController::class, 'type']);
 
