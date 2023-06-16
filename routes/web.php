@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,7 @@ Route::get('/contact', function () {
 Route::get('/form', function(){
     return view('form');
 });
+
+
+//Route Register
+Route::resource('/register', RegistrationFormController::class);
