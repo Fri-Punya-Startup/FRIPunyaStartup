@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\
     {
-    PortofolioController, 
-    TypeController, 
-    LoginController, 
+    PortofolioController,
+    TypeController,
+    LoginController,
     AdminController,
     EventController,
     DashboardPostController,
@@ -45,6 +45,9 @@ Route::get('/startup/feelsbox', [PortofolioController::class, 'feelsbox']);
 Route::get('/startup/kiri', [PortofolioController::class, 'kiri']);
 Route::get('/startup/sport-gather', [PortofolioController::class, 'sport']);
 
+Route::get('/ideaforge',  function () {
+    return view('ideaforge');
+});
 
 Route::get('/type/', [TypeController::class, 'type']);
 
