@@ -1,17 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\
-    {
-    PortofolioController,
-    TypeController,
-    LoginController,
-    AdminController,
-    EventController,
-    DashboardPostController,
-    RegistrationController,
-    waController
-};
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+
+// use App\Http\Controllers\
+//     {
+//     PortofolioController,
+//     TypeController,
+//     LoginController,
+//     AdminController,
+//     EventController,
+//     DashboardPostController,
+//     RegistrationController,
+//     waController
+// };
 
 /*
 |--------------------------------------------------------------------------
@@ -24,40 +28,40 @@ use App\Http\Controllers\
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-Route::get("/about", function () {
-    return view('about');
-});
+// Route::get("/about", function () {
+//     return view('about');
+// });
 
-Route::get('/navbar', function () {
-    return view('navbar');
-});
-Route::get('/member' , function(){
-    return view('member');
-});
+// Route::get('/navbar', function () {
+//     return view('navbar');
+// });
+// Route::get('/member' , function(){
+//     return view('member');
+// });
 
-Route::get('/portofolio', [PortofolioController::class, 'index']);
+// Route::get('/portofolio', [PortofolioController::class, 'index']);
 
-Route::get('/startup/feelsbox', [PortofolioController::class, 'feelsbox']);
-Route::get('/startup/kiri', [PortofolioController::class, 'kiri']);
-Route::get('/startup/sport-gather', [PortofolioController::class, 'sport']);
+// Route::get('/startup/feelsbox', [PortofolioController::class, 'feelsbox']);
+// Route::get('/startup/kiri', [PortofolioController::class, 'kiri']);
+// Route::get('/startup/sport-gather', [PortofolioController::class, 'sport']);
 
-Route::get('/ideaforge',  function () {
-    return view('ideaforge');
-});
+// Route::get('/ideaforge',  function () {
+//     return view('ideaforge');
+// });
 
-Route::get('/type/', [TypeController::class, 'type']);
+// Route::get('/type', [TypeController::class, 'type']);
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->middleware('login');
-Route::post('/login', [LoginController::class, 'authenticate']);
+// Route::get('/login', [LoginController::class, 'showLoginForm'])->middleware('login');
+// Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::post('/logout', [LoginController::class, 'logout']);
-Route::get('/logout', [LoginController::class, 'logout']);
+// Route::post('/logout', [LoginController::class, 'logout']);
+// Route::get('/logout', [LoginController::class, 'logout']);
 
-Route::resource('/register', RegistrationController::class);
+// Route::resource('/register', RegistrationController::class);
 // Route::get('/event', [EventController::class, 'indexPublic']);
 // Route::get('/register-event/{event:slug}', [EventController::class, 'showRegistrationForm']);
 // Route::post('/register-event/{event:slug}', [EventController::class, 'peopleRegisterEvent']);
@@ -75,5 +79,30 @@ Route::resource('/register', RegistrationController::class);
 // Route::put("/admin/edit-member/{id}", [AdminController::class, 'naikPangkat'])->middleware('admin');
 // Route::get('/admin/register-akun', [AdminController::class, 'registerAkun'])->middleware('admin');
 // Route::get('/admin/type', [AdminController::class, 'type'])->middleware('admin');
-Route::resource('/admin', AdminController::class)->middleware('admin');
-Route::resource('/admin/user', AdminController::class)->middleware('admin');
+// Route::resource('/admin', AdminController::class)->middleware('admin');
+// Route::resource('/admin/user', AdminController::class)->middleware('admin');
+
+
+//HomeController
+Route::group(['as' => 'home.'], function () {
+    Route::get('/', [HomeController::class, 'landingPage'])->name('landing-page');
+    Route::get('/about', [HomeController::class, 'about'])->name('about');
+    Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+    Route::get('/team', [HomeController::class, 'team'])->name('team');
+});
+
+Route::middleware(['guest'])->group(function () {
+    //AuthController
+    Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');
+    Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
+});
+
+Route::middleware(['auth'])->group(function () {
+    //DashboardController
+    Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+        Route::get('/home', [DashboardController::class, 'home'])->name('home');
+        Route::get('/team', [DashboardController::class, 'team'])->name('team');
+        Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    });
+});
