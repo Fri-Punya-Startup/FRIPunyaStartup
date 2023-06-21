@@ -45,6 +45,11 @@ class User extends Authenticatable
         return $this->hasMany(Portofolio::class);
     }
 
+    public function team()
+    {
+        return $this->hasOne(Team::class);
+    }
+
     public function jabatan(){
         return $this->belongsTo(Jabatan::class);
     }
