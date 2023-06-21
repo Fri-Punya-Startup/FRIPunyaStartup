@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Registration Ideaforge</title>
-    <link rel="stylesheet" href="resources/css/registration.css" />
+    <link rel="stylesheet" href="./css/registration/registration.css" />
   </head>
   <body>
 
@@ -53,7 +53,7 @@
           </div>
           <div class="input-box">
             <label>Nomor Whatsapp</label>
-            <input type="text" placeholder=" Input Here" required />
+            <input type="number" placeholder=" Input Here" required />
           </div>
           
         <div class="role-box">
@@ -92,9 +92,13 @@
               <input type="text" id="additional-input-field" name="additional-input" placeholder="Input Here">
             </div>
         </div>
+        <div class="input-box">
+            <label>Kode Refferal</label>
+            <input type="text" placeholder="Input Here" required />
+          </div>
         <a href="/submit"><button>Submit</button></a>
       </form>
     </section>
-    <script type="text/javascript" src="resources/js/registration.js"></script>
+    <script src="{{ asset('./js/registration.js') }}"></script>
   </body>
 </html>
