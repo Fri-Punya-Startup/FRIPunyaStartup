@@ -100,7 +100,7 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     //DashboardController
     Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
-        Route::get('/home', [DashboardController::class, 'home'])->name('home');
+        Route::get('/', [DashboardController::class, 'home'])->name('home');
         Route::get('/team', [DashboardController::class, 'team'])->name('team');
         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
