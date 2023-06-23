@@ -2,34 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationFormController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('home');
+//HomeController
+Route::group(['as' => 'home.'], function () {
+    Route::get('/', [HomeController::class, 'landingPage'])->name('landing-page');
+    Route::get('/about', [HomeController::class, 'about'])->name('about');
+    Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+    Route::get('/team', [HomeController::class, 'team'])->name('team');
 });
 
-Route::get('/contoh', function () {
-    return view('contoh');
-});
-Route::get('/navbar', function () {
-    return view('navbar');
-});
-Route::get('/coming-soon', function () {
-    return view('coming');
-}); 
-
-Route::get('/about-us', function () {
-    return view('about');
+Route::middleware(['guest'])->group(function () {
+    //AuthController
+    Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');
+    Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
 });
 
 Route::get('/contact', function () {
@@ -42,3 +31,12 @@ Route::get('/form', function(){
 
 //Route Register
 Route::resource('/register', RegistrationFormController::class);
+Route::middleware(['auth'])->group(function () {
+    //DashboardController
+    Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+        Route::get('/', [DashboardController::class, 'home'])->name('home');
+        Route::get('/team', [DashboardController::class, 'team'])->name('team');
+        Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    });
+});

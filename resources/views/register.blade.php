@@ -1,104 +1,259 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Registration Ideaforge</title>
-    <link rel="stylesheet" href="./css/registration/registration.css" />
-  </head>
-  <body>
 
-    <section class="container">
-        <nav>
-          <div class="parent">
-            <div class="title-container">
-              <div class="img-ideaforge">
-                <img src="images/logoIdeaforge.png" alt="" width="70" height="70" class="responsive">
-              </div>
-              <p>Registration</p>
-            </div>
-            <p><span class="sub-title">Home > Ideaforge > Registration</span></p>
-            <div class="navbar-container">
-             <div class="img-container">
-               <a href="/">
-                 <img src="/images/logoNavbar.svg" alt="" class="responsive">
-               </a>
-             </div>
-             <div class="menu-container">
-               <a href="/home">Home</a>
-               <a href="/team">Team</a>
-               <a href="/startup">Startup</a>
-               <a href="/profile">Profile</a>
-               <div class="button">
-                 <a href="/login" class="btnOne">Register</a>
-                 <a href="/#contact" class="btnTwo">Contact Us</a>
-               </div>
-          </div>
-       </nav>
+@extends("layouts.main")
 
-      <header>Registration Ideaforge</header>
-      <form action="#" class="form">
-        <div class="input-box">
-          <label>Email</label>
-          <input type="text" placeholder=" Input Here" required />
-        </div>
-        <div class="input-box">
-          <label>Full Name</label>
-          <input type="text" placeholder=" Input Here" required />
-        </div>
-        <div class="input-box">
-            <label>Password</label>
-            <input type="text" placeholder=" Input Here" required />
-          </div>
-          <div class="input-box">
-            <label>Nomor Whatsapp</label>
-            <input type="number" placeholder=" Input Here" required />
-          </div>
-          
-        <div class="role-box">
-          <h3>Role</h3>
-          <div class="role-option">
-            <div class="role">
-              <input type="radio" id="check-hustler" name="role" required/>
-              <label for="check-hustler">Hustler</label>
-            </div>
-            <div class="role">
-              <input type="radio" id="check-hipster" name="role" required/>
-              <label for="check-hipster">Hipster</label>
-            </div>
-            <div class="role">
-              <input type="radio" id="check-hacker" name="role" required/>
-              <label for="check-hacker">Hacker</label>
-            </div>
-        </div>
+@section('content')
 
-        <div class="role-box">
-            <h3>Sudah ada startup?</h3>
-            <div class="role-option">
-              <div class="startup">
-                <input type="checkbox" id="check-startup" name="startup" unchecked />
-                <label for="check-startup">Sudah</label>
-              </div>
-          </div>
-        </div>
-          
-        <div class="input-box" id="additional-input" style="display: none;">
-            <label>Nama Startup</label>
-            <input type="text" id="additional-input-field" name="additional-input" placeholder="Input Here">
+<head>
+    <title>registration form</title>
+    <link rel="stylesheet" href="./css/form/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-            <div class="input-box">
-              <label>Deskripsi Startup</label>
-              <input type="text" id="additional-input-field" name="additional-input" placeholder="Input Here">
-            </div>
+    <style>
+        
+        .invalid-error{
+            color: red;     
+        }
+
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+
+        .fade-out{
+            animation: fadeOut 1s;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }  
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+</head>
+<body>
+    <div style="background-color:#e5e5e5;padding:15px;text-align:center;" class="header">
+        <h1 class="hero text-light">Register Form</h1>
+    </div>
+    <div class="story">
+        <div class="form">
+            <h2 class="form-header">Join Us</h2>
+            <form action="/register" method="post" enctype="multipart/form-data">
+                @csrf
+
+                {{-- form nama --}}
+                <label for="email"><h5>Nama</h5></abbr></label><br> 
+                @error('name')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <input type="text" id="mail" name="name" placeholder="Masukan Nama"  @error('name')is-invalid @enderror value="{{ old('name') }}">
+                
+                {{-- form email --}}
+                <label for="username"><h5>Email</h5></label>
+                @error('email')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <input type="text" id="mail" name="email" placeholder="Masukan Alamat Email"  @error('email')is-invalid @enderror  value="{{ old('email') }}"><br>
+                <br>
+
+                <label for="username"><h5>No Hp</h5></label>
+                @error('no_hp')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <br>
+                <input type="number" id="no_hp" name="no_hp" placeholder="Masukan No Hp"  @error('no_hp')is-invalid @enderror  value="{{ old('no_hp') }}"><br>
+                <br>
+
+                {{-- form alasan --}}
+                <label for="alasan"><h5>Alasan mengikuti FPS</h5></label>
+                @error('alasan')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <input type="text" id="alasan" name="alasan" placeholder="Masukan Alasan Mengikuti FPS" @error('alasan')is-invalid @enderror  value="{{ old('alasan') }}"><br>
+                <br>
+
+                {{-- form harapan--}}
+                <label for="harapan"> <h5>Harapan Mengikuti FPS</h5></label>
+                @error('harapan')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <input type="text" id="harapan" name="harapan" placeholder="Masukan Harapan Mengikuti FPS" @error('harapan') is-invalid @enderror  value="{{ old('harapan') }}"><br>
+                <br>
+
+                {{-- form role --}}
+                <label for="role"><h5>Pilih Role Mu</h5></label><br>
+                @error('role')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <input type="radio" name="role" value="Hustler" id="hustler">
+                <label for="hustler"><p>Hustler</p></label>
+                <input type="radio" name="role" value="Hacker" id="hacker">
+                <label for="hustler"><p>Hacker</p></label>
+                <input type="radio" name="role" id="hipster" value="Hispster">
+                <label for="hipster"><p>Hipster</p></label>
+
+                <div id="list-hustler" style='display:none;'>
+                    <label for="list-hustler"><h5>Pilih Skill Hustler mu</h5></label>
+                    @error('skill')
+                    <div class="invalid-error">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Bussines Development">
+                    <label for="Bussines Development">Bussines Development</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Product Management">
+                    <label for="Product Management">Product Management</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="BMC">
+                    <label for="BMC">BMC</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Digital Marketing">
+                    <label for="Digital Marketing">Digital Marketing</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Other">
+                    <label for="Other">Other</label>
+                    <br>
+                </div>
+
+                <div id="list-hacker" style='display:none;'>
+                    <label for="list-hacker"><h5>Pilih Skill Hacker mu</h5></label>
+                    @error('skill')
+                    <div class="invalid-error">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="FrontEnd">
+                    <label for="FrontEnd">FrontEnd</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="BackEnd">
+                    <label for="BackEnd">BackEnd</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Devops">
+                    <label for="Devops">Devops</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="FullStack">
+                    <label for="FullStack">FullStack</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="MobileDev">
+                    <label for="MobileDev">MobileDev</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Network Engginer">
+                    <label for="Network Engginer">Network Engginer</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Other">
+                    <label for="Other">Other</label>
+                    <br>
+
+                </div>
+                
+                <div id="list-hipster" style='display:none;'>
+                    <label for="list-hipster"><h5>Pilih Skill hipster mu</h5></label>
+                    @error('skill')
+                    <div class="invalid-error">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="UI">
+                    <label for="UI">UI</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="UX">
+                    <label for="UX">UX</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="UX Writer">
+                    <label for="UX Writer">UX Writer</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="UX Researcher">
+                    <label for="UX Researcher">UX Researcher</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Product Designer">
+                    <label for="Product Designer">Product Designer</label>
+                    <br>
+
+                    <input type="radio" name="skill" id="" value="Other">
+                    <label for="Other">Other</label>
+                    <br>
+                </div>
+                <br>
+                <br>
+
+                {{-- form Startup--}}
+                <label for="startup"> <h5>Apakah Sudah Punya Startup?</h5></label>
+                <p>Jika iya apa namanya jika tidak isi (-)</p>
+                @error('startup')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <input type="text" id="startup" name="startup" placeholder="Masukan Nama Startup" @error('startup') is-invalid @enderror  value="{{ old('startup') }}"><br>
+                <br>
+                
+                {{-- form cv--}}
+                <label for="cv"> <h5>Masukan CV Kreatif mu</h5></label><br> 
+                <p>file berupa pdf</p>
+                @error('cv')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                <input type="file" id="cv" name="cv" placeholder="Masukan CV" @error('alasan') is-invalid @enderror  value="{{ old('cv') }}"><br>
+                <br>
+
+                {{-- form follow--}}
+                <label for="follow"> <h5>Apakah sudah memfolow ig @fps.telkom</h5></label>
+                @error('follow')
+                <div class="invalid-error">
+                    {{ $message }}
+                </div>
+                @enderror
+                    <br>
+                    <input type="radio" name="follow" value="1">
+                    <label for="ya">Ya</label>
+                    <input type="radio" name="follow" value="0">
+                    <label for="tidak">Tidak</label>
+                <br>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
-        <div class="input-box">
-            <label>Kode Refferal</label>
-            <input type="text" placeholder="Input Here" required />
-          </div>
-        <a href="/submit"><button>Submit</button></a>
-      </form>
-    </section>
-    <script src="{{ asset('./js/registration.js') }}"></script>
-  </body>
+    </div>
+    <script src="{{asset('js/registration.js')}}"></script>
+ <script src="{{asset('js/validation.js')}}"></script>
+</body>
 </html>
+@endsection
