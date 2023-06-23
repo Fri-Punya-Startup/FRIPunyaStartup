@@ -1,0 +1,75 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+.header{width: 100%;
+    background: linear-gradient(180deg, #0181CA 25%, #b4dff8 100%);
+}
+
+.container{
+    text-align: center;
+    position: relative;
+    padding: 8px;
+}
+
+.title-container{
+    color: white;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: -24px;
+    margin-bottom: -24px;
+}
+.sub-title{
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
+.card-img-kiri{
+    height: 80px;
+    object-fit: contain;
+    margin-top: 24px;
+}
+.card-img-feelsbox{
+    height: 100px;
+    object-fit: contain;
+    margin-top: 24px;
+}
+.card-img-sportgather{
+    height: 100px;
+    object-fit: contain;
+    margin-top: 24px;
+}
+.card-title-startup{
+    text-align: center;
+    font-weight: bold;
+    color: #025bc0;
+}
+.card-footer-body{
+    background: linear-gradient(0deg, #fdfeff 25%, #b4dff8 100%);
+    padding: 24px;
+}
+.card-title-footer {
+    margin-left: 48px;
+}
+.card-text-footer{
+    margin-left: 48px;
+}
+.footer{
+    color: white;
+    background: linear-gradient(0deg, #2e2d68 10%, #49687a 100%);
+}
+.footer-title{
+    color: #FFC943;
+    font-size: 16px;
+}
+.footer-text{
+    font-size: 12px;
+    color: #5BC0F8;
+}
+.copyright-text{
+    font-size: 12px;
+}
