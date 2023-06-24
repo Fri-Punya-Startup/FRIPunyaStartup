@@ -14,7 +14,7 @@ class RegistrationFormController extends Controller
     public function store(Request $request){
         //validation form
         $validated = $request->validate([
-           
+
         ]);
 
         //replace 0 menjadi kode nomer 62
@@ -22,11 +22,11 @@ class RegistrationFormController extends Controller
             $validated['no_hp'] = "62". substr($validated['no_hp'], 1);
         }
 
-       
+
 
         //save data ke database yang sudah divalidasi
         $register = Registration::create([
-            
+
         ]);
 
         //message success
@@ -35,7 +35,7 @@ class RegistrationFormController extends Controller
             Session::flash('message', 'Selamat !');
         }
 
-        //return view('');         
+        //return view('');
 
 
     }

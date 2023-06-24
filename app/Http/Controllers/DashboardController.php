@@ -13,7 +13,7 @@ class DashboardController extends Controller
         ]);
     }
     public function team() {
-        return view('pages.dashboard.team', [
+        return view('pages.dashboard.team2', [
             'title' => 'Dashboard Team'
         ]);
     }
