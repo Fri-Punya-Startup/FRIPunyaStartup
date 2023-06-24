@@ -13,59 +13,63 @@ use App\Models\{
 class AdminController extends Controller
 {
 
-    public function index(Event $event)
-    {
-        return view('admin.index', [
-            'users' => Registration::all(),
-        ]);
+    public function index(){
+        return view('admin.dashboard.index');
     }
 
-    public function show($id)
-    {
-        return view('admin.register-detail', [
-            'user' => Registration::find($id),
-        ]);
-    }
+    // public function index(Event $event)
+    // {
+    //     return view('admin.index', [
+    //         'users' => Registration::all(),
+    //     ]);
+    // }
 
-    public function member(){
-        return view('admin.member',[
-            'users' => User::all(),
-            'member' => User::where('role', 'member')->get(),
-        ]);
-    }
+    // public function show($id)
+    // {
+    //     return view('admin.register-detail', [
+    //         'user' => Registration::find($id),
+    //     ]);
+    // }
 
-    public function editMember(Request $request){
-        return view('admin.edit-member',[
-            'member' => User::find($request->id),
-            'jabatan' => Jabatan::all(),
-        ]);
-    }
+    // public function member(){
+    //     return view('admin.member',[
+    //         'users' => User::all(),
+    //         'member' => User::where('role', 'member')->get(),
+    //     ]);
+    // }
 
-    public function naikPangkat(Request $request){
+    // public function editMember(Request $request){
+    //     return view('admin.edit-member',[
+    //         'member' => User::find($request->id),
+    //         'jabatan' => Jabatan::all(),
+    //     ]);
+    // }
 
-        if($request->has("delete")){
-            $user = User::find($request->id);
-            $user->delete();
-            return redirect()->back()->with('success', 'Berhasil menghapus member');
-        }
+    // public function naikPangkat(Request $request){
 
-        $user = User::find($request->id);
+    //     if($request->has("delete")){
+    //         $user = User::find($request->id);
+    //         $user->delete();
+    //         return redirect()->back()->with('success', 'Berhasil menghapus member');
+    //     }
 
-        if($request->jabatan_id == ""){
-            $user->jabatan_id = null;
-        }
+    //     $user = User::find($request->id);
 
-        $user->update([
-            'jabatan_id' => $request->jabatan_id,
-        ]);
+    //     if($request->jabatan_id == ""){
+    //         $user->jabatan_id = null;
+    //     }
 
-        return redirect("/admin/member")->with('success', 'Berhasil mengubah jabatan');
-    }
+    //     $user->update([
+    //         'jabatan_id' => $request->jabatan_id,
+    //     ]);
 
-    public function registerAkun(){
-        return view('admin.register-akun',[
-            'users' => User::where('verifikasi', null)->get(),
-        ]);
-    }
+    //     return redirect("/admin/member")->with('success', 'Berhasil mengubah jabatan');
+    // }
+
+    // public function registerAkun(){
+    //     return view('admin.register-akun',[
+    //         'users' => User::where('verifikasi', null)->get(),
+    //     ]);
+    // }
 }
 

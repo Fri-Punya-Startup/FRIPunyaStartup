@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationFormController;
 use App\Http\Controllers\AuthController;
@@ -29,9 +30,16 @@ Route::get('/form', function(){
 });
 
 
+Route::group(['as' => 'admin.'], function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin-home');
+    // Route::get('/about', [HomeController::class, 'about'])->name('about');
+    // Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+    // Route::get('/team', [HomeController::class, 'team'])->name('team');
+});
+
 //Route Register
 Route::resource('/register', RegistrationFormController::class);
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
     //DashboardController
     Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
         Route::get('/', [DashboardController::class, 'home'])->name('home');
@@ -39,4 +47,5 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     });
-});
+// });
+
