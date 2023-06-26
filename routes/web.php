@@ -20,6 +20,8 @@ Route::middleware(['guest'])->group(function () {
     //AuthController
     Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');
     Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 });
 
 Route::get('/contact', function () {
