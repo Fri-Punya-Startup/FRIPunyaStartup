@@ -1,0 +1,420 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/work-sans');
+                
+
+.penjelasan-ideaforge {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .penjelasan-idea-forge-penjelasan-idea-forge {
+    width: 100%;
+    height: 1977px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: rgba(255, 255, 255, 1)
+  }
+  .content {
+    gap: 7px;
+    top: 271px;
+    left: -1px;
+    width: 1200px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+  }
+  .grand-plan {
+    gap: 32px;
+    width: 100%;
+    display: flex;
+    padding: 64px;
+    position: relative;
+    flex-shrink: 0;
+    padding-left: 39px;
+    padding-right: var(--dl-space-space-halfunit);
+    flex-direction: column;
+    justify-content: center;
+  }
+  .title-grand-plan {
+    align-items: flex-start;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    width: fit-content;
+  }
+  .line3 {
+    height: 42px;
+    max-width: 5px;
+    position: relative;
+  }
+
+  .text-title {
+    color: rgb(33, 32, 105);
+    height: auto;
+    font-size: 34px;
+    font-style: Bold;
+    text-align: left;
+    font-family: "Work Sans";
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+ 
+  .grand-plan-text {
+    color: var(--dl-color-black-900);
+    width: 1300px;
+    height: var(--dl-size-size-xxlarge);
+    font-size: 20px;
+    font-style: "Regular";
+    text-align: left;
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 25.92px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .group1 {
+    width: 1375px;
+    height: 502px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-shrink: 1;
+    justify-content: center;
+  }
+  .frame-proses-teknologi {
+    top: 0px;
+    left: 0px;
+    width: 836px;
+    height: 221px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+  .title-proses-teknologi {
+    gap: 16px;
+    top: 12px;
+    left: 121px;
+    width: 356px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+  }
+
+
+  .proses-teknologi-row1 {
+    gap: 32px;
+    right: 45px;
+    width: 708px;
+    bottom: -30px;
+    display: flex;
+    position: absolute;
+    align-self: stretch;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+  .proses-teknologi-card {
+    gap: 16px;
+    width: 240px;
+    height: 80px;
+    display: flex;
+    padding: 32px;
+    overflow: hidden;
+    align-self: stretch;
+    box-shadow: 0px 31px 46px -22px rgba(123, 97, 255, 0.25) ;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(221, 221, 221, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 16px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .proses-teknologi-card-description {
+    gap: 16px;
+    width: 321px;
+    height: 150px;
+    display: flex;
+    padding: 15px 5px;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .proses-teknologi-text {
+    top: -14px;
+    left: 35px;
+    color: rgba(0, 0, 0, 1);
+    width: 256px;
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    font-style: "Regular";
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 25.920000076293945px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .penjelasan-idea-forge-text14 {
+    top: -9px;
+    left: 37px;
+    color: rgba(0, 0, 0, 1);
+    width: 256px;
+    height: auto;
+    position: absolute;
+    font-size: 18px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 25.920000076293945px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .frame-proses-desain {
+    gap: 30px;
+    right: 0px;
+    bottom: 48px;
+    height: 181px;
+    display: flex;
+    position: absolute;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+  .title-proses-desain {
+    gap: 16px;
+    display: flex;
+    align-items: flex-start;
+  }
+  .penjelasan-idea-forge-line32 {
+    width: 32px;
+    height: 38px;
+  }
+  .penjelasan-idea-forge-text16 {
+    color: rgba(33, 32, 105, 1);
+    height: auto;
+    font-size: 34px;
+    font-style: Bold;
+    text-align: left;
+    font-family: Work Sans;
+    font-weight: 700;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .proses-desain-row {
+    gap: 32px;
+    width: 620px;
+    height: 149px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+  .proses-desain-card1 {
+    gap: 16px;
+    width: 207px;
+    height: 100px;
+    display: flex;
+    padding: 32px;
+    overflow: hidden;
+    align-self: stretch;
+    box-shadow: 0px 31px 46px -22px rgba(123, 97, 255, 0.25) ;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(221, 221, 221, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 16px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .proses-desain-card-description1 {
+    gap: 16px;
+    width: 198px;
+    height: 100%;
+    display: flex;
+    padding: 15px 17px 17px 15px;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .proses-desain-text1 {
+    top: 25px;
+    left: 0px;
+    color: rgba(0, 0, 0, 1);
+    width: auto;
+    height: 100px;
+    margin: auto;
+    position: absolute;
+    font-size: 18px;
+    font-style: "Regular";
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 25.920000076293945px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .proses-desain-card2 {
+    gap: 16px;
+    flex: 1;
+    width: 600px;
+    height: 100px;
+    display: flex;
+    padding: 32px;
+    overflow: hidden;
+    align-self: stretch;
+    box-shadow: 0px 31px 46px -22px rgba(123, 97, 255, 0.25) ;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(221, 221, 221, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 16px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .proses-desain-card-description2 {
+    gap: 16px;
+    width: 270px;
+    height: 170px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .proses-desain-text2 {
+    color: rgb(0, 0, 0);
+    width: 200;
+    height: 150px;
+    font-size: 18px;
+    font-style: "Regular";
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 25.92px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .frame-output-ideaforge {
+    width: 100%;
+    height: 359px;
+    top: 25px;
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+  .output-ideaforge-title {
+    gap: 16px;
+    top: 12px;
+    left: 40px;
+    width: 356px;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+  }
+
+  .output-ideaforge-row {
+    gap: 15px;
+    top: 74px;
+    flex: 1;
+    left: 11px;
+    width: 1300px;
+    height: 50%;
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 0;
+    justify-content: space-between;
+  }
+  .output-ideaforge-card {
+    width: 180px;
+    height: 100px;
+    display: flex;
+    padding: 16px;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    flex-shrink: 0;
+    border-color: rgba(91, 192, 248, 1);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  .output-ideaforge-text {
+    top: 23px;
+    color: rgba(0, 0, 0, 1);
+    width: 182px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: "Regular";
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 25.920000076293945px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+
+  .output-ideaforge-text1 {
+    top: 36px;
+    color: rgba(0, 0, 0, 1);
+    width: 182px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Regular;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 400;
+    line-height: 25.920000076293945px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
+  .output-ideaforge-text2 {
+    top: 15px;
+    color: rgb(0, 0, 0);
+    width: 182px;
+    height: auto;
+    position: absolute;
+    font-size: 20px;
+    font-style: Regular;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 400;
+    line-height: 25.92px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
