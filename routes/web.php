@@ -106,7 +106,10 @@ Route::group(['as' => 'admin.'], function () {
 
 //Route Register
 Route::resource('/register', RegistrationFormController::class);
-// Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
+    //AuthController
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
     //DashboardController
     Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
         Route::get('/', [DashboardController::class, 'home'])->name('home');
@@ -114,5 +117,5 @@ Route::resource('/register', RegistrationFormController::class);
         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     });
-// });
+});
 
