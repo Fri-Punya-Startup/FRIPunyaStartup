@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href=".css/registration/registration.css"/>
+    <link rel="stylesheet" href="../css/registration/registration.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
@@ -139,7 +139,7 @@
             </div>
           </form>
       </section>
-    
+
     <footer>
       <div class="card">
         <div class="card-footer-body text-white">
@@ -155,12 +155,12 @@
             <img src="images/fpsLogoFooter2.svg" alt="">
             <h6 class="footer-title">FRI Punya Startup</h6>
             <p class="footer-text">
-              Bandung,<br>           
+              Bandung,<br>
               Fakultas Rekayasa Industri <br>
               Telkom University
             </p>
         </div>
-    
+
         <section class="mt-4 mb-1 text-center">
           <a
            class="btn btn-outline-light btn-floating m-1"
@@ -187,12 +187,12 @@
            ><i class="fa fa-linkedin"></i
           ></a>
         </section>
-    
+
           <div class="copyright-text text-center p-1 mb-6">
            <p>Copyright FPS Telkom, All Right Reserved</p>
           </div>
         </footer>
-        
+
     <script type="text/javascript" src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
