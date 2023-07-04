@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./sudahpunyatim.css" rel="stylesheet" />
+    <link href="../css/tim1/sudahpunyatim.css" rel="stylesheet" />
     <title>Sudah Punya Tim</title>
 </head>
 <div>
@@ -178,6 +178,20 @@
               <span class="jabatan-anggota">
                 <span>Anggota</span>
               </span>
+        </div>
+        <span class="posisi-anggota"><span>ANGGOTA</span></span>
+      </div>
+      <div class="footer">
+        <div class="frame3">
+          <a href="/ideaforge">
+            <button class="button">
+              <span class="button-text"><span>IdeaForge</span></span>
+            </button></a>
+            <span class="footer-text-bold">
+              <span>Let&apos;s bring your startup to the next level!!</span></span>
+              <div class="sudahpunyatim-form-group">
+                <span class="footer-text"><span>IdeaForge by FPS</span></span>
+              </div>
             </div>
           </div>
           <div class="frameanggota-box">

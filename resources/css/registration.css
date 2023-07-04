@@ -1,0 +1,216 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+body {
+  min-height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.container {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+.parent{
+  position: relative;
+  margin-bottom:-150px;
+  padding: 24px;
+  background: linear-gradient(180deg, #0181CA 25%, #b4dff8 100%);
+  text-align: center;
+}
+.navbar-container{
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 110px;
+  margin-top: -180px;
+}
+
+.navbar-container a{
+  color: white;
+  text-decoration: none;
+}
+
+.img-container{
+  padding: 8px;
+  margin-top: -32px;
+}
+.img-container img{
+  min-width: 267px;
+}
+.menu-container{
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  gap: 12px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-top: -24px;
+  margin-bottom: 32px;
+}
+.menu-container a{
+  padding: 8px;
+  color: #fff;
+}
+.menu-container a:hover{
+  color: #AED136;
+  transition: all 0.5s ease;
+}
+.title-container{
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 46px;
+}
+.sub-title{
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+}
+.img-ideaforge{
+  margin-bottom: -35px;
+}
+.button .btnOne{
+  background-color: #fff;
+  color: #aed136;
+  border: 2px solid #AED136;
+  box-shadow: 0px 133px 118px rgba(159, 241, 42, 0.05), 0px 29.7073px 26.3568px rgba(159, 241, 42, 0.0298054), 0px 8.84464px 7.84712px rgba(159, 241, 42, 0.0201946);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+.button .btnOne:hover{
+  background: #EEF6D6;;
+}
+.button .btnTwo{
+  background: #212069;
+  box-shadow: 0px 43px 72px rgba(64, 37, 214, 0.08), 0px 15.6096px 28.3703px rgba(64, 37, 214, 0.0551985), 0px 6.04617px 13.1662px rgba(64, 37, 214, 0.0445033), 0px 1.69431px 5.93674px rgba(64, 37, 214, 0.0354967), 0px 0.0190289px 2.13248px rgba(64, 37, 214, 0.0248015);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.button .btnTwo:hover{
+  background: #4947C7;
+  color: #fff;
+}
+.closebtn{
+  display: none;
+}
+.container header {
+  font-size: 28px;
+  color: #000000;
+  font-weight: 1000;
+  text-align: left;
+  margin-top: 120px;
+  padding: 50px;
+  margin-bottom: -90px;
+}
+
+.container .form {
+  padding: 50px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+  font-weight: 1000;
+  color: #000000;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .role-box {
+  margin-top: 20px;
+}
+.role-box h3 {
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 1000;
+  margin-bottom: 8px;
+}
+.form :where(.role-option, .role) {
+  display: flex;
+  align-items: center;
+  column-gap: 32px;
+  flex-wrap: wrap;
+}
+.form .role {
+  column-gap: 5px;
+}
+.role input {
+  accent-color: #323EAC;
+}
+.form :where(.role input, .role label) {
+  cursor: pointer;
+}
+.role label {
+  color: #000000;
+}
+.form button {
+  height: 42px;
+  width: 8%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #323EAC;
+  border-radius: 8px;
+}
+.form button:hover {
+  background: rgb(88, 56, 250);
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+  .form button {
+    height: 42px;
+    width: 40%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    transition: all 0.2s ease;
+    background: #323EAC;
+    border-radius: 8px;
+  }
+  .form button:hover {
+    background: rgb(88, 56, 250);
+  }
+}

@@ -9,11 +9,14 @@ class DashboardController extends Controller
 {
     public function home() {
         return view('pages.dashboard.home', [
-            'title' => 'Dashboard Home'
+            'title' => 'Dashboard Home',
+            'startups' => auth()->user()->team->startups ?? null,
+            'team' => auth()->user()->team ?? null,
+            'user' => auth()->user(),
         ]);
     }
     public function team() {
-        return view('pages.dashboard.team', [
+        return view('pages.dashboard.team2', [
             'title' => 'Dashboard Team'
         ]);
     }
