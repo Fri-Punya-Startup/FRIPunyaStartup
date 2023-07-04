@@ -97,8 +97,8 @@ Route::get('/form', function(){
 });
 
 
-Route::group(['as' => 'admin.'], function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin-home');
+Route::group(['as' => 'admin.', 'prefix' => 'admin.'], function () {
+    // Route::get('/', [AdminController::class, 'index'])->name('admin-home');
     // Route::get('/about', [HomeController::class, 'about'])->name('about');
     // Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
     // Route::get('/team', [HomeController::class, 'team'])->name('team');
