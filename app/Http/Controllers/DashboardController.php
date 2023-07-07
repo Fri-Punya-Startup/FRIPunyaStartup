@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -61,7 +63,14 @@ class DashboardController extends Controller
         $data = $request->validate($rules, $messages);
 
         if ($request->avatar) {
-            $avatar = auth()->user()->id . '.' . $data['avatar']->extension();
+            if (auth()->user()->avatar) {
+                try {
+                    unlink(public_path(auth()->user()->avatar));
+                } catch (Exception $e) {
+                    //do nothing
+                }
+            }
+            $avatar = Str::random(32) . '.' . $data['avatar']->extension();
             $request->file('avatar')->move(public_path('/images/avatars'), $avatar);
             $data['avatar'] = "/images/avatars/$avatar";
         }

@@ -43,17 +43,17 @@
                     <button class="btn-close" data-bs-dismiss="alert" type="button" aria-label="Close"></button>
                 </div>
             @endif
-            <form action="{{ route('dashboard.profile.patch') }}" method="POST" enctype="multipart/form-data" x-data="{ dragging: false, submit: false }" x-on:submit="submit = true">
+            <form id="profile-form" action="{{ route('dashboard.profile.patch') }}" method="POST" enctype="multipart/form-data" x-data="{ dragging: false }">
                 @csrf
                 @method('PATCH')
                 <div class="row">
-                    <div class="col">
+                    <div class="col-lg">
                         <div class="mb-3">
                             <label class="form-label" for="name">Nama</label>
                             <input class="form-control" id="name" name="name" type="text" value="{{ old('name') ?? auth()->user()->name }}" placeholder="Your name..." required>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-lg">
                         <div class="mb-3">
                             <label class="form-label" for="email">Email</label>
                             <input class="form-control" id="email" type="email" value="{{ auth()->user()->email }}" placeholder="Your email..." disabled>
@@ -79,7 +79,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <button class="btn text-light rounded-3" id="submit" type="submit" style="background-color: #212069; padding-left: 100px; padding-right: 100px" x-text="submit ? 'Updating...' : 'Update'"></button>
+                    <button class="btn text-light rounded-3" id="submit-btn" type="submit" style="background-color: #212069; width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Update</button>
                 </div>
             </form>
         </div>
@@ -91,6 +91,8 @@
         const avatarPreview = $('#avatar-preview');
         const avatarInput = $('#avatar-input');
         const dragDrop = $('#drag-n-drop');
+        const profileForm = $('#profile-form');
+        const submitBtn = $('#submit-btn');
 
         function imagePreview(files) {
             const file = files;
@@ -128,5 +130,9 @@
             e.preventDefault();
             imagePreview(this.files[0]);
         });
+
+        profileForm.on('submit', function(e) {
+            submitBtn.html('<span class="spinner-border spinner-border-sm"></span>');
+        })
     </script>
 @endsection
