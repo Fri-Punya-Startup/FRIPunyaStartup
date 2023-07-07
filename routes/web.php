@@ -116,6 +116,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/team', [DashboardController::class, 'team'])->name('team');
         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+        Route::patch('/profile', [DashboardController::class, 'profile_patch'])->name('profile.patch');
     });
 });
 

@@ -17,20 +17,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
-        $team = Team::create([
-            'name' => 'Tim Hore',
-            'desc' => 'Tim yang isinya orang-orang gabut',
-            'logo' => 'https://i.pinimg.com/236x/e6/2a/ed/e62aed78c082488fe6baae012f0fcf7e.jpg',
-        ]);
-
-        User::create([
+        $user = User::create([
             'name' => 'user',
             'email' => 'user@example.com',
             'avatar' => 'https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25',
             'role' => 'Hacker',
             'password' => bcrypt('user1234'),
-            'team_id' => $team->id,
+        ]);
+
+        $team = Team::create([
+            'name' => 'Tim Hore',
+            'desc' => 'Tim yang isinya orang-orang gabut',
+            'logo' => 'https://i.pinimg.com/236x/e6/2a/ed/e62aed78c082488fe6baae012f0fcf7e.jpg',
+            'leader_id' => $user->id
+        ]);
+
+
+        $user->update([
+            'team_id' => $team->id
         ]);
 
         Startup::create([
@@ -41,21 +45,21 @@ class DatabaseSeeder extends Seeder
             'team_id' => $team->id,
         ]);
 
-        Startup::create([
-            'name' => 'Kiri',
-            'desc' => 'Kiri merupakan startup yang bergerak di bidang transportasi publik dengan tujuan menciptakan transportasi publik yang aman, nyaman, dan mudah diakses oleh masyarakat',
-            'logo' => '/images/kiri.png',
-            'category' => 'test',
-            'team_id' => $team->id,
-        ]);
+        // Startup::create([
+        //     'name' => 'Kiri',
+        //     'desc' => 'Kiri merupakan startup yang bergerak di bidang transportasi publik dengan tujuan menciptakan transportasi publik yang aman, nyaman, dan mudah diakses oleh masyarakat',
+        //     'logo' => '/images/kiri.png',
+        //     'category' => 'test',
+        //     'team_id' => $team->id,
+        // ]);
 
-        Startup::create([
-            'name' => 'Sportgather',
-            'desc' => 'Sportgather merupakan platform digital olahraga yang mewadahi para penggiat olahraga untuk dapat menentukan jadwal tanding, menemukan lawan tanding, serta memberikan rekomendasi venue olahraga.',
-            'logo' => '/images/sport.png',
-            'category' => 'test',
-            'team_id' => $team->id,
-        ]);
+        // Startup::create([
+        //     'name' => 'Sportgather',
+        //     'desc' => 'Sportgather merupakan platform digital olahraga yang mewadahi para penggiat olahraga untuk dapat menentukan jadwal tanding, menemukan lawan tanding, serta memberikan rekomendasi venue olahraga.',
+        //     'logo' => '/images/sport.png',
+        //     'category' => 'test',
+        //     'team_id' => $team->id,
+        // ]);
 
 
         // User::create([
@@ -84,7 +88,7 @@ class DatabaseSeeder extends Seeder
         //     'contact' => '08123456789',
         // ]);
 
-        User::factory(5)->create();
+        User::factory(3)->create();
 
         // Portofolio::factory(10)->create();
 

@@ -44,7 +44,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'role' => $this->faker->randomElement(['Hacker', 'Hustler', 'Hipster',]),
             'password' => bcrypt('123'),
-            'team_id' => $this->faker->randomElement([1, null]),
+            'team_id' => 1,
             'avatar' => "https://api.dicebear.com/6.x/avataaars/png?seed=$seed&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25",
         ];
     }

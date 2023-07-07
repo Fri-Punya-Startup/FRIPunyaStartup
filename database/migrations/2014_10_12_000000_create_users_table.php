@@ -29,6 +29,10 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::table('teams', function (Blueprint $table) {
+            $table->foreignId('leader_id')->references('id')->on('users');
+        });
     }
 
     /**
