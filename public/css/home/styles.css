@@ -13,14 +13,109 @@ body{
     flex-direction: column;
     row-gap: 64px;
 }
+.poster-element-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 396px;
+    z-index: 100 !important; 
+}
+@media screen and (max-width: 1200px ) {
+    .poster-container{
+        padding: 32px 32px !important;
+    }
+    .poster-text h2{
+        font-size: 30px !important;
+    }
+    .poster-description{
+        font-size: 16px !important;
+    }
+    .poster-element-wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 100%;
+    }
+    .particle-poster-text{
+        display: none;
+    }
+    .element-susah{
+        display: none;
+    }
+    .hidden{
+        display: none;
+    }
+}
 
+@media screen and (max-width: 601px){
+    .poster-image{
+        width: 250px;
+    }
+}
 .containers{
     color: white;
     padding-top: 120px !important;
     padding: 100px;
     position: relative;
-    height: 760px;
     width: 100%;
+}
+
+.element-susah{
+    position: absolute;
+    right: 0;
+}
+.poster-container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px ;
+    background: rgb(35,35,91);
+    background: linear-gradient(90deg, rgba(35,35,91,1) 19%, rgba(35,38,73,1) 80%);
+}
+
+.poster-text-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.poster-image {
+    max-width: 376px !important;
+}
+
+.poster-text{
+    display: flex;
+    justify-content: space-between;
+}
+
+.particle-poster-element{
+    position: absolute;
+    right: -35px;
+    bottom: -35px;
+}
+.poster-text h2{
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 58px; /* 145% */
+}
+.poster-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster-description{
+    color: #FFF;
+    text-align: justify;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 130.435% */
+}
+
+.home-animate{
+    height: 760px;
     background: linear-gradient(
         45deg, #C0DB64, #4947C7, #171591,#4947C7, #adace6
     );

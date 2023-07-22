@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit84921c615544765508820a5bdd2988f7
+class ComposerStaticInitd1d6914d49fb32fb6d465f771a30c864
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -18,10 +18,10 @@ class ComposerStaticInit84921c615544765508820a5bdd2988f7
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '662a729f963d39afe703c9d9b7ab4a8c' => __DIR__ . '/..' . '/symfony/polyfill-php83/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '3bd81c9b8fcc150b69d8b63b4d2ccf23' => __DIR__ . '/..' . '/spatie/flare-client-php/src/helpers.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '09f6b20656683369174dd6fa83b7e5fb' => __DIR__ . '/..' . '/symfony/polyfill-uuid/bootstrap.php',
-        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '35a6ad97d21e794e7e22a17d806652e4' => __DIR__ . '/..' . '/nunomaduro/termwind/src/Functions.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
@@ -352,8 +352,8 @@ class ComposerStaticInit84921c615544765508820a5bdd2988f7
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -541,6 +541,7 @@ class ComposerStaticInit84921c615544765508820a5bdd2988f7
         'App\\Http\\Controllers\\PortofolioController' => __DIR__ . '/../..' . '/app/Http/Controllers/PortofolioController.php',
         'App\\Http\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegisterController.php',
         'App\\Http\\Controllers\\RegistrationController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistrationController.php',
+        'App\\Http\\Controllers\\RegistrationFormController' => __DIR__ . '/../..' . '/app/Http/Controllers/RegistrationFormController.php',
         'App\\Http\\Controllers\\StartupController' => __DIR__ . '/../..' . '/app/Http/Controllers/StartupController.php',
         'App\\Http\\Controllers\\TeamController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeamController.php',
         'App\\Http\\Controllers\\TypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/TypeController.php',
@@ -575,6 +576,7 @@ class ComposerStaticInit84921c615544765508820a5bdd2988f7
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\Startup' => __DIR__ . '/../..' . '/app/Models/Startup.php',
         'App\\Models\\Team' => __DIR__ . '/../..' . '/app/Models/Team.php',
+        'App\\Models\\TeamMember' => __DIR__ . '/../..' . '/app/Models/TeamMember.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Policies\\PortofolioPolicy' => __DIR__ . '/../..' . '/app/Policies/PortofolioPolicy.php',
         'App\\Policies\\RegistrationPolicy' => __DIR__ . '/../..' . '/app/Policies/RegistrationPolicy.php',
@@ -4807,6 +4809,27 @@ class ComposerStaticInit84921c615544765508820a5bdd2988f7
         'SebastianBergmann\\Type\\UnknownType' => __DIR__ . '/..' . '/sebastian/type/src/type/UnknownType.php',
         'SebastianBergmann\\Type\\VoidType' => __DIR__ . '/..' . '/sebastian/type/src/type/VoidType.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'Spatie\\Backtrace\\Arguments\\ArgumentReducers' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ArgumentReducers.php',
+        'Spatie\\Backtrace\\Arguments\\ProvidedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ProvidedArgument.php',
+        'Spatie\\Backtrace\\Arguments\\ReduceArgumentPayloadAction' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReduceArgumentPayloadAction.php',
+        'Spatie\\Backtrace\\Arguments\\ReduceArgumentsAction' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReduceArgumentsAction.php',
+        'Spatie\\Backtrace\\Arguments\\ReducedArgument\\ReducedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReducedArgument/ReducedArgument.php',
+        'Spatie\\Backtrace\\Arguments\\ReducedArgument\\ReducedArgumentContract' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReducedArgument/ReducedArgumentContract.php',
+        'Spatie\\Backtrace\\Arguments\\ReducedArgument\\TruncatedReducedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReducedArgument/TruncatedReducedArgument.php',
+        'Spatie\\Backtrace\\Arguments\\ReducedArgument\\UnReducedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReducedArgument/UnReducedArgument.php',
+        'Spatie\\Backtrace\\Arguments\\ReducedArgument\\VariadicReducedArgument' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/ReducedArgument/VariadicReducedArgument.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\ArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/ArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\ArrayArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/ArrayArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\BaseTypeArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/BaseTypeArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\ClosureArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/ClosureArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\DateTimeArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/DateTimeArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\DateTimeZoneArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/DateTimeZoneArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\EnumArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/EnumArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\MinimalArrayArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/MinimalArrayArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\SensitiveParameterArrayReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/SensitiveParameterArrayReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\StdClassArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/StdClassArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\StringableArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/StringableArgumentReducer.php',
+        'Spatie\\Backtrace\\Arguments\\Reducers\\SymphonyRequestArgumentReducer' => __DIR__ . '/..' . '/spatie/backtrace/src/Arguments/Reducers/SymphonyRequestArgumentReducer.php',
         'Spatie\\Backtrace\\Backtrace' => __DIR__ . '/..' . '/spatie/backtrace/src/Backtrace.php',
         'Spatie\\Backtrace\\CodeSnippet' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippet.php',
         'Spatie\\Backtrace\\File' => __DIR__ . '/..' . '/spatie/backtrace/src/File.php',
@@ -4849,6 +4872,7 @@ class ComposerStaticInit84921c615544765508820a5bdd2988f7
         'Spatie\\FlareClient\\Truncation\\AbstractTruncationStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/AbstractTruncationStrategy.php',
         'Spatie\\FlareClient\\Truncation\\ReportTrimmer' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/ReportTrimmer.php',
         'Spatie\\FlareClient\\Truncation\\TrimContextItemsStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TrimContextItemsStrategy.php',
+        'Spatie\\FlareClient\\Truncation\\TrimStackFrameArgumentsStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TrimStackFrameArgumentsStrategy.php',
         'Spatie\\FlareClient\\Truncation\\TrimStringsStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TrimStringsStrategy.php',
         'Spatie\\FlareClient\\Truncation\\TruncationStrategy' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Truncation/TruncationStrategy.php',
         'Spatie\\FlareClient\\View' => __DIR__ . '/..' . '/spatie/flare-client-php/src/View.php',
@@ -5968,9 +5992,9 @@ class ComposerStaticInit84921c615544765508820a5bdd2988f7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit84921c615544765508820a5bdd2988f7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit84921c615544765508820a5bdd2988f7::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit84921c615544765508820a5bdd2988f7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitd1d6914d49fb32fb6d465f771a30c864::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitd1d6914d49fb32fb6d465f771a30c864::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitd1d6914d49fb32fb6d465f771a30c864::$classMap;
 
         }, null, ClassLoader::class);
     }
