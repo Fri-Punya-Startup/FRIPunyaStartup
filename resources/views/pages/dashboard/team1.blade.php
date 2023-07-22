@@ -1,217 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/tim1/sudahpunyatim.css" rel="stylesheet" />
-    <title>Sudah Punya Tim</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="./css/tim1/sudahpunyatim.css"/>
+    <script src="https://kit.fontawesome.com/a1b53e9e69.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"/>
+    <title>sudah punya team</title>
+    
 </head>
-<div>
-  <div class="punyatim-container">
-    <div class="punyatim-punyatim">
-      <div class="sidebar">
-        <img
-          src="images/back-side.png"
-          class="sidebar-background"
-        />
-        <div class="sidebar-content">
-          <img
-            src="images/ideaforge.png"
-            class="logo-ideaforge"
-          />
-          <div class="sidebar-menu">
-            <div class="sidebar-menu-home">
-              <a href="#">
-              <img
-              src="images/sidebar-box.png"
-              class="sidebar-hover-grey"
-            /> </a>
-              <div class="menu-home square">
-                <img
-                  src="images/home.png"
-                  class="icon-home"
-                />
-                <span class="sidebar-text">
-                  <span><a href="#" class="sidebar-text">Home</a></span>
-                </span>
-              </div>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-body-tertiary" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4">
+                <img src="images/team1/ideaforge.png" width="70" alt="">
             </div>
-            <div class="sidebar-menu1">
-              <img
-                src="images/hover-sidebar.png"
-                class="sidebar-hover"
-              />
-              <div class="menu-team">
-                <img
-                  src="images/Team.png"
-                  class="icon-team"
-                />
-                <span class="sidebar-text02">
-                  <span><a href="#" class="sidebar-text02">Team</a></span>
-                </span>
-              </div>
+                
+            <div class="list-group list-group-flush my-3 text-center">
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text"><i
+                        class="bi bi-grid-fill me-2"></i>Home</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        class="fa fa-user-group me-2"></i>Team</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text"><i
+                        class="fa fa-rocket me-2"></i>Startup</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text"><i
+                        class="fa-solid fa-user me-2"></i>Profile</a>
+                <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger"><i
+                        class="fa fa-right-from-bracket me-2"></i>Logout</a>
             </div>
-            <div class="sidebar-menu-startup">
-              <a href="#">
-              <img
-              src="images/sidebar-box.png"
-              class="sidebar-hover-grey"
-            /> </a>
-              <div class="menu-startup">
-                <div class="menu-startup-text">
-                  <span class="sidebar-text">
-                    <span><a href="#" class="sidebar-text">Startup</a></span>
-                  </span>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fa-solid fa-bars primary-text fs-5 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-5 fw-bold m-0 ms-3">Team</h2>
                 </div>
-                <img
-                  src="images/startup.png"
-                  class="icon-startup"
-                />
-              </div>
-            </div>
-            <div class="sidebar-menu-profile">
-              <a href="#">
-              <img
-              src="images/sidebar-box.png"
-              class="sidebar-hover-grey"
-            /> </a>
-              <div class="menu-profile">
-                <img
-                  src="images/profile.png"
-                  class="icon-profile"
-                />
-                <div class="menu-profile-text">
-                  <span class="sidebar-text">
-                    <span><a href="#" class="sidebar-text">Profile</a></span>
-                  </span>
+
+                <div class="side-profile row ms-auto">
+                    <div class="col-3 justify-content-end ms-auto">
+                        <img class="rounded-circle article-img" src="images/team1/profile-pict.png" width="40" id="img"> 
+                    </div>
+                    <div class="text-profile col">
+                        <h3 class="second-text fw-bold fs-6">Bagus Satrio</h3> <br> 
+                        <p class="text-gmail">bagus@gmail.com</p>
+                    </div>
                 </div>
-              </div>
+            </nav>
+
+            <div class="container-fluid px-4">
+                <div class="row">
+                    <div class="col text-start">
+                        <h2 class="fs-5 fw-bold mb-3 mt-4">Nama Team</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card cardketua shadow ">
+                            <div class="card-body cardbody-ketua">
+                                <img class="card-image rounded-circle article-img mx-auto" src="images/team1/ketua.png" id="">
+                                <h5 class="card-title fw-bold fs-6 text-center">Bagus Satrio</h5>
+                                <p class="card-text text-center">Ketua</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-3 justify-content-center text-center">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <img class="card-image rounded-circle article-img" src="images/team1/anggota1.png" id="img">
+                                <h5 class="card-title fw-bold fs-6">Bagus Satrio</h5>
+                                <p class="card-text">Anggota</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 justify-content-center text-center">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <img class="card-image rounded-circle article-img" src="images/team1/anggota2.png" id="">
+                                <h5 class="card-title fw-bold fs-6">Bagus Satrio</h5>
+                                <p class="card-text">Anggota</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 justify-content-center text-center">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <img class="card-image rounded-circle article-img" src="images/team1/anggota3.png" id="">
+                                <h5 class="card-title fw-bold fs-6">Bagus Satrio</h5>
+                                <p class="card-text">Anggota</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 justify-content-center text-center">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <img class="card-image rounded-circle article-img" src="images/team1/anggota4.png" id="">
+                                <h5 class="card-title fw-bold fs-6">Bagus Satrio</h5>
+                                <p class="card-text">Anggota</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <img
-              src="images/end-sidebar.png"
-              class="end-sidebar"
-            />
-            <div class="sidebar-logout">
-              <img
-                src="images/logout.png"
-                class="icon-logout"
-              />
-              <span class="sidebar-text03">
-                <span><a href="#" class="sidebar-text03">Log Out</a></span>
-              </span>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="team-content">
-        <div class="profile">
-          <a href="#">
-          <img
-            src="images/profile-pict.png"
-            class="profile-pict"
-          /></a>
-          <span class="username">
-            <span>Bagus Satrio</span>
-          </span>
-          <span class="email">
-            <span>Bagus@gmail.com</span>
-          </span>
-        </div>
-        <span class="team"><span>Team</span></span>
-        <span class="nama-team">
-          <span>Nama Team</span>
-        </span>
-        <div class="frameketua">
-          <div class="frameketua-box">
-            <img
-              src="images/ketua.png"
-              class="profile-pict-team"
-            />
-            <div class="frameketua-identity">
-              <span class="nama">
-                <span>Bagus Satrio</span>
-              </span>
-              <span class="jabatan">
-                <span>Ketua</span>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="frameanggota">
-          <div class="frameanggota-box">
-            <img
-              src="images/anggota1.png"
-              class="profile-pict-team"
-            />
-            <div class="frameanggota-identity">
-              <span class="nama-anggota">
-                <span>Bagus Satrio</span>
-              </span>
-              <span class="jabatan-anggota">
-                <span>Anggota</span>
-              </span>
-            </div>
-          </div>
-          <div class="frameanggota-box">
-            <img
-              src="images/anggota2.png"
-              class="profile-pict-team"
-            />
-            <div class="frameanggota-identity">
-              <span class="nama-anggota">
-                <span>Bagus Satrio</span>
-              </span>
-              <span class="jabatan-anggota">
-                <span>Anggota</span>
-              </span>
-            </div>
-          </div>
-          <div class="frameanggota-box">
-            <img
-              src="images/anggota3.png"
-              class="profile-pict-team"
-            />
-            <div class="frameanggota-identity">
-              <span class="nama-anggota">
-                <span>Bagus Satrio</span>
-              </span>
-              <span class="jabatan-anggota">
-                <span>Anggota</span>
-              </span>
-        </div>
-        <span class="posisi-anggota"><span>ANGGOTA</span></span>
-      </div>
-      <div class="footer">
-        <div class="frame3">
-          <a href="/ideaforge">
-            <button class="button">
-              <span class="button-text"><span>IdeaForge</span></span>
-            </button></a>
-            <span class="footer-text-bold">
-              <span>Let&apos;s bring your startup to the next level!!</span></span>
-              <div class="sudahpunyatim-form-group">
-                <span class="footer-text"><span>IdeaForge by FPS</span></span>
-              </div>
-            </div>
-          </div>
-          <div class="frameanggota-box">
-            <img
-              src="images/anggota4.png"
-              class="profile-pict-team"
-            />
-            <div class="frameanggota-identity">
-              <span class="nama-anggota">
-                <span>Bagus Satrio</span>
-              </span>
-              <span class="jabatan-anggota">
-                <span>Anggota</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
+    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
 </body>
+
 </html>
