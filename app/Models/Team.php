@@ -11,13 +11,13 @@ class Team extends Model
 
     protected $guarded = ['id'];
 
-    public function users()
+    public function members()
     {
         return $this->hasMany(User::class);
     }
 
-    public function startups()
+    public function startup()
     {
-        return $this->hasMany(Startup::class);
+        return $this->hasOne(Startup::class);
     }
 }
