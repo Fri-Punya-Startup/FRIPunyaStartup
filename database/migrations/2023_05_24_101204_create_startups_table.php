@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('team_id')->constrained()->onDelete('cascade');
             $table->string('name');
+            $table->string('logo');
             $table->string('category'); //sementara string dulu, kedepannya kalau harus ada model category baru diganti ke foreign
             $table->longText('desc');
             $table->timestamps();

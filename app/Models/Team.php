@@ -22,7 +22,7 @@ class Team extends Model
 
     protected $guarded = ['id'];
 
-    public function users()
+    public function members()
     {
         return $this->hasMany(User::class);
     }

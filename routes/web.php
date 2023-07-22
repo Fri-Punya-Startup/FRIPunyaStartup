@@ -1,23 +1,13 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationFormController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StartupController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrationController;
-
-// use App\Http\Controllers\
-//     {
-//     PortofolioController,
-//     TypeController,
-//     LoginController,
-//     AdminController,
-//     EventController,
-//     DashboardPostController,
-//     RegistrationController,
-//     waController
-// };
 
 /*
 |--------------------------------------------------------------------------
@@ -30,20 +20,20 @@ use App\Http\Controllers\RegistrationController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
-// Route::get("/about", function () {
-//     return view('about');
-// });
+Route::get("/about", function () {
+    return view('about');
+});
 
-// Route::get('/navbar', function () {
-//     return view('navbar');
-// });
-// Route::get('/member' , function(){
-//     return view('member');
-// });
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+Route::get('/member' , function(){
+    return view('member');
+});
 
 // Route::get('/portofolio', [PortofolioController::class, 'index']);
 
@@ -51,9 +41,9 @@ use App\Http\Controllers\RegistrationController;
 // Route::get('/startup/kiri', [PortofolioController::class, 'kiri']);
 // Route::get('/startup/sport-gather', [PortofolioController::class, 'sport']);
 
-// Route::get('/ideaforge',  function () {
-//     return view('ideaforge');
-// });
+Route::get('/ideaforge',  function () {
+    return view('ideaforge');
+});
 
 // Route::get('/type', [TypeController::class, 'type']);
 
@@ -86,12 +76,12 @@ use App\Http\Controllers\RegistrationController;
 
 
 //HomeController
-Route::group(['as' => 'home.'], function () {
-    Route::get('/', [HomeController::class, 'landingPage'])->name('landing-page');
-    Route::get('/about', [HomeController::class, 'about'])->name('about');
-    Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
-    Route::get('/team', [HomeController::class, 'team'])->name('team');
-});
+// Route::group(['as' => 'home.'], function () {
+//     Route::get('/', [HomeController::class, 'landingPage'])->name('landing-page');
+//     Route::get('/about', [HomeController::class, 'about'])->name('about');
+//     Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+//     Route::get('/team', [HomeController::class, 'team'])->name('team');
+// });
 
 // Route::middleware(['guest'])->group(function () {
 //     //AuthController
@@ -112,3 +102,42 @@ Route::group(['as' => 'home.'], function () {
 
 Route::resource('/registration', RegistrationController::class);
 Route::get('/startup', [StartupController::class, 'index']);
+Route::middleware(['guest'])->group(function () {
+    //AuthController
+    Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');
+    Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
+    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+    Route::post('/login', [AuthController::class, 'login'])->name('login.post');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/form', function(){
+    return view('form');
+});
+
+
+Route::group(['as' => 'admin.', 'prefix' => 'admin.'], function () {
+    // Route::get('/', [AdminController::class, 'index'])->name('admin-home');
+    // Route::get('/about', [HomeController::class, 'about'])->name('about');
+    // Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+    // Route::get('/team', [HomeController::class, 'team'])->name('team');
+});
+
+//Route Register
+Route::resource('/register', RegistrationFormController::class);
+Route::middleware(['auth'])->group(function () {
+    //AuthController
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    //DashboardController
+    Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+        Route::get('/', [DashboardController::class, 'home'])->name('home');
+        Route::get('/team', [DashboardController::class, 'team'])->name('team');
+        Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+        Route::patch('/profile', [DashboardController::class, 'profile_patch'])->name('profile.patch');
+    });
+});
+
