@@ -2,120 +2,93 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Registration;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreRegistrationRequest;
-use App\Http\Requests\UpdateRegistrationRequest;
+use App\Models\Role;
+use App\Models\FrsUser;
+use App\Models\Startup;
+use App\Models\TeamMember;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('register');
+    public function index () {
+        return view ('registration');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreRegistrationRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreRegistrationRequest $request)
-    {
-        // validasi data
-        
+    public function store(Request $request) {
         $validated = $request->validate([
-            "name" => "required",
-            "email" => "required|email",
-            "no_hp" => "required|numeric",
-            "alasan" => "required",
-            "harapan" => "required",
-            "role" => "required",
-            "skill" => "required",
-            "startup" => "required",
-            "cv" => "required|mimes:pdf|max:10000",
-            "follow" => "required",
-        ]); 
-
-        // upload file
-        $cv = $request->file('cv');
-        $cvName = $validated['name'] . '-' . time() . '.' . $cv->extension();
-        $cv->storeAs('cv', $cvName);
-
-        // save data
-        Registration::create([
-            "name" => $validated['name'],
-            "email" => $validated['email'],
-            "no_hp" => $validated['no_hp'],
-            "alasan" => $validated['alasan'],
-            "harapan" => $validated['harapan'],
-            "role" => $validated['role'],
-            "skill" => $validated['skill'],
-            "startup" => $validated['startup'],
-            "cv" => $cvName,
-            "follow" => $validated['follow'],
+            'email' => 'required|unique:users|email',
+            'fullName' => 'required',
+            'password' => 'required',
+            'number' => 'required',
+            'role' => 'required',
+            'startup' => 'required',
+            'deskripsi' => 'nullable',
+            'refferal' => 'nullable'
         ]);
 
-        return view('success');
-    }
+        $role = Role::find($validated['role']);
+        $isStartup = Startup::where('startup_name', $validated['startup'])->first();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Registration  $registration
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Registration $registration)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Registration  $registration
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Registration $registration)
-    {
-        //
-    }
+        if ($isStartup) {
+            if ($validated['refferal'] != null) {
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateRegistrationRequest  $request
-     * @param  \App\Models\Registration  $registration
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateRegistrationRequest $request, Registration $registration)
-    {
-        //
-    }
+                $user = FrsUser::create([
+                    'email' => $validated['email'],
+                    'name' => $validated['fullName'],
+                    'password' => bcrypt($validated['password']),
+                    'phone' => $validated['number'],
+                    'role_id' => $validated['role'],
+                ]);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Registration  $registration
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Registration $registration)
-    {
-        //
+                $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
+                
+                $newTeamMember = TeamMember::create([
+                    'team_id' => $teamMember->team_id,
+                    'user_id' => $user->id,
+                    'refferal' => $validated['refferal'],
+                ]);
+
+                return "Berhasil mendaftarkan akun, Berhasil masuk ke team";
+
+            } else {
+
+             $user = FrsUser::create([
+                'email' => $validated['email'],
+                'name' => $validated['fullName'],
+                'password' => bcrypt($validated['password']),
+                'phone' => $validated['number'],
+                'role_id' => $validated['role'],
+            ]);
+            return "Berhasil mendaftarkan akun, Anda Mendaftar tanpa kode refferal";
+        }
+
+         } else {
+            $user = FrsUser::create([
+                'email' => $validated['email'],
+                'name' => $validated['fullName'],
+                'password' => bcrypt($validated['password']),
+                'phone' => $validated['number'],
+                'role_id' => $validated['role'],
+            ]);
+
+            $startup = Startup::create([
+                'owners_id' => $user->id,
+                'startup_name' => $validated['startup'],
+                'description' => $validated['deskripsi'],
+            ]);
+            $randomString = strtoupper(Str::random(8));
+            $teamSave = $startup->team()->create(['name_team' => $validated['startup']." Team"]);
+            $teamSave->members()->attach($user->id, ['refferal' => $randomString]);
+            // Tampilkan pop-up dengan kode referral
+            echo "<script>";
+            echo "var referralCode = '{$randomString}';";
+            echo "var popupContent = 'Silahkan undang teman anda menggunakan kode ini : ' + referralCode;";
+            echo "alert(popupContent);";
+            echo "</script>";
+         }
+        
+        
     }
 }

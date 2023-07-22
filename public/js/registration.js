@@ -1,4 +1,3 @@
-
 var checkbox = document.getElementById("check-startup");
 var additionalInputDiv = document.getElementById("additional-input");
 
