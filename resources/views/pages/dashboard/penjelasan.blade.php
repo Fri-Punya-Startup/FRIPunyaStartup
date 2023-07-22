@@ -8,16 +8,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penjelasan Ideaforge</title>
-    <link rel="stylesheet" href="penjelasan.css">
+    <link rel="stylesheet" href="./css/penjelasan/penjelasan.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
 </head>
 <body>
+  <div class="header">
+        <div class="container">
+            <h1 class="us">Penjelasan IdeaForge</h1>
+        </div>
+    </div>
   <div class="background">
     <div class="penjelasan-idea-forge-container">
       <div class="penjelasan-idea-forge">
         <div class="penjelasan-idea-forge-grandplan">
           <div class="title">
             <img
-              src="images/line3.png"
+              src="images/penjelasan/line3.png"
               class="line3"
             />
             <span class="title-text">
@@ -59,7 +70,7 @@
           <div class="frame-prosesteknologi">
             <div class="title">
               <img
-                src="images/line3.png"
+                src="images/penjelasan/line3.png"
                 class="line3"
               />
               <span class="title-text">
@@ -90,7 +101,7 @@
           <div class="frame-prosesdesain">
             <div class="title">
               <img
-                src="images/line3.png"
+                src="images/penjelasan/line3.png"
                 class="line3"
               />
               <span class="title-text">
@@ -108,7 +119,7 @@
               <div class="prosesdesain-card-description1">
                 <span class="prosesdesain-card-text1">
                   <span>
-                    Desain prosuk atau layanan, desain websie atau aplikasi,
+                    Desain produk atau layanan, desain website atau aplikasi,
                     desain branding, serta pengembangan strategi desain yang
                     menarik dan efektif
                   </span>
@@ -120,7 +131,7 @@
         <div class="ourboard-frame">
           <div class="title">
             <img
-              src="images/line3.png"
+              src="images/penjelasan/line3.png"
               class="line3"
             />
             <span class="title-text">
@@ -169,5 +180,5 @@
     </div>
   </div>
 </body>
-</html>
 @endsection
+</html>
