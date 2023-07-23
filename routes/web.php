@@ -5,7 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationFormController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StartupController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,6 +83,25 @@ Route::get('/ideaforge',  function () {
 //     Route::get('/team', [HomeController::class, 'team'])->name('team');
 // });
 
+// Route::middleware(['guest'])->group(function () {
+//     //AuthController
+//     Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');
+//     Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
+// });
+
+// Route::middleware(['auth'])->group(function () {
+//     //DashboardController
+//     Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+//         Route::get('/home', [DashboardController::class, 'home'])->name('home');
+//         Route::get('/team', [DashboardController::class, 'team'])->name('team');
+//         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
+//         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+//     });
+// });
+
+
+Route::resource('/registration', RegistrationController::class);
+Route::get('/startup', [StartupController::class, 'index']);
 Route::middleware(['guest'])->group(function () {
     //AuthController
     Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');

@@ -2,7 +2,37 @@
 @import url('https://fonts.cdnfonts.com/css/work-sans');
 @import url('https://fonts.cdnfonts.com/css/open-sans');
                 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  height: auto;
+  width: 100%;
+  background-image: url("/images/header.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.container h1{
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  color: white;
+  padding: 125px 0 16px 0;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    background-color: #F7F7F7;
+}
 .penjelasan-idea-forge-container {
   width: 100%;
   display: flex;
@@ -22,7 +52,7 @@
 }
 .penjelasan-idea-forge-grandplan {
   gap: 32px;
-  width: 1280px;
+  width: 1400px;
   display: flex;
   padding: 64px;
   align-items: flex-start;
@@ -63,6 +93,8 @@
   line-height: 25.920000076293945px;
   font-stretch: normal;
   text-decoration: none;
+  width: 1300px;
+  transition: width 0.3s ease;
 }
 .group {
   gap: 32px;
@@ -70,6 +102,7 @@
   display: flex;
   align-items: flex-start;
   flex-shrink: 0;
+  justify-content: flex-start;
 }
 .frame-prosesteknologi {
   gap: 16px;
@@ -117,7 +150,7 @@
   justify-content: center;
 }
 .prosesteknologi-card-text {
-  top: 28px;
+  top: 11px;
   color: rgba(0, 0, 0, 1);
   width: 486px;
   height: auto;
@@ -135,7 +168,7 @@
 .frame-prosesdesain {
   gap: 16px;
   display: flex;
-  padding: 64px;
+  padding: 64px 130px;
   flex-grow: 1;
   align-self: stretch;
   align-items: flex-start;
@@ -149,9 +182,9 @@
 .prosesdesain-card {
   gap: 16px;
   height: 92px;
-  width: 488px;
+  width: 500px;
   display: flex;
-  padding: 10px;
+  padding: 16px;
   overflow: hidden;
   align-self: stretch;
   align-items: center;
@@ -164,6 +197,7 @@
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 1);
 }
+
 
 .prosesdesain-card-description {
   gap: 16px;
@@ -178,7 +212,7 @@
   justify-content: center;
 }
 .prosesdesain-card-text {
-  top: 35px;
+  top: 17px;
   color: rgba(0, 0, 0, 1);
   width: 486px;
   height: auto;
@@ -196,7 +230,7 @@
   gap: 16px;
   height: 145px;
   display: flex;
-  width: 460px;
+  width: 500px;
   padding: 25px;
   overflow: hidden;
   align-self: stretch;
@@ -223,7 +257,7 @@
   justify-content: center;
 }
 .prosesdesain-card-text1 {
-  top: 23.5px;
+  top: 3px;
   left: 21px;
   color: rgba(0, 0, 0, 1);
   width: 443px;
@@ -248,7 +282,7 @@
   flex-direction: column;
 }
 .ourboard-row {
-  gap: 45px;
+  gap: 55px;
   display: flex;
   align-self: flex-start;
   flex-shrink: 1;
@@ -256,10 +290,10 @@
 }
 .ourboard-card {
   gap: 16px;
-  width: 180px;
-  height: 80px;
+  width: 200px;
+  height: 123px;
   display: flex;
-  padding: 20px 10px;
+  padding: 40px 50px;
   overflow: hidden;
   align-items: center;
   flex-shrink: 0;
@@ -271,8 +305,7 @@
   justify-content: space-between;
   background-color: rgba(255, 255, 255, 1);
 }
-.ourboard-card-description{
-  gap: 16px;
+.ourboard-card-description {
   width: 200px;
   height: 150px;
   display: flex;
@@ -284,8 +317,8 @@
   justify-content: center;
 }
 .ourboard-text {
-  top: 5px;
-  left: 10px;
+  top: -13px;
+  left: -2px;
   color: rgba(0, 0, 0, 1);
   width: 216px;
   height: auto;
@@ -301,16 +334,16 @@
 }
 
 .ourboard-text1 {
-  top: 2px;
-  left: 25px;
+  top: -14px;
+  left: 6px;
   color: rgba(0, 0, 0, 1);
   width: 190px;
   height: auto;
   position: absolute;
   font-size: 20px;
-  font-style: Regular;
+  font-style: "Regular";
   text-align: center;
-  font-family: Poppins;
+  font-family: "Poppins";
   font-weight: 400;
   line-height: 25.920000076293945px;
   font-stretch: normal;
@@ -319,8 +352,8 @@
 
 
 .ourboard-text2 {
-  top: 15px;
-  left: 26px;
+  top: -4px;
+  left: 7px;
   color: rgba(0, 0, 0, 1);
   width: 189px;
   height: auto;
@@ -336,8 +369,8 @@
 }
 
 .ourboard-text3 {
-  top: 7px;
-  left: 23px;
+  top: -14px;
+  left: 10px;
   color: rgba(0, 0, 0, 1);
   width: 189px;
   height: auto;
@@ -352,8 +385,8 @@
   text-decoration: none;
 }
 .ourboard-text4 {
-  top: -6px;
-  left: 26px;
+  top: -27px;
+  left: 6px;
   color: rgba(0, 0, 0, 1);
   width: 189px;
   height: auto;
@@ -367,3 +400,97 @@
   font-stretch: normal;
   text-decoration: none;
 }
+
+
+@media screen and (max-width: 960px) {
+    .container h1{
+        font-size: 48px;
+    }
+    .ourboard-row{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .text {
+      width: 900px;
+      
+    }
+    .group {
+      width: 750px;
+      flex-direction: column;
+      gap: -10px;
+      
+    }
+  
+    .prosesdesain-card,
+    .prosesdesain-card1 {
+      width: 100%;
+      max-width: 500px;
+    }
+    
+    .frame-prosesdesain {
+      gap: 16px;
+      display: flex;
+      flex-grow: 1;
+      align-self: stretch;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 64px;
+    }
+  }
+
+  .title-prosesteknologi,
+  .title-prosesdesain {
+      gap: 16px;
+      display: flex;
+      align-items: flex-start;
+      margin-left: 100px; /* Atur nilai margin kiri sesuai kebutuhan */
+    }
+
+
+@media screen and (max-width: 590px) {
+    .container h1{
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        padding-left: 32px;
+    }
+    .text {
+      width: 440px;
+      
+    }
+   
+    .penjelasan-idea-forge{
+        display: flex;
+        flex-direction: column;
+        row-gap: 0;
+    }
+    .midBottomWrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .top{
+        padding-bottom: 0;
+    }
+    .midContent{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .bottomContent{
+        display: flex;
+        flex-direction: column;
+        padding-top: 64px ;
+
+    }
+    .director{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 16px;
+    }
+
+  }
