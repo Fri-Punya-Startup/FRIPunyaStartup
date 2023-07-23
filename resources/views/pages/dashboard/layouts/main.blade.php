@@ -16,11 +16,9 @@
         @yield('navbar')
     </header>
     <main>
-        @yield('left-sidebar')
-        @yield('main')
-        @yield('right-sidebar')
+        @include('pages.dashboard.layouts.sidebar')
     </main>
-    <footer style="margin-top: 20%">
+    <footer>
         @yield('footer')
     </footer>
     @include('pages.layouts.body-import')

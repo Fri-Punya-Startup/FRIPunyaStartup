@@ -27,6 +27,11 @@ class Team extends Model
         return $this->hasMany(User::class);
     }
 
+    public function leader()
+    {
+        return $this->hasOne(User::class);
+    }
+
     public function startup()
     {
         return $this->belongsTo(Startup::class, 'startup_id');
