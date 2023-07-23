@@ -1,11 +1,15 @@
 var checkbox = document.getElementById("check-startup");
 var additionalInputDiv = document.getElementById("additional-input");
+const kode_referal = document.getElementById("kode-referal")
 
   checkbox.addEventListener("change", function() {
     if (checkbox.checked) {
       additionalInputDiv.style.display = "block";
+        kode_referal.style.display = "none"
     } else {
       additionalInputDiv.style.display = "none";
+      kode_referal.style.display = "block"
+
     }
   });
 
@@ -18,7 +22,7 @@ const listHipster = document.getElementById('list-hipster');
 const listHacker = document.getElementById('list-hacker');
 
 hacker.addEventListener('click', () => {
-    listHacker.style.display = 'block';    
+    listHacker.style.display = 'block';
     listHipster.style.display = 'none';
     listHustler.style.display = 'none';
 

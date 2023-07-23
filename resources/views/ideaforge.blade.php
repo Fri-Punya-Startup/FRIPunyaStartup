@@ -1,30 +1,26 @@
 @extends("layouts.main")
 
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penjelasan Ideaforge</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="../css/penjelasan/penjelasan.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <div class="background">
-    <div class="penjelasan-idea-forge-container">
-      <div class="penjelasan-idea-forge">
-        <div class="penjelasan-idea-forge-grandplan">
-          <div class="title">
-            <img
-              src="images/line3.png"
-              class="line3"
-            />
-            <span class="title-text">
-              <span>Grand Plan</span>
-            </span>
-          </div>
-          <span class="text">
+    <div class="header">
+        <div class="container">
+            <h1 class="us">Ideaforge</h1>
+        </div>
+    </div>
+    <div class="container ideaforge">
+        <br>
+        <span class="text">
             <span>
               <span>
                 IdeaForge by FPS adalah wadah bagi para startup enthusiast untuk
@@ -168,6 +164,6 @@
       </div>
     </div>
   </div>
+    </div>
 </body>
-</html>
 @endsection
