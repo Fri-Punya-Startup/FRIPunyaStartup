@@ -1,4 +1,4 @@
-@extends('pages.layouts.main')
+@extends('pages.dashboard.layouts.main')
 
 @section('style')
     <style>
@@ -16,6 +16,13 @@
             border: 2px dashed rgb(66, 75, 255) !important;
         }
 
+        #submit-btn {
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
         label {
             font-weight: bold;
         }
@@ -23,9 +30,9 @@
 @endsection
 
 @section('main')
-    <div class="container">
-        <h2 class="mb-5" style="color: #212069">Profile</h2>
-        <div class="rounded-3 container p-5 shadow">
+    <div class="container-fluid">
+        <h2 class="fw-bold my-4" style="color: #212069">Profile</h2>
+        <div class="rounded-3 p-5 shadow">
             @if (session()->has('alert'))
                 <div class="alert alert-primary alert-dismissible fade show" role="alert">
                     {{ session('alert') }}
@@ -43,7 +50,7 @@
                     <button class="btn-close" data-bs-dismiss="alert" type="button" aria-label="Close"></button>
                 </div>
             @endif
-            <form id="profile-form" action="{{ route('dashboard.profile.patch') }}" method="POST" enctype="multipart/form-data" x-data="{ dragging: false }">
+            <form id="profile-form" action="{{ route('dashboard.profile.patch') }}" method="POST" enctype="multipart/form-data" x-data="{ dragging: false }" x-on:submit="$('#submit-btn').html(`<span class='spinner-border spinner-border-sm'></span>`);">
                 @csrf
                 @method('PATCH')
                 <div class="row">
@@ -79,7 +86,7 @@
                 </div>
 
                 <div class="d-flex justify-content-end">
-                    <button class="btn text-light rounded-3" id="submit-btn" type="submit" style="background-color: #212069; width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Update</button>
+                    <button class="btn text-light rounded-3" id="submit-btn" type="submit" style="background-color: #212069;">Update</button>
                 </div>
             </form>
         </div>
@@ -91,8 +98,6 @@
         const avatarPreview = $('#avatar-preview');
         const avatarInput = $('#avatar-input');
         const dragDrop = $('#drag-n-drop');
-        const profileForm = $('#profile-form');
-        const submitBtn = $('#submit-btn');
 
         function imagePreview(files) {
             const file = files;
@@ -130,9 +135,5 @@
             e.preventDefault();
             imagePreview(this.files[0]);
         });
-
-        profileForm.on('submit', function(e) {
-            submitBtn.html('<span class="spinner-border spinner-border-sm"></span>');
-        })
     </script>
 @endsection

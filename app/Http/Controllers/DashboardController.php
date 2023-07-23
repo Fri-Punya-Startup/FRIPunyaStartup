@@ -16,7 +16,6 @@ class DashboardController extends Controller
             'title' => 'Dashboard Home',
             'startup' => auth()->user()->team->startup ?? null,
             'team' => auth()->user()->team ?? null,
-            'user' => auth()->user(),
         ]);
     }
 
