@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->foreign('role_id')->references('id')->on('roles');
+            $table->index('email'); // Indeks untuk mempercepat pencarian berdasarkan email
+            $table->index('remember_token'); // Indeks untuk mempercepat pencarian berdasarkan remember_token
         });
     }
 
