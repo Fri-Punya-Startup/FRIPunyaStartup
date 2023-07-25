@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\FrsUser;
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -18,7 +19,7 @@ class Startup extends Model
     ];
     protected $primaryKey = 'id';
     protected $table = 'startups';
-    
+
     protected $guarded = ['id'];
 
     protected $attributes = [
@@ -26,11 +27,11 @@ class Startup extends Model
         'image' => 'default_avatar.png',
     ];
 
-    
+
 
     public function owner()
     {
-        return $this->belongsTo(FrsUser::class, 'owners_id', 'id', 'owner');
+        return $this->belongsTo(User::class, 'owners_id', 'id', 'owner');
     }
 
     public function team()

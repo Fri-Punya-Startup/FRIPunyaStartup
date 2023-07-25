@@ -2,28 +2,91 @@
 
 namespace App\Http\Controllers;
 
-use Exception;
+use App\Models\Team;
 use App\Models\User;
-use Illuminate\Support\Str;
+use App\Models\Startup;
+use App\Models\TeamMember;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function home()
-    {
-        return view('pages.dashboard.home', [
-            'title' => 'Dashboard Home',
-            'startup' => auth()->user()->team->startup ?? null,
-            'team' => auth()->user()->team ?? null,
-        ]);
-    }
+    public function home() {
+        $user = Auth::user();
+        $cekUserTeam = TeamMember::where('user_id', $user->id)->first();
 
-    public function team()
-    {
-        return view('pages.dashboard.team2', [
-            'title' => 'Dashboard Team'
-        ]);
+        if($cekUserTeam){
+            $teamId = $cekUserTeam->team_id;
+            $usersWithSameTeam = TeamMember::where('team_id', $teamId)->pluck('user_id');
+            $users = User::whereIn('id', $usersWithSameTeam)
+                    ->with('role:id,name')
+                    ->get(['id', 'name', 'role_id']);
+
+            $teamName = Team::join('teams_members', 'teams_members.team_id', '=', 'teams.id')
+                ->where('teams_members.team_id', $teamId)
+                ->value('teams.name_team');
+
+
+            $team = Team::findOrFail($teamId);
+            $startup = Startup::findOrFail($team->startup_id);
+
+
+
+            return view('pages.dashboard.home', [
+                'title' => 'Dashboard Team',
+                'users' => $users,
+                'teamName' => $teamName,
+                'startup' => $startup
+            ]);
+        }else {
+            $allTeam = Team::all();
+
+            return view('pages.dashboard.home', [
+                'title' => 'Dashboard Team',
+                'team' => $allTeam
+            ]);
+        }
+    }
+    public function team() {
+
+        $user = Auth::user();
+        $cekUserTeam = TeamMember::where('user_id', $user->id)->first();
+
+        if($cekUserTeam){
+            $teamId = $cekUserTeam->team_id;
+            $usersWithSameTeam = TeamMember::where('team_id', $teamId)->pluck('user_id');
+            $users = User::whereIn('id', $usersWithSameTeam)->pluck('name');
+
+            $teamName = Team::join('teams_members', 'teams_members.team_id', '=', 'teams.id')
+                ->where('teams_members.team_id', $teamId)
+                ->value('teams.name_team');
+
+            $team = Team::findOrFail($teamId);
+            $startup = Startup::findOrFail($team->startup_id);
+
+
+
+            return view('pages.dashboard.team', [
+                'title' => 'Dashboard Team',
+                'users' => $users,
+                'teamName' => $teamName,
+                'startup' => $startup
+            ]);
+        }else {
+            $allTeam = Team::all();
+
+            return view('pages.dashboard.team', [
+                'title' => 'Dashboard Team',
+                'team' => $allTeam
+            ]);
+        }
+
+
+        // return view('dashboard.team', [
+        //     'title' => 'Dashboard Team',
+        //     'team' => $team
+        // ]);
     }
 
     public function startup()
@@ -40,44 +103,30 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function profile_patch(Request $request)
-    {
-        $rules = [
-            'name' => ['required'],
-            'avatar' => ['image', 'file', 'max:2000'],
-        ];
+    public function joinTeam(Request $request){
+        // $validated = $request->validate([
 
-        $messages = [
-            'name.required' => 'Nama harus diisi.',
-            'avatar.image' => 'Avatar harus berupa gambar.',
-            'avatar.file' => 'Avatar tidak valid.',
-            'avatar.max' => 'Ukuran maksimal avatar adalah 2MB.',
-        ];
+        // ]);
+        $refferal = $request->input('refferal');
 
-        if ($request->password) {
-            $rules['password'] = ['min:8'];
-            $messages['password.min'] = 'Password minimal 8 karakter.';
+        $cekRefferal = TeamMember::where('refferal',$refferal)->first();
+        $count = TeamMember::where('team_id', $cekRefferal->team_id)->count();
+
+
+        if($cekRefferal && $count < 4){
+            $user = Auth::user();
+
+            $newTeamMember = TeamMember::create([
+                'team_id' => $cekRefferal->team_id,
+                'user_id' => $user->id,
+                'refferal' => $refferal,
+            ]);
+
+            return "anda berhasil join team silahkan refresh";
+        }else{
+            return "Kode yang anda masukan salah/Team sudah penuh";
         }
 
-        $data = $request->validate($rules, $messages);
 
-        if ($request->avatar) {
-            if (auth()->user()->avatar) {
-                try {
-                    unlink(public_path(auth()->user()->avatar));
-                } catch (Exception $e) {
-                    //do nothing
-                }
-            }
-            $avatar = Str::random(32) . '.' . $data['avatar']->extension();
-            $request->file('avatar')->move(public_path('/images/avatars'), $avatar);
-            $data['avatar'] = "/images/avatars/$avatar";
-        }
-
-        $request->password ? $data['password'] = bcrypt($data['password']) : null;
-
-        User::find(auth()->user()->id)->update($data);
-
-        return redirect()->back()->with('alert', 'Profile berhasil diupdate.');
     }
 }

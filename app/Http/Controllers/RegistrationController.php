@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Role;
-use App\Models\FrsUser;
+use App\Models\User;
 use App\Models\Startup;
 use App\Models\TeamMember;
 use Illuminate\Support\Str;
@@ -34,7 +34,7 @@ class RegistrationController extends Controller
         if ($isStartup) {
             if ($validated['refferal'] != null) {
 
-                $user = FrsUser::create([
+                $user = User::create([
                     'email' => $validated['email'],
                     'name' => $validated['fullName'],
                     'password' => bcrypt($validated['password']),
@@ -43,7 +43,7 @@ class RegistrationController extends Controller
                 ]);
 
                 $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
-                
+
                 $newTeamMember = TeamMember::create([
                     'team_id' => $teamMember->team_id,
                     'user_id' => $user->id,
@@ -54,7 +54,7 @@ class RegistrationController extends Controller
 
             } else {
 
-             $user = FrsUser::create([
+             $user = User::create([
                 'email' => $validated['email'],
                 'name' => $validated['fullName'],
                 'password' => bcrypt($validated['password']),
@@ -65,7 +65,7 @@ class RegistrationController extends Controller
         }
 
          } else {
-            $user = FrsUser::create([
+            $user = User::create([
                 'email' => $validated['email'],
                 'name' => $validated['fullName'],
                 'password' => bcrypt($validated['password']),
@@ -88,7 +88,7 @@ class RegistrationController extends Controller
             echo "alert(popupContent);";
             echo "</script>";
          }
-        
-        
+
+
     }
 }
