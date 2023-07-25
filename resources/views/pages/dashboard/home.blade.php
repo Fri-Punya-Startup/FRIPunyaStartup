@@ -21,7 +21,7 @@
             <div class="sidebar-heading text-center py-4">
                 <img src="images/logoIdeaforge.png" width="70" alt="">
             </div>
-                
+
             <div class="list-group list-group-flush my-3 text-center">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                         class="bi bi-grid-fill me-2"></i>Home</a>
@@ -47,10 +47,10 @@
 
                 <div class="side-profile row">
                     <div class="col-3 justify-content-end">
-                        <img class="rounded-circle article-img" src="images/.jpeg" width="40" id="img"> 
+                        <img class="rounded-circle article-img" src="images/.jpeg" width="40" id="img">
                     </div>
                     <div class="text-profile col">
-                        <h3 class="second-text fw-bold fs-6">{{auth()->user()->name}}</h3> <br> 
+                        <h3 class="second-text fw-bold fs-6">{{auth()->user()->name}}</h3> <br>
                         <p class="text-gmail">{{auth()->user()->email}}</p>
                     </div>
                 </div>
@@ -62,11 +62,11 @@
                         <h3 class="text-desc ms-5 fs-4 mb-4 second-text fw-bold">Start develop your idea!</h3>
                         <p class="text-title ms-5">Create your team and develop an idea until it becomes a startup</p>
                     </div>
-            
+
                     <div class="col-1 d-flex ms-5" style="height: 150px;">
                         <div class="vr"></div>
                     </div>
-                    
+
                     @if(isset($teamName))
                     <div class="col-6 row">
                         <h3 class="fs-4 mb-4 second-text fw-bold">{{$startup->startup_name}}</h3>
@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-    
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>

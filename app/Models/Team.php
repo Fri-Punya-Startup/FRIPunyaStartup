@@ -9,7 +9,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Team extends Model
 {
+
+
+
     use HasFactory;
+    protected $fillable = [
+        'id',
+        'name_team',
+        'startup_id',
+    ];
+
     protected $fillable = [
         'id',
         'name_team',
@@ -18,9 +27,14 @@ class Team extends Model
 
     protected $guarded = ['id'];
 
-    public function users()
+    // public function members()
+    // {
+    //     return $this->hasMany(User::class);
+    // }
+
+    public function leader()
     {
-        return $this->hasMany(User::class);
+        return $this->hasOne(User::class);
     }
 
     public function startup()

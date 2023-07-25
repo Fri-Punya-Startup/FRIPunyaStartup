@@ -1,0 +1,496 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/work-sans');
+@import url('https://fonts.cdnfonts.com/css/open-sans');
+                
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  height: auto;
+  width: 100%;
+  background-image: url("/images/header.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container h1{
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 84px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  color: white;
+  padding: 125px 0 16px 0;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    background-color: #F7F7F7;
+}
+.penjelasan-idea-forge-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.penjelasan-idea-forge {
+  gap: 64px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.penjelasan-idea-forge-grandplan {
+  gap: 32px;
+  width: 1400px;
+  display: flex;
+  padding: 64px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.title {
+  gap: 16px;
+  display: flex;
+  align-items: flex-start;
+}
+.line3 {
+  height: 42px;
+    max-width: 5px;
+    position: relative;
+}
+.title-text {
+  color: rgba(33, 32, 105, 1);
+  height: auto;
+  font-size: 34px;
+  font-style: Bold;
+  text-align: left;
+  font-family: "Work Sans";
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.text {
+  color: #141414;
+  height: auto;
+  font-size: 18px;
+  align-self: stretch;
+  font-style: "Regular";
+  text-align: left;
+  font-family: "Open Sans";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+  width: 1300px;
+  transition: width 0.3s ease;
+}
+.group {
+  gap: 32px;
+  width: 1280px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  justify-content: flex-start;
+}
+.frame-prosesteknologi {
+  gap: 16px;
+  display: flex;
+  padding: 64px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.title-prosesteknologi {
+  gap: 16px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.prosesteknologi-card {
+  gap: 16px;
+  height: 92px;
+  width: 500px;
+  display: flex;
+  padding: 10px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(230, 230, 230, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+.prosesteknologi-card-description {
+  gap: 16px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  padding: 15px 17px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.prosesteknologi-card-text {
+  top: 11px;
+  color: rgba(0, 0, 0, 1);
+  width: 486px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.frame-prosesdesain {
+  gap: 16px;
+  display: flex;
+  padding: 64px 130px;
+  flex-grow: 1;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.title-prosesdesain {
+  gap: 16px;
+  display: flex;
+  align-items: flex-start;
+}
+.prosesdesain-card {
+  gap: 16px;
+  height: 92px;
+  width: 500px;
+  display: flex;
+  padding: 16px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(230, 230, 230, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+
+.prosesdesain-card-description {
+  gap: 16px;
+  width: 486px;
+  height: 100px;
+  display: flex;
+  padding: 15px 17px 17px 15px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.prosesdesain-card-text {
+  top: 17px;
+  color: rgba(0, 0, 0, 1);
+  width: 486px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.prosesdesain-card1 {
+  gap: 16px;
+  height: 145px;
+  display: flex;
+  width: 500px;
+  padding: 25px;
+  overflow: hidden;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(230, 230, 230, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+.prosesdesain-card-description1 {
+  gap: 16px;
+  width: 486px;
+  height: 150px;
+  display: flex;
+  padding: 15px 17px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.prosesdesain-card-text1 {
+  top: 3px;
+  left: 21px;
+  color: rgba(0, 0, 0, 1);
+  width: 443px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.ourboard-frame {
+  gap: 32px;
+  width: 1280px;
+  display: flex;
+  padding: 64px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.ourboard-row {
+  gap: 55px;
+  display: flex;
+  align-self: flex-start;
+  flex-shrink: 1;
+  justify-content: space-between;
+}
+.ourboard-card {
+  gap: 16px;
+  width: 200px;
+  height: 123px;
+  display: flex;
+  padding: 40px 50px;
+  overflow: hidden;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(230, 230, 230, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 16px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+.ourboard-card-description {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  padding: 15px 17px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.ourboard-text {
+  top: -13px;
+  left: -2px;
+  color: rgba(0, 0, 0, 1);
+  width: 216px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.ourboard-text1 {
+  top: -14px;
+  left: 6px;
+  color: rgba(0, 0, 0, 1);
+  width: 190px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+
+.ourboard-text2 {
+  top: -4px;
+  left: 7px;
+  color: rgba(0, 0, 0, 1);
+  width: 189px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.ourboard-text3 {
+  top: -14px;
+  left: 10px;
+  color: rgba(0, 0, 0, 1);
+  width: 189px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.ourboard-text4 {
+  top: -27px;
+  left: 6px;
+  color: rgba(0, 0, 0, 1);
+  width: 189px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: "Regular";
+  text-align: center;
+  font-family: "Poppins";
+  font-weight: 400;
+  line-height: 25.920000076293945px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 960px) {
+    .container h1{
+        font-size: 48px;
+    }
+    .ourboard-row{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    }
+    .text {
+      width: 900px;
+      
+    }
+    .group {
+      width: 750px;
+      flex-direction: column;
+      gap: -10px;
+      
+    }
+  
+    .prosesdesain-card,
+    .prosesdesain-card1 {
+      width: 100%;
+      max-width: 500px;
+    }
+    
+    .frame-prosesdesain {
+      gap: 16px;
+      display: flex;
+      flex-grow: 1;
+      align-self: stretch;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 64px;
+    }
+  }
+
+  .title-prosesteknologi,
+  .title-prosesdesain {
+      gap: 16px;
+      display: flex;
+      align-items: flex-start;
+      margin-left: 100px; /* Atur nilai margin kiri sesuai kebutuhan */
+    }
+
+
+@media screen and (max-width: 590px) {
+    .container h1{
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        padding-left: 32px;
+    }
+    .text {
+      width: 440px;
+      
+    }
+   
+    .penjelasan-idea-forge{
+        display: flex;
+        flex-direction: column;
+        row-gap: 0;
+    }
+    .midBottomWrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .top{
+        padding-bottom: 0;
+    }
+    .midContent{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .bottomContent{
+        display: flex;
+        flex-direction: column;
+        padding-top: 64px ;
+
+    }
+    .director{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 16px;
+    }
+
+  }

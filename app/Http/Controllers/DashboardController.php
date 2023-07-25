@@ -22,7 +22,7 @@ class DashboardController extends Controller
             $users = User::whereIn('id', $usersWithSameTeam)
                     ->with('role:id,name')
                     ->get(['id', 'name', 'role_id']);
-            
+
             $teamName = Team::join('teams_members', 'teams_members.team_id', '=', 'teams.id')
                 ->where('teams_members.team_id', $teamId)
                 ->value('teams.name_team');
@@ -30,9 +30,9 @@ class DashboardController extends Controller
 
             $team = Team::findOrFail($teamId);
             $startup = Startup::findOrFail($team->startup_id);
-                
-   
-            
+
+
+
             return view('pages.dashboard.home', [
                 'title' => 'Dashboard Team',
                 'users' => $users,
@@ -41,7 +41,7 @@ class DashboardController extends Controller
             ]);
         }else {
             $allTeam = Team::all();
-            
+
             return view('pages.dashboard.home', [
                 'title' => 'Dashboard Team',
                 'team' => $allTeam
@@ -57,16 +57,16 @@ class DashboardController extends Controller
             $teamId = $cekUserTeam->team_id;
             $usersWithSameTeam = TeamMember::where('team_id', $teamId)->pluck('user_id');
             $users = User::whereIn('id', $usersWithSameTeam)->pluck('name');
-            
+
             $teamName = Team::join('teams_members', 'teams_members.team_id', '=', 'teams.id')
                 ->where('teams_members.team_id', $teamId)
                 ->value('teams.name_team');
 
             $team = Team::findOrFail($teamId);
             $startup = Startup::findOrFail($team->startup_id);
-                
-   
-            
+
+
+
             return view('pages.dashboard.team', [
                 'title' => 'Dashboard Team',
                 'users' => $users,
@@ -75,25 +75,29 @@ class DashboardController extends Controller
             ]);
         }else {
             $allTeam = Team::all();
-            
+
             return view('pages.dashboard.team', [
                 'title' => 'Dashboard Team',
                 'team' => $allTeam
             ]);
         }
-    
+
 
         // return view('dashboard.team', [
         //     'title' => 'Dashboard Team',
         //     'team' => $team
         // ]);
     }
-    public function startup() {
+
+    public function startup()
+    {
         return view('pages.dashboard.startup', [
             'title' => 'Dashboard Startup'
         ]);
     }
-    public function profile() {
+
+    public function profile()
+    {
         return view('pages.dashboard.profile', [
             'title' => 'Dashboard Profile'
         ]);
@@ -107,11 +111,11 @@ class DashboardController extends Controller
 
         $cekRefferal = TeamMember::where('refferal',$refferal)->first();
         $count = TeamMember::where('team_id', $cekRefferal->team_id)->count();
-        
-       
+
+
         if($cekRefferal && $count < 4){
             $user = Auth::user();
-            
+
             $newTeamMember = TeamMember::create([
                 'team_id' => $cekRefferal->team_id,
                 'user_id' => $user->id,
@@ -123,6 +127,6 @@ class DashboardController extends Controller
             return "Kode yang anda masukan salah/Team sudah penuh";
         }
 
-        
+
     }
 }

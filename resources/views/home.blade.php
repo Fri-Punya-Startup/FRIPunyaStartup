@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="css/home/styles.css">
 <body>
     <div class="home">
-        <div class="containers">
+        <div class="containers home-animate">
             <br>
             <br>
             <h1>Learn, Discuss</h1>
@@ -35,6 +35,26 @@
                     <button type="submit" class="button2">Register Now</button>
                 </a>
             </div>
+        </div>
+        
+        <!-- poster -->
+        <div class="poster-container">
+            <div class="poster-element-wrapper">
+                <div class="poster-text-wrapper">
+                    <div class="poster-text">
+                        <h2>Siap membangun startup <br class="hidden"> yang anda impikan?</h2>
+                        <img src="/images/home/particle-poster.svg" alt="" class="particle-poster-text">
+                    </div>
+                    <p class="poster-description">IdeaForge siap membantu mengasah dan mewujudkan ide-ide brilianmu, dengan menyediakan mentor-mentor yang terampil dan berbagai rangkaian acara yang tak akan terlupakan!</p>
+                </div>
+                <div class="poster-image-container">
+                    <img src="/images/home/posterImage.svg" class="poster-image" alt="">
+                </div>
+            </div>
+            <div class="element-susah">
+                <img src="/images/home/poster-eclipse.svg" alt="">
+            </div>
+            <div class="particle-poster-element"><img src="/images/home/particle-poster.svg" alt=""></div>
         </div>
 
         <div class="aboutUs" id="about">

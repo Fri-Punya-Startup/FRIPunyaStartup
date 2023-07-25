@@ -43,7 +43,7 @@ class RegistrationController extends Controller
                 ]);
 
                 $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
-                
+
                 $newTeamMember = TeamMember::create([
                     'team_id' => $teamMember->team_id,
                     'user_id' => $user->id,
@@ -88,7 +88,7 @@ class RegistrationController extends Controller
             echo "alert(popupContent);";
             echo "</script>";
          }
-        
-        
+
+
     }
 }

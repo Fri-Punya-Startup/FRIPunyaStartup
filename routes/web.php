@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrationFormController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StartupController;
@@ -30,20 +32,20 @@ use App\Http\Controllers\RegistrationController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
-// Route::get("/about", function () {
-//     return view('about');
-// });
+Route::get("/about", function () {
+    return view('about');
+});
 
-// Route::get('/navbar', function () {
-//     return view('navbar');
-// });
-// Route::get('/member' , function(){
-//     return view('member');
-// });
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+Route::get('/member' , function(){
+    return view('member');
+});
 
 // Route::get('/portofolio', [PortofolioController::class, 'index']);
 
@@ -51,9 +53,9 @@ use App\Http\Controllers\RegistrationController;
 // Route::get('/startup/kiri', [PortofolioController::class, 'kiri']);
 // Route::get('/startup/sport-gather', [PortofolioController::class, 'sport']);
 
-// Route::get('/ideaforge',  function () {
-//     return view('ideaforge');
-// });
+Route::get('/ideaforge',  function () {
+    return view('ideaforge');
+});
 
 // Route::get('/type', [TypeController::class, 'type']);
 
@@ -86,12 +88,12 @@ use App\Http\Controllers\RegistrationController;
 
 
 //HomeController
-Route::group(['as' => 'home.'], function () {
-    Route::get('/', [HomeController::class, 'landingPage'])->name('landing-page');
-    Route::get('/about', [HomeController::class, 'about'])->name('about');
-    Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
-    Route::get('/team', [HomeController::class, 'team'])->name('team');
-});
+// Route::group(['as' => 'home.'], function () {
+//     Route::get('/', [HomeController::class, 'landingPage'])->name('landing-page');
+//     Route::get('/about', [HomeController::class, 'about'])->name('about');
+//     Route::get('/portfolio', [HomeController::class, 'portfolio'])->name('portfolio');
+//     Route::get('/team', [HomeController::class, 'team'])->name('team');
+// });
 
 // Route::middleware(['guest'])->group(function () {
 //     //AuthController
