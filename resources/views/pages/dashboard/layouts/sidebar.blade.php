@@ -85,10 +85,10 @@
                 <a class="{{ Request::is('dashboard') ? 'active-nav' : null }}" href="{{ route('dashboard.home') }}"><i class="ti ti-category me-3"></i>Home</a>
             </li>
             <li>
-                <a class="{{ Request::is('dashboard/team') ? 'active-nav' : null }}" href=""><i class="ti ti-users-group me-3"></i>Team</a>
+                <a class="{{ Request::is('dashboard/team') ? 'active-nav' : null }}" href="{{ route('dashboard.team') }}"><i class="ti ti-users-group me-3"></i>Team</a>
             </li>
             <li>
-                <a class="{{ Request::is('dashboard/startup') ? 'active-nav' : null }}" href=""><i class="ti ti-rocket me-3"></i>Startup</a>
+                <a class="{{ Request::is('dashboard/startup') ? 'active-nav' : null }}" href="{{ route('dashboard.startup') }}"><i class="ti ti-rocket me-3"></i>Startup</a>
             </li>
             <li>
                 <a class="{{ Request::is('dashboard/profile') ? 'active-nav' : null }}" href="{{ route('dashboard.profile') }}"><i class="ti ti-user me-3"></i>Profile</a>
@@ -111,7 +111,7 @@
                             <i class="ti" x-bind:class="toggle ? 'ti-x' : 'ti-menu-2'"></i>
                         </button>
 
-                        <div class="row px-3" style="cursor: pointer" x-on:click="location.href = `{{ route('dashboard.profile') }}`">
+                        {{-- <div class="row px-3" style="cursor: pointer" x-on:click="location.href = `{{ route('dashboard.profile') }}`">
                             <div class="col-auto">
                                 <img class="rounded-circle article-img" id="img" src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name }}'s avatar" width="40">
                             </div>
@@ -119,7 +119,7 @@
                                 <h6 class="fw-bold my-0">{{ auth()->user()->name }}</h6>
                                 <p class="text-secondary my-0">{{ auth()->user()->email }}</p>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                     @yield('main')

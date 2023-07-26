@@ -33,7 +33,7 @@
 .login {
   min-height: 100vh;
 }
-  
+
 .bg-image {
   background-image: url("images/Information.svg");
   background-position: center;
@@ -43,7 +43,7 @@
 .login-heading {
   font-weight: 300;
 }
-  
+
 .btn-login {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
@@ -104,7 +104,7 @@
   margin: 0 10px;
 }
 .left-box{
-  height: 200px; 
+  height: 200px;
 }
 .left-page{
   margin-top: -180px;
@@ -145,5 +145,4 @@
 }
 }
 
-  
-  
+

@@ -31,7 +31,7 @@ class DashboardController extends Controller
             $team = Team::findOrFail($teamId);
             $startup = Startup::findOrFail($team->startup_id);
 
-
+            // dd($users);
 
             return view('pages.dashboard.home', [
                 'title' => 'Dashboard Team',
@@ -65,10 +65,16 @@ class DashboardController extends Controller
             $team = Team::findOrFail($teamId);
             $startup = Startup::findOrFail($team->startup_id);
 
+            // jika owerners_id dalam startup sama dengan id di users maka dia masuk variabel leader dan dihapus dalam array user
+            $leader = User::where('id', $startup->owners_id)->first();
 
+            $users = $users->reject(function ($user) use ($leader) {
+                return $user === $leader["name"];
+            });
 
             return view('pages.dashboard.team', [
                 'title' => 'Dashboard Team',
+                'leader' => $leader,
                 'users' => $users,
                 'teamName' => $teamName,
                 'startup' => $startup

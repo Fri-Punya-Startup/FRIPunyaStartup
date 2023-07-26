@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Startup extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'id',
         'owners_id',
@@ -19,7 +18,7 @@ class Startup extends Model
     ];
     protected $primaryKey = 'id';
     protected $table = 'startups';
-
+    
     protected $guarded = ['id'];
 
     protected $attributes = [
@@ -27,7 +26,7 @@ class Startup extends Model
         'image' => 'default_avatar.png',
     ];
 
-
+    
 
     public function owner()
     {
@@ -38,5 +37,4 @@ class Startup extends Model
     {
         return $this->hasOne(Team::class, 'startup_id');
     }
-
 }

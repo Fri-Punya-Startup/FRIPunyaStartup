@@ -1,45 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Registration Ideaforge</title>
+@extends("layouts.main")
+
+@section('content')
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
     <link rel="stylesheet" href="./css/registration/registration.css" />
-  </head>
-  <body>
-
-    <section class="container">
-        <nav>
-          <div class="parent">
-            <div class="title-container">
-              <div class="img-ideaforge">
-                <img src="images/logoIdeaforge.png" alt="" width="70" height="70" class="responsive">
-              </div>
-              <p>Registration</p>
-            </div>
-            <p><span class="sub-title">Home > Ideaforge > Registration</span></p>
-            <div class="navbar-container">
-             <div class="img-container">
-               <a href="/">
-                 <img src="/images/logoNavbar.svg" alt="" class="responsive">
-               </a>
-             </div>
-             <div class="menu-container">
-               <a href="/home">Home</a>
-               <a href="/team">Team</a>
-               <a href="/startup">Startup</a>
-               <a href="/profile">Profile</a>
-               <div class="button">
-                 <a href="/login" class="btnOne">Register</a>
-                 <a href="/#contact" class="btnTwo">Contact Us</a>
-               </div>
-          </div>
-       </nav>
-
-      
-
-      <header>Registration Ideaforge</header>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class=""><span> </span> Register Ideaforge</h1>
+        </div>
+    </div>
+    <div class="container registration">
       <div>
         @if ($errors->any())
         <ul>
@@ -69,7 +48,7 @@
             <label name="number" >Nomor Whatsapp</label>
             <input type="number" name="number" placeholder=" Input Here" required />
           </div>
-          
+
         <div class="role-box">
           <h3>Role</h3>
           <div class="role-option">
@@ -96,7 +75,7 @@
               </div>
           </div>
         </div>
-          
+
         <div class="input-box" id="additional-input" style="display: none;">
             <label name="startup">Nama Startup</label>
             <input type="text" id="additional-input-field" name="startup" placeholder="Input Here">
@@ -114,5 +93,8 @@
       </form>
     </section>
     <script src="{{ asset('./js/registration.js') }}"></script>
-  </body>
-</html>
+    </div>
+  </div>
+    </div>
+</body>
+@endsection

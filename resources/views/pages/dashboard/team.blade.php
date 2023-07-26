@@ -1,42 +1,77 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ $title }}</title>
-</head>
-<body>
-    <h1>Dashboard Team</h1>
+@extends('pages.dashboard.layouts.main')
 
-    @if (isset($teamName))
-        <h2>Team Name: {{ $teamName }}</h2>
+@section('style')
+    <style>
+        .img-avatar {
+            height: 150px;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
 
-        @if (isset($startup))
-            <h3>Startup: {{ $startup->startup_name }}</h3>
-        @endif
+        .drag-n-drop {
+            border: 1px dashed #ccc !important;
+        }
 
-        @if ($users->count() > 0)
-            <h3>Team Members:</h3>
-            <ul>
-                @foreach ($users as $user)
-                    <li>{{ $user }}</li>
-                @endforeach
-            </ul>
-        @else
-            <p>No team members found.</p>
-        @endif
-    @else
-        <p>You don't have a team.</p>
-        <h3>All Teams:</h3>
-        <ul>
-            @foreach ($team as $team)
-                <li>{{ $team->name_team }}</li>
-            @endforeach
-        </ul>
-        <form action="" method="post">
-            @csrf
-            <label for="Refferal">Refferal</label>
-            <input type="text" name="refferal" id="refferal">
-            <button type="submit"> Join Now </button>
-        </form>
-    @endif
-</body>
-</html>
+        .drag-n-drop.dragging {
+            border: 2px dashed rgb(66, 75, 255) !important;
+        }
+
+        #submit-btn {
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+@endsection
+
+@section('main')
+
+            <div class="container-fluid px-4">
+                <div class="row">
+                    <div class="col text-start">
+                        <h2 class="fs-5 fw-bold mb-3 mt-4">Nama Team</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="card cardketua shadow ">
+                            <div class="card-body cardbody-ketua">
+                                <img class="card-image rounded-circle article-img mx-auto" src="images/team1/ketua.png" id="">
+                                <h5 class="card-title fw-bold fs-6 text-center">{{ $leader->name }}</h5>
+                                <p class="card-text text-center">Ketua</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    {{-- <div class="col-md-3 justify-content-center text-center">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <img class="card-image rounded-circle article-img" src="images/team1/anggota1.png" id="img">
+                                <h5 class="card-title fw-bold fs-6">Bagus Satrio</h5>
+                                <p class="card-text">Anggota</p>
+                            </div>
+                        </div>
+                    </div> --}}
+                    @if ($users->count() > 0)
+                        @foreach ($users as $user)
+                        <div class="col-md-3 justify-content-center text-center">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <img class="card-image rounded-circle article-img" src="images/team1/anggota1.png" id="img">
+                                    <h5 class="card-title fw-bold fs-6">{{ $user }}</h5>
+                                    <p class="card-text">Anggota</p>
+                                </div>
+                            </div>
+                        </div>                        @endforeach
+                    @else
+                        <p>No team members found.</p>
+                    @endif
+                </div>
+            </div>
+@endsection

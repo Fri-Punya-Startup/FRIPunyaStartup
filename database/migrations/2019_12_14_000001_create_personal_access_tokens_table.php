@@ -15,19 +15,12 @@ return new class extends Migration
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {
             $table->id();
+            $table->morphs('tokenable');
             $table->string('name');
-            $table->string('avatar')->nullable();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role');
-            $table->string('verifikasi')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('remember_token', 100)->nullable(); // Menggunakan panjang token 100 karakter
+            $table->string('token', 64)->unique();
+            $table->text('abilities')->nullable();
+            $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
-            
-            $table->index('email'); // Indeks untuk mempercepat pencarian berdasarkan email
-            $table->index('remember_token'); // Indeks untuk mempercepat pencarian berdasarkan remember_token
         });
     }
 

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-use App\Models\{Type, Portofolio, User, Jabatan, Team, Startup};
+use App\Models\{Type, Portofolio, User, Jabatan, Role, Team, Startup};
 
 
 class DatabaseSeeder extends Seeder
@@ -21,29 +21,33 @@ class DatabaseSeeder extends Seeder
             'name' => 'user',
             'email' => 'user@example.com',
             'avatar' => 'https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25',
-            'role' => 'Hacker',
+            'role_id' => '2',
             'password' => bcrypt('user1234'),
         ]);
 
-        $team = Team::create([
-            'name' => 'Tim Hore',
-            'desc' => 'Tim yang isinya orang-orang gabut',
-            'logo' => 'https://i.pinimg.com/236x/e6/2a/ed/e62aed78c082488fe6baae012f0fcf7e.jpg',
-            'leader_id' => $user->id
+        // buatkan roles
+        Role::create([
+            'id' => 1,
+            "name" => "Hustler"
         ]);
 
-
-        $user->update([
-            'team_id' => $team->id
+        Role::create([
+            'id' => 2,
+            "name" => "Hipster"
         ]);
 
-        Startup::create([
-            'name' => 'Feelsbox',
-            'desc' => 'Feelsbox merupakan platform layanan kesehatan mental untuk usia remaja. Layanan kami meliputi konseling, mentoring, self-tracking, hingga coaching',
-            'logo' => '/images/feelsbox.png',
-            'category' => 'test',
-            'team_id' => $team->id,
+        Role::create([
+            'id' => 3,
+            "name" => "Hacker"
         ]);
+
+        // Startup::create([
+        //     'name' => 'Feelsbox',
+        //     'desc' => 'Feelsbox merupakan platform layanan kesehatan mental untuk usia remaja. Layanan kami meliputi konseling, mentoring, self-tracking, hingga coaching',
+        //     'logo' => '/images/feelsbox.png',
+        //     'category' => 'test',
+        //     'team_id' => $team->id,
+        // ]);
 
         // Startup::create([
         //     'name' => 'Kiri',
@@ -88,7 +92,7 @@ class DatabaseSeeder extends Seeder
         //     'contact' => '08123456789',
         // ]);
 
-        User::factory(3)->create();
+        // User::factory(3)->create();
 
         // Portofolio::factory(10)->create();
 
