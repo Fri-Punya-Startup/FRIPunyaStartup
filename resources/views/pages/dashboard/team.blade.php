@@ -41,7 +41,7 @@
             <div class="col text-center">
                 <div class="card cardketua shadow">
                     <div class="card-body cardbody-ketua">
-                        <img class="card-image rounded-circle article-img mx-auto" id="" src="images/team1/ketua.png">
+                        <img class="card-image rounded-circle article-img mx-auto" id="" src="{{ asset('images/team1/ketua.png') }}">
                         <h5 class="card-title fw-bold fs-6 text-center">{{ $leader->name }}</h5>
                         <p class="card-text text-center">Ketua</p>
                     </div>
@@ -63,8 +63,9 @@
                     <div class="col-md-3 justify-content-center text-center">
                         <div class="card shadow">
                             <div class="card-body">
-                                <img class="card-image rounded-circle article-img" id="img" src="images/team1/anggota1.png">
-                                <h5 class="card-title fw-bold fs-6">{{ $user }}</h5>
+                                <img class="card-image rounded-circle article-img" src="{{ asset('images/team1/anggota1.png') }}" id="img">
+                                <h5 class="card-title fw-bold fs-6">{{ $user->name }}</h5>
+                                <h5 class="card-title fw-bold fs-6">{{ $user->role->name }}</h5>
                                 <p class="card-text">Anggota</p>
                             </div>
                         </div>

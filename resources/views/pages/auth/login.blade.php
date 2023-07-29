@@ -32,7 +32,11 @@
                       <h5 class="login-heading mb-3 mt-4 fw-bold">Welcome Back!</h5>
                       <p class="text-login second-text">Sign in with your email and password <br> or continue with google account</p>
                     </div>
-
+                    @if(session()->has('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{ session('success') }}</strong>
+                    </div>
+                    @endif
 
                     <!-- Sign In Form -->
                     <form action="/login" method="POST" class="form-input text-center mx-auto">
@@ -64,7 +68,7 @@
                       </div>
 
                       <div class="sign-up d-grid">
-                        <p class="second-text">Don't have an account? <a href="" class="primary-text fw-medium">Sign Up</a></p>
+                        <p class="second-text">Don't have an account? <a href="/registration" class="primary-text fw-medium">Sign Up</a></p>
                       </div>
 
                     </form>

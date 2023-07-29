@@ -69,13 +69,13 @@
                 <div class="col justify-content-center text-center">
                     <div class="card">
                         <div class="card-body">
-                            <img class="card-image rounded-circle article-img" src="images/.jpeg" id="img">
+                            <img class="card-image rounded-circle article-img" src="images/team1/anggota1.png" id="img">
                             <h5 class="card-title fw-bold fs-6">{{ $user->name }}</h5>
                             <p class="card-text">{{$user->role->name}}</p>
                         </div>
                     </div>
                 </div>
-                @endforeach
+             @endforeach
             </div>
             @else
             <p>No team members available.</p>
