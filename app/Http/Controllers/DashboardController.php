@@ -17,65 +17,49 @@ class DashboardController extends Controller
     public function home()
     {
         $user = Auth::user();
-        $cekUserTeam = TeamMember::where('user_id', $user->id)->first();
-
-        if ($cekUserTeam) {
-            $teamId = $cekUserTeam->team_id;
-            $usersWithSameTeam = TeamMember::where('team_id', $teamId)->pluck('user_id');
-            $users = User::whereIn('id', $usersWithSameTeam)
-                ->with('role:id,name')
-                ->get(['id', 'name', 'role_id']);
-
-            $teamName = Team::join('teams_members', 'teams_members.team_id', '=', 'teams.id')
-                ->where('teams_members.team_id', $teamId)
-                ->value('teams.name_team');
-
-
-            $team = Team::findOrFail($teamId);
-            $startup = Startup::findOrFail($team->startup_id);
-
-            // dd($users);
-
+        $team = $user->team()->with('members', 'startup.owner')->first();
+        
+        if ($team) {
+            $teamName = $team->name_team;
+            $startup = $team->startup;
+            // Get the leader from the startup's owner
+            $leader = $startup->owner;
+            // Get all team members, including the leader
+            $users = $team->members;
+            
             return view('pages.dashboard.home', [
-                'title' => 'Dashboard Team',
+                'title' => 'Dashboard Home',
+                'leader' => $leader,
                 'users' => $users,
                 'teamName' => $teamName,
                 'startup' => $startup
             ]);
         } else {
-            $allTeam = Team::all();
-
+            $teamData = Team::with('members', 'startup.owner')->get();
+    
             return view('pages.dashboard.home', [
-                'title' => 'Dashboard Team',
-                'team' => $allTeam
+                'title' => 'Dashboard Home',
+                'team' => $teamData
             ]);
         }
+
     }
+    
     public function team()
     {
-
         $user = Auth::user();
-        $cekUserTeam = TeamMember::where('user_id', $user->id)->first();
-
-        if ($cekUserTeam) {
-            $teamId = $cekUserTeam->team_id;
-            $usersWithSameTeam = TeamMember::where('team_id', $teamId)->pluck('user_id');
-            $users = User::whereIn('id', $usersWithSameTeam)->pluck('name');
-
-            $teamName = Team::join('teams_members', 'teams_members.team_id', '=', 'teams.id')
-                ->where('teams_members.team_id', $teamId)
-                ->value('teams.name_team');
-
-            $team = Team::findOrFail($teamId);
-            $startup = Startup::findOrFail($team->startup_id);
-
-            // jika owerners_id dalam startup sama dengan id di users maka dia masuk variabel leader dan dihapus dalam array user
-            $leader = User::where('id', $startup->owners_id)->first();
-
-            $users = $users->reject(function ($user) use ($leader) {
-                return $user === $leader["name"];
+        $team = $user->team()->with('members', 'startup.owner')->first();
+    
+        if ($team) {
+            $teamName = $team->name_team;
+            $startup = $team->startup;
+            // Get the leader from the startup's owner
+            $leader = $startup->owner;
+            // Filter the leader from the users
+            $users = $team->members->reject(function ($member) use ($leader) {
+                return $member->name === $leader->name;
             });
-
+    
             return view('pages.dashboard.team', [
                 'title' => 'Dashboard Team',
                 'leader' => $leader,
@@ -84,24 +68,19 @@ class DashboardController extends Controller
                 'startup' => $startup
             ]);
         } else {
-            $allTeam = Team::all();
-
+            $teamData = Team::with('members', 'startup.owner')->get();
+    
             return view('pages.dashboard.teamcopy', [
                 'title' => 'Dashboard Team',
-                'team' => $allTeam
+                'team' => $teamData
             ]);
         }
-
-
-        // return view('dashboard.team', [
-        //     'title' => 'Dashboard Team',
-        //     'team' => $team
-        // ]);
     }
 
     public function startup()
     {
         //N+1 PROBLEM. TOLONG RELASI DIPERBAIKI LAGI, TABLE TEAM_MEMBER SEHARUSNYA TIDAK PERLU KARENA AKAN MENYUSAKAN PENGAMBILAN DATA KE DATABASE. UNTUK SEMENTARA GINI AJA DULU KARENA WAKTU MEPET.
+        //Relasi udah dibenerin bang mungkin untuk mengatasi N+1 bisa menggunakan eagerloading
         $team_member = TeamMember::where('user_id', auth()->user()->id)->first();
         $team = Team::findOrFail($team_member->team_id);
         $startup = Startup::findOrFail($team->startup_id);
@@ -210,23 +189,26 @@ class DashboardController extends Controller
 
         // ]);
         $refferal = $request->input('refferal');
-
         $cekRefferal = TeamMember::where('refferal', $refferal)->first();
-        $count = TeamMember::where('team_id', $cekRefferal->team_id)->count();
 
+        if ($cekRefferal) {
+            $count = TeamMember::where('team_id', $cekRefferal->team_id)->count();
 
-        if ($cekRefferal && $count < 4) {
-            $user = Auth::user();
+            if ($count < 4) {
+                $user = Auth::user();
 
-            $newTeamMember = TeamMember::create([
-                'team_id' => $cekRefferal->team_id,
-                'user_id' => $user->id,
-                'refferal' => $refferal,
-            ]);
+                $newTeamMember = TeamMember::create([
+                    'team_id' => $cekRefferal->team_id,
+                    'user_id' => $user->id,
+                    'refferal' => $refferal,
+                ]);
 
-            return "anda berhasil join team silahkan refresh";
-        }else{
-            return "Kode yang anda masukan salah / team sudah penuh";
+                return "anda berhasil join team silahkan refresh";
+            } else {
+                return "Team sudah penuh.";
+            }
+        } else {
+            return "Kode yang anda masukan salah.";
         }
     }
 }

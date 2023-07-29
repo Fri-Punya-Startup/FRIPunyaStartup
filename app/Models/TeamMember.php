@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class TeamMember extends Model
 {
     use HasFactory;
-    protected $fillable = ['team_id', 'user_id', 'referral'];
+    protected $fillable = ['team_id', 'user_id', 'refferal'];
     protected $table = 'teams_members';
 
     public function team()

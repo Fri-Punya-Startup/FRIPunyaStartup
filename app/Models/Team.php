@@ -31,7 +31,7 @@ class Team extends Model
     public function members()
     {
         return $this->belongsToMany(User::class, 'teams_members', 'team_id', 'user_id')
-            ->withPivot('referral')
+            ->withPivot('refferal')
             ->withTimestamps();
     }
 }

@@ -31,6 +31,7 @@ class RegistrationController extends Controller
         $isStartup = Startup::where('startup_name', $validated['startup'])->first();
         $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
 
+
         if($validated['refferal'] && $teamMember) {
             $user = User::create([
                 'email' => $validated['email'],
@@ -46,9 +47,9 @@ class RegistrationController extends Controller
                 'refferal' => $validated['refferal'],
             ]);
 
-            return "Berhasil mendaftarkan akun, Berhasil masuk ke team";
+            return redirect('login')->with('success', 'Selamat! Akun Anda berhasil didaftarkan, dan Anda telah resmi menjadi bagian dari tim kami. Selamat datang di tim! 🎉');
         }else {
-            if($isStartup ){
+            if($isStartup){
                 $user = User::create([
                     'email' => $validated['email'],
                     'name' => $validated['fullName'],
@@ -56,7 +57,7 @@ class RegistrationController extends Controller
                     'phone' => $validated['number'],
                     'role_id' => $validated['role'],
                 ]);
-                return "Start Up sudah ada, Berhasil mendaftarkan akun";
+                return redirect('login')->with('success', 'Selamat! Akun Anda berhasil didaftarkan. Startup Anda sudah terdaftar di platform kami. Terima kasih!');
             }elseif($validated['startup']) {
                 $user = User::create([
                     'email' => $validated['email'],
@@ -89,7 +90,7 @@ class RegistrationController extends Controller
                     'phone' => $validated['number'],
                     'role_id' => $validated['role'],
                 ]);
-                return "Berhasil mendaftar akun tanpa refferal";
+                return redirect('login')->with('success', 'Selamat! Akun Anda berhasil didaftarkan 🎉');
             }
         }
 

@@ -21,13 +21,12 @@ class Startup extends Model
     
     protected $guarded = ['id'];
 
-    // protected $attributes = [
-    //     'category' => 'Teknologi',
-    //     'image' => 'default_avatar.png',
-    // ];
+    protected $attributes = [
+        'category' => 'Teknologi',
+        'image' => 'default_avatar.png',
+    ];
 
     
-
     public function owner()
     {
         return $this->belongsTo(User::class, 'owners_id', 'id', 'owner');
