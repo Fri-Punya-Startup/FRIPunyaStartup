@@ -135,9 +135,9 @@ Route::middleware(['auth'])->group(function () {
     Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
         Route::get('/', [DashboardController::class, 'home'])->name('home');
         Route::get('/team', [DashboardController::class, 'team'])->name('team');
+        Route::post('/team', [DashboardController::class, 'joinTeam'])->name('joinTeam');
         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
         Route::patch('/profile', [DashboardController::class, 'profile_patch'])->name('profile.patch');
-        Route::patch('/startup', [DashboardController::class, 'startup_patch'])->name('startup.patch');
     });
 });
