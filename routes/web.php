@@ -138,5 +138,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
         Route::patch('/profile', [DashboardController::class, 'profile_patch'])->name('profile.patch');
+        Route::patch('/startup', [DashboardController::class, 'startup_patch'])->name('startup.patch');
     });
 });

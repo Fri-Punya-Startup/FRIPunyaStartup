@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 
-use App\Models\{Type, Portofolio, User, Jabatan, Role, Team, Startup};
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\{Type, Portofolio, User, Jabatan, Role, Team, Startup, TeamMember};
 
 
 class DatabaseSeeder extends Seeder
@@ -17,13 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::create([
-            'name' => 'user',
-            'email' => 'user@example.com',
-            'avatar' => 'https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25',
-            'role_id' => '2',
-            'password' => bcrypt('user1234'),
-        ]);
+
 
         // buatkan roles
         Role::create([
@@ -39,6 +34,75 @@ class DatabaseSeeder extends Seeder
         Role::create([
             'id' => 3,
             "name" => "Hacker"
+        ]);
+
+        User::create([
+            "name" => "User",
+            "avatar" => "https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25",
+            "email" => "user@example.com",
+            "password" => bcrypt('user1234'),
+            "role_id" => 1,
+        ]);
+
+        User::create([
+            "name" => "anggota 1",
+            "avatar" => "https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25",
+            "email" => "anggota1@gmail.com",
+            "password" => bcrypt(123),
+            "role_id" => 2,
+        ]);
+
+        User::create([
+            "name" => "anggota 2",
+            "avatar" => "https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25",
+            "email" => "anggota2@gmail.com",
+            "password" => bcrypt(123),
+            "role_id" => 2,
+        ]);
+
+        User::create([
+            "name" => "anggota 3",
+            "avatar" => "https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25",
+            "email" => "anggota3@gmail.com",
+            "password" => bcrypt(123),
+            "role_id" => 3,
+        ]);
+
+        Startup::create([
+            "owners_id" => 1,
+            "startup_name" => "UKM Kapitalis",
+            "description" => "Sebuah umkm yang mememintangkan uang daripada kesejahteraan masyarakat"
+        ]);
+
+        Team::create([
+            "startup_id" => 1,
+            "name_team" => "UKM Kapitalis",
+        ]);
+
+        $ref = strtoupper(Str::random(6));
+
+        TeamMember::create([
+            "team_id" => 1,
+            "user_id" => 1,
+            'refferal' => $ref,
+        ]);
+
+        TeamMember::create([
+            "team_id" => 1,
+            "user_id" => 2,
+            'refferal' => $ref,
+        ]);
+
+        TeamMember::create([
+            "team_id" => 1,
+            "user_id" => 3,
+            'refferal' => $ref,
+        ]);
+
+        TeamMember::create([
+            "team_id" => 1,
+            "user_id" => 4,
+            'refferal' => $ref,
         ]);
 
         // Startup::create([

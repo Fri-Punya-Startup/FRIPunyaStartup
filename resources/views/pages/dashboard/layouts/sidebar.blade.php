@@ -111,7 +111,7 @@
                             <i class="ti" x-bind:class="toggle ? 'ti-x' : 'ti-menu-2'"></i>
                         </button>
 
-                        {{-- <div class="row px-3" style="cursor: pointer" x-on:click="location.href = `{{ route('dashboard.profile') }}`">
+                        <div class="row px-3" style="cursor: pointer" x-on:click="location.href = `{{ route('dashboard.profile') }}`">
                             <div class="col-auto">
                                 <img class="rounded-circle article-img" id="img" src="{{ auth()->user()->avatar }}" alt="{{ auth()->user()->name }}'s avatar" width="40">
                             </div>
@@ -119,7 +119,7 @@
                                 <h6 class="fw-bold my-0">{{ auth()->user()->name }}</h6>
                                 <p class="text-secondary my-0">{{ auth()->user()->email }}</p>
                             </div>
-                        </div> --}}
+                        </div>
 
                     </div>
                     @yield('main')
