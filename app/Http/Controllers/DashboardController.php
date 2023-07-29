@@ -82,7 +82,7 @@ class DashboardController extends Controller
         }else {
             $allTeam = Team::all();
 
-            return view('pages.dashboard.team', [
+            return view('pages.dashboard.teamcopy', [
                 'title' => 'Dashboard Team',
                 'team' => $allTeam
             ]);
@@ -130,7 +130,7 @@ class DashboardController extends Controller
 
             return "anda berhasil join team silahkan refresh";
         }else{
-            return "Kode yang anda masukan salah/Team sudah penuh";
+            return "Kode yang anda masukan salah / team sudah penuh";
         }
 
 

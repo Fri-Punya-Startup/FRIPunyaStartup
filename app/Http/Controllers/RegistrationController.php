@@ -22,49 +22,16 @@ class RegistrationController extends Controller
             'password' => 'required',
             'number' => 'required',
             'role' => 'required',
-            'startup' => 'required',
+            'startup' => 'nullable',
             'deskripsi' => 'nullable',
             'refferal' => 'nullable'
         ]);
 
         $role = Role::find($validated['role']);
         $isStartup = Startup::where('startup_name', $validated['startup'])->first();
+        $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
 
-
-        if ($isStartup) {
-            if ($validated['refferal'] != null) {
-
-                $user = User::create([
-                    'email' => $validated['email'],
-                    'name' => $validated['fullName'],
-                    'password' => bcrypt($validated['password']),
-                    'phone' => $validated['number'],
-                    'role_id' => $validated['role'],
-                ]);
-
-                $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
-
-                $newTeamMember = TeamMember::create([
-                    'team_id' => $teamMember->team_id,
-                    'user_id' => $user->id,
-                    'refferal' => $validated['refferal'],
-                ]);
-
-                return "Berhasil mendaftarkan akun, Berhasil masuk ke team";
-
-            } else {
-
-             $user = User::create([
-                'email' => $validated['email'],
-                'name' => $validated['fullName'],
-                'password' => bcrypt($validated['password']),
-                'phone' => $validated['number'],
-                'role_id' => $validated['role'],
-            ]);
-            return "Berhasil mendaftarkan akun, Anda Mendaftar tanpa kode refferal";
-        }
-
-         } else {
+        if($validated['refferal'] && $teamMember) {
             $user = User::create([
                 'email' => $validated['email'],
                 'name' => $validated['fullName'],
@@ -73,21 +40,58 @@ class RegistrationController extends Controller
                 'role_id' => $validated['role'],
             ]);
 
-            $startup = Startup::create([
-                'owners_id' => $user->id,
-                'startup_name' => $validated['startup'],
-                'description' => $validated['deskripsi'],
+            $newTeamMember = TeamMember::create([
+                'team_id' => $teamMember->team_id,
+                'user_id' => $user->id,
+                'refferal' => $validated['refferal'],
             ]);
-            $randomString = strtoupper(Str::random(8));
-            $teamSave = $startup->team()->create(['name_team' => $validated['startup']." Team"]);
-            $teamSave->members()->attach($user->id, ['refferal' => $randomString]);
-            // Tampilkan pop-up dengan kode referral
-            echo "<script>";
-            echo "var referralCode = '{$randomString}';";
-            echo "var popupContent = 'Silahkan undang teman anda menggunakan kode ini : ' + referralCode;";
-            echo "alert(popupContent);";
-            echo "</script>";
-         }
+
+            return "Berhasil mendaftarkan akun, Berhasil masuk ke team";
+        }else {
+            if($isStartup ){
+                $user = User::create([
+                    'email' => $validated['email'],
+                    'name' => $validated['fullName'],
+                    'password' => bcrypt($validated['password']),
+                    'phone' => $validated['number'],
+                    'role_id' => $validated['role'],
+                ]);
+                return "Start Up sudah ada, Berhasil mendaftarkan akun";
+            }elseif($validated['startup']) {
+                $user = User::create([
+                    'email' => $validated['email'],
+                    'name' => $validated['fullName'],
+                    'password' => bcrypt($validated['password']),
+                    'phone' => $validated['number'],
+                    'role_id' => $validated['role'],
+                ]);
+    
+                $startup = Startup::create([
+                    'owners_id' => $user->id,
+                    'startup_name' => $validated['startup'],
+                    'description' => $validated['deskripsi'],
+                ]);
+                $randomString = strtoupper(Str::random(8));
+                $teamSave = $startup->team()->create(['name_team' => $validated['startup']." Team"]);
+                $teamSave->members()->attach($user->id, ['refferal' => $randomString]);
+                // Tampilkan pop-up dengan kode referral
+                echo "<script>";
+                echo "var referralCode = '{$randomString}';";
+                echo "var popupContent = 'Silahkan undang teman anda menggunakan kode ini : ' + referralCode;";
+                echo "alert(popupContent);";
+                echo "</script>";
+                
+            }else{
+                $user = User::create([
+                    'email' => $validated['email'],
+                    'name' => $validated['fullName'],
+                    'password' => bcrypt($validated['password']),
+                    'phone' => $validated['number'],
+                    'role_id' => $validated['role'],
+                ]);
+                return "Berhasil mendaftar akun tanpa refferal";
+            }
+        }
 
 
     }
