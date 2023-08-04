@@ -7,24 +7,58 @@
 
     <title>FRI Punya Startup</title>
     <link rel="preload" as="image" href="/images/logoNavbar.svg">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Open+Sans&family=Poppins:ital@1&display=swap" rel="stylesheet" />
-    
+
     <!-- <link rel="stylesheet" href="/css/navbar/navbar.css"> -->
     <link rel="stylesheet" href="../../../css/footer/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../css/navbar/navbar.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <style>
-      /* .content{
-        margin-top: -80px;
-        position: relative;
-        z-index: 1;
-      } */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+            height: auto;
+            width: 100%;
+            background-image: url("/images/header.svg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .heading{
+            font-family: Work Sans;
+            font-size: 34px;
+            font-weight: 700;
+            line-height: 40px;
+            letter-spacing: -0.02em;
+            color: #212069;
+        }
+        .container h1{
+            font-family: 'Work Sans';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 84px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.02em;
+            color: white;
+            padding: 125px 0 16px 0;
+        }
+        .about{
+            display: flex;
+            flex-direction: column;
+            row-gap: 32px;
+        }
     </style>
 
 </head>
@@ -65,13 +99,13 @@
                                 <h5>Let's join us!</h5>
                             </div>
                             <div class="col-md-6" >
-                                <a href="/register">
+                                <a href="/registration">
                                   <div class="register">
                                     <h5>Register Now!</h5>
                                   </div>
                                 </a>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
                 <div  id="contact" class="contact">
@@ -89,16 +123,16 @@
 
                       <a  href="https://www.instagram.com/fps.telkom/">
                           <Image class="medsos" src="/images/footer/instagram.svg" width="50" height="50"/>
-                      </a>    
-                
+                      </a>
+
                       <a  href="#">
                           <Image class="medsos" src="/images/footer/facebook.svg" width="50" height="50"/>
-                      </a>                  
-                
+                      </a>
+
                       <a  href="https://www.linkedin.com/company/fps-fri-punya-startup/">
                           <Image class="medsos" src="/images/footer/linkedin.svg" width="50" height="50"/>
                       </a>
-                        
+
                     </div>
                     <br/>
                     <h6>Copyright FPS Telkom, All Right Reserved</h6>
@@ -112,4 +146,3 @@
   <script src="./js/navbar/navbar.js"></script>
   </body>
 </html>
-

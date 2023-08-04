@@ -1,0 +1,148 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+:root {
+  --main-bg-color: #212069;
+  --main-text-color: #212069;
+  --second-text-color: #737373;
+  --second-bg-color: #F0F0F0;
+}
+
+.primary-text {
+  color: var(--main-text-color);
+}
+
+.second-text {
+  color: var(--second-text-color);
+}
+
+.primary-bg {
+  background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+  background-color: var(--second-bg-color);
+}
+
+.login {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url("images/Information.svg");
+  background-position: center;
+  background-size: 80%
+}
+
+.login-heading {
+  font-weight: 300;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.button-login{
+  margin-bottom: 32px;
+}
+
+.second-title{
+  font-size: 12px;
+}
+
+.text-login{
+  font-size: 13px;
+}
+
+.icons{
+  margin-left: 280px;
+}
+
+.form-input{
+  width: 390px;
+}
+
+.form-control{
+  font-size: 14px;
+  padding: 12px;
+}
+.remember-me{
+  margin-right: 60px;
+  font-size: small;
+}
+.forgot-password{
+  margin-left: 90px;
+  font-size: small;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #212069;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #00b3db;
+}
+
+.sign-up{
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+
+@media only screen and (max-width: 768px){
+
+.box-area{
+  margin: 0 10px;
+}
+.left-box{
+  height: 200px;
+}
+.left-page{
+  margin-top: -180px;
+}
+
+/* Left Page */
+.featured-image{
+  width: 72px;
+}
+.text-title{
+  font-size: 12px;
+}
+.sub-title{
+  font-size: 8px;
+}
+
+/* Right Page */
+.form-input{
+  width: 300px;
+}
+.icons{
+  margin-left: 280px;
+}
+
+.login-heading{
+  font-size: 16px;
+}
+.text-login{
+  font-size: 12px;
+}
+.remember-me{
+  margin-right: 54px;
+  font-size: small;
+}
+.forgot-password{
+  margin-left: 0px;
+  font-size: small;
+}
+}
+
+

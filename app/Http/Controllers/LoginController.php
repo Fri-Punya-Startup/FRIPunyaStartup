@@ -20,14 +20,14 @@ class LoginController extends Controller{
         ]);
 
         if(Auth::attempt($credentials)){
-            
+
             if(Auth::user()->verifikasi == null){
                 Auth::logout();
                 return back()->with('akunError', 'Akun Anda Belum Terverifikasi');
             }
-            
+
             $request->session()->regenerate();
-            
+
             if(Auth::user()->role == 'admin'){
                 return redirect('/admin');
             }else{
