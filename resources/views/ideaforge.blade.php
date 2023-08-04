@@ -18,102 +18,82 @@
             <h1 class="us">Ideaforge</h1>
         </div>
     </div>
-    <div class="container ideaforge">
-        <br>
-        <span class="text">
-            <span>
-              <span>
-                IdeaForge by FPS adalah wadah bagi para startup enthusiast untuk
-                menginisiasikan ide startup mereka menuju mvp. IdeaForge ini
-                merupakan tempat pengasahan ide sebelum masuk fase inkubasi atau
-                bisa disebut fase ideation.
-              </span>
-              <br />
-              <span></span>
-              <br />
-              <span>
-                IdeaForge menyediakan tiga mentor bagi peserta yang ingin
-                mengajukan pertanyaan seputar ide, sistem, desain, dan lain-lain.
-                Mentor-mentor ini akan tersedia melalui platform Discord dan akan
-                sesuai dengan peran mereka sebagai hacker, hustler, dan hipster.
-                Selama IdeaForge berlangsung, peserta diperbolehkan untuk
-                mengajukan pertanyaan dan mendapatkan bimbingan bersama mentor
-                yang telah disediakan.
-              </span>
-              <br />
-              <span></span>
-              <br />
-              <span>
-                IdeaForge akan diakhiri dengan para peserta mempresentasikan
-                produk mereka pada acara demoday atau pitchday, yang akan dinilai
-                oleh juri yang tersedia.
-              </span>
-            </span>
+    <div class="container mt-5 mb-5 d-flex flex-column gap-5">
+      <div>
+          <span>
+            IdeaForge by FPS adalah wadah bagi para startup enthusiast untuk
+            menginisiasikan ide startup mereka menuju mvp. IdeaForge ini
+            merupakan tempat pengasahan ide sebelum masuk fase inkubasi atau
+            bisa disebut fase ideation.
           </span>
-        </div>
-        <div class="group">
+          <br />
+          <br />
+          <span>
+            IdeaForge menyediakan tiga mentor bagi peserta yang ingin
+            mengajukan pertanyaan seputar ide, sistem, desain, dan lain-lain.
+            Mentor-mentor ini akan tersedia melalui platform Discord dan akan
+            sesuai dengan peran mereka sebagai hacker, hustler, dan hipster.
+            Selama IdeaForge berlangsung, peserta diperbolehkan untuk
+            mengajukan pertanyaan dan mendapatkan bimbingan bersama mentor
+            yang telah disediakan.
+          </span>
+          <br />
+          <br />
+          <span>
+            IdeaForge akan diakhiri dengan para peserta mempresentasikan
+            produk mereka pada acara demoday atau pitchday, yang akan dinilai
+            oleh juri yang tersedia.
+          </span>
+      </div>
+      <div class='row d-flex flex-column gap-5'>
+        <div class="col">
           <div class="frame-prosesteknologi">
-            <div class="title">
-              <img
-                src="images/line3.png"
-                class="line3"
-              />
+            <div class="title ">
+              <img src="images/line3.png"class="line3"/>
               <span class="title-text">
-                <span>Proses Teknologi</span>
-              </span>
-            </div>
-            <div class="prosesteknologi-card">
-              <div class="prosesteknologi-card-description">
-                <span class="prosesteknologi-card-text">
-                  <span>
-                    Pengembangan platform dan infrastruktur teknologi yang
-                    dibutuhkan dalam bisnis
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div class="prosesteknologi-card">
-              <div class="prosesteknologi-card-description">
-                <span class="prosesteknologi-card-text">
-                  <span>
-                    Pemilihan teknologi yang tepat untuk mendukung bisnis yang
-                    dijalankan.
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="frame-prosesdesain">
-            <div class="title">
-              <img
-                src="images/line3.png"
-                class="line3"
-              />
-              <span class="title-text">
-                <span>Proses Desain</span>
+                Proses Teknologi
               </span>
             </div>
             <div class="prosesdesain-card">
-              <div class="prosesdesain-card-description">
-                <span class="prosesdesain-card-text">
-                  <span>Pengembangan konsep desain yang tepat.</span>
-                </span>
-              </div>
+              <span class="prosesdesain-card-text">
+                  Pengembangan platform dan infrastruktur teknologi yang
+                  dibutuhkan dalam bisnis
+              </span>
             </div>
-            <div class="prosesdesain-card1">
-              <div class="prosesdesain-card-description1">
-                <span class="prosesdesain-card-text1">
-                  <span>
-                    Desain prosuk atau layanan, desain websie atau aplikasi,
-                    desain branding, serta pengembangan strategi desain yang
-                    menarik dan efektif
-                  </span>
-                </span>
-              </div>
+            <div class="prosesdesain-card">
+              <span class="prosesdesain-card-text">
+                  Pemilihan teknologi yang tepat untuk mendukung bisnis yang
+                  dijalankan.
+              </span>
             </div>
           </div>
         </div>
-        <div class="ourboard-frame">
+        <div class="col">
+          <div class="frame-prosesdesain ">
+            <div class="title">
+                <img
+                  src="images/line3.png"
+                  class="line3"
+                />
+                <span class="title-text">
+                  Proses Desain
+                </span>
+            </div>
+            <div class="prosesdesain-card">
+              <span class="prosesdesain-card-text">
+                Pengembangan konsep desain yang tepat
+              </span>
+            </div>
+            <div class="prosesdesain-card">
+                <span class="prosesdesain-card-text">
+                    Desain prosuk atau layanan, desain websie atau aplikasi,
+                    desain branding, serta pengembangan strategi desain yang
+                    menarik dan efektif
+                </span>
+            </div>
+        </div>
+      </div>
+      <div class="ourboard-frame">
           <div class="title">
             <img
               src="images/line3.png"
@@ -125,37 +105,30 @@
           </div>
           <div class="ourboard-row">
             <div class="ourboard-card">
-              <div class="ourboard-card-description">
                 <span class="ourboard-text">
-                  <span>Meningkatkan kreativitas dan inovasi</span>
+                  Meningkatkan kreativitas dan inovasi
                 </span>
-              </div>
             </div>
             <div class="ourboard-card">
-              <div class="ourboard-card-description">
                 <span class="ourboard-text1">
-                  <span>Membuat ide bisnis menjadi produk yang siap</span>
+                 Membuat ide bisnis menjadi produk yang siap
                 </span>
-              </div>
             </div>
             <div class="ourboard-card">
-              <div class="ourboard-card-description">
                 <span class="ourboard-text2">
-                  <span>Meningkatkan pemahaman</span>
+                  Meningkatkan pemahaman
                 </span>
-              </div>
             </div>
             <div class="ourboard-card">
               <div class="ourboard-card-description">
                 <span class="ourboard-text3">
-                  <span>Meningkatkan keterampilan dan keahlian</span>
-                </span>
+               Meningkatkan keterampilan dan keahlian
               </div>
             </div>
             <div class="ourboard-card">
               <div class="ourboard-card-description">
                 <span class="ourboard-text4">
-                  <span>Meningkatkan jaringan bisnis dan menjalin kemitraan</span>
+              Meningkatkan jaringan bisnis dan menjalin kemitraan
                 </span>
               </div>
             </div>
