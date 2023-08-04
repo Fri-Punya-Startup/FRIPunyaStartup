@@ -11,11 +11,25 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
+/**
+     * Report or log an exception.
+     *
+     * This is a great spot to send exceptions to Flare, Sentry, Bugsnag, etc.
+     *
+     * @param  \Throwable  $exception
+     * @return void
+     */
+
     public function index () {
         return view ('registration');
     }
 
     public function store(Request $request) {
+
+        // random number 1 - 999
+        $randomNumber = rand(1, 999);
+        $image = "https://api.dicebear.com/6.x/avataaars/png?seed=$randomNumber&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25";
+
         $validated = $request->validate([
             'email' => 'required|unique:users|email',
             'fullName' => 'required',
@@ -31,69 +45,71 @@ class RegistrationController extends Controller
         $isStartup = Startup::where('startup_name', $validated['startup'])->first();
         $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
 
+        if($isStartup){
+            return back()->with('error', 'Nama startup sudah terdaftar');
+        }
 
-        if($validated['refferal'] && $teamMember) {
+        // jika validate referal atau validate startup kosong maka back error
+        if($validated['refferal'] == null && $validated['startup'] == null) {
+            return back()->with('error', 'Nama startup atau kode refferal harus diisi');
+        }
+
+        if($validated['startup']){
             $user = User::create([
                 'email' => $validated['email'],
                 'name' => $validated['fullName'],
                 'password' => bcrypt($validated['password']),
                 'phone' => $validated['number'],
                 'role_id' => $validated['role'],
+                'avatar' => $image,
             ]);
 
-            $newTeamMember = TeamMember::create([
+            $startupName = $validated['startup'];
+
+            $startup = Startup::create([
+                'owners_id' => $user->id,
+                'startup_name' => $validated['startup'],
+                'description' => $validated['deskripsi'],
+                "image" => "https://api.dicebear.com/6.x/initials/svg?seed=$startupName"
+            ]);
+            $randomString = strtoupper(Str::random(8));
+            $teamSave = $startup->team()->create(['name_team' => $validated['startup']." Team"]);
+            $teamSave->members()->attach($user->id, ['refferal' => $randomString]);
+            // auto atempt auth
+            auth()->attempt($request->only('email', 'password'));
+
+            return back()->with('success', $randomString);
+        }
+
+        if(!$teamMember){
+            return back()->with('error', 'Kode refferal tidak ditemukan');
+        }
+
+        if($validated['refferal'] && $teamMember) {
+
+            // jika sudah maksimal 4 teammember nya maka return error
+            if($teamMember->team->members->count() >= 4) {
+                return back()->with('error', 'Kode refferal sudah mencapai batas maksimal');
+            }
+
+            $user = User::create([
+                'email' => $validated['email'],
+                'name' => $validated['fullName'],
+                'password' => bcrypt($validated['password']),
+                'phone' => $validated['number'],
+                'role_id' => $validated['role'],
+                'avatar' => $image,
+            ]);
+
+            TeamMember::create([
                 'team_id' => $teamMember->team_id,
                 'user_id' => $user->id,
                 'refferal' => $validated['refferal'],
             ]);
 
-            return redirect('login')->with('success', 'Selamat! Akun Anda berhasil didaftarkan, dan Anda telah resmi menjadi bagian dari tim kami. Selamat datang di tim! 🎉');
-        }else {
-            if($isStartup){
-                $user = User::create([
-                    'email' => $validated['email'],
-                    'name' => $validated['fullName'],
-                    'password' => bcrypt($validated['password']),
-                    'phone' => $validated['number'],
-                    'role_id' => $validated['role'],
-                ]);
-                return redirect('login')->with('success', 'Selamat! Akun Anda berhasil didaftarkan. Startup Anda sudah terdaftar di platform kami. Terima kasih!');
-            }elseif($validated['startup']) {
-                $user = User::create([
-                    'email' => $validated['email'],
-                    'name' => $validated['fullName'],
-                    'password' => bcrypt($validated['password']),
-                    'phone' => $validated['number'],
-                    'role_id' => $validated['role'],
-                ]);
-    
-                $startup = Startup::create([
-                    'owners_id' => $user->id,
-                    'startup_name' => $validated['startup'],
-                    'description' => $validated['deskripsi'],
-                ]);
-                $randomString = strtoupper(Str::random(8));
-                $teamSave = $startup->team()->create(['name_team' => $validated['startup']." Team"]);
-                $teamSave->members()->attach($user->id, ['refferal' => $randomString]);
-                // Tampilkan pop-up dengan kode referral
-                echo "<script>";
-                echo "var referralCode = '{$randomString}';";
-                echo "var popupContent = 'Silahkan undang teman anda menggunakan kode ini : ' + referralCode;";
-                echo "alert(popupContent);";
-                echo "</script>";
-                
-            }else{
-                $user = User::create([
-                    'email' => $validated['email'],
-                    'name' => $validated['fullName'],
-                    'password' => bcrypt($validated['password']),
-                    'phone' => $validated['number'],
-                    'role_id' => $validated['role'],
-                ]);
-                return redirect('login')->with('success', 'Selamat! Akun Anda berhasil didaftarkan 🎉');
-            }
+            auth()->attempt($request->only('email', 'password'));
+
+            return redirect('dashboard')->with('success', 'Selamat! Akun Anda berhasil didaftarkan, dan Anda telah resmi menjadi bagian dari tim kami. Selamat datang di tim! 🎉');
         }
-
-
     }
 }

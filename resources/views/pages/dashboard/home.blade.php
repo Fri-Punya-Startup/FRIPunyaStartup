@@ -47,7 +47,7 @@
                 <h3 class="text-desc fs-4 mb-4 second-text fw-bold">Your Startup</h3>
                 <h4 class="fs-4 mb-4 second-text">{{$startup->startup_name}}</h4>
                 <div class="col-3">
-                    <img src="images/feelsbox.png" alt="" width="80" class="col">
+                    <img src="{{$startup->image}}" alt="" width="80" class="col">
                 </div>
                 <div class="col">
                     <p class="text-title col">{{ $startup->description }}</p>
@@ -69,7 +69,7 @@
                 <div class="col justify-content-center text-center">
                     <div class="card">
                         <div class="card-body">
-                            <img class="card-image rounded-circle article-img" src="images/team1/anggota1.png" id="img">
+                            <img class="card-image rounded-circle article-img" src="{{ $user->avatar }}" width="100" id="img">
                             <h5 class="card-title fw-bold fs-6">{{ $user->name }}</h5>
                             <p class="card-text">{{$user->role->name}}</p>
                         </div>

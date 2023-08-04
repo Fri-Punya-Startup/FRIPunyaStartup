@@ -15,7 +15,7 @@
     <header>
         @yield('navbar')
     </header>
-    <main>
+    <main id="main">
         @include('pages.dashboard.layouts.sidebar')
     </main>
     <footer>

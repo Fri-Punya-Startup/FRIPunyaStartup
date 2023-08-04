@@ -18,7 +18,7 @@
             <h1 class="us">Login</h1>
         </div>
     </div>
-    
+
     @if(session()->has('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>{{ session('success') }}</strong>
@@ -43,7 +43,7 @@
         </button>
     </div>
     @endif
-    
+
     <div class="story">
         <div class="form">
             <h2 class="form-header">Login</h2>
@@ -51,7 +51,7 @@
                 @csrf
                 <label for="email"><h6>Email Address</h6></abbr></label><br>
                 <input type="text" id="mail"  name="email" placeholder="Masukan Alamat Email" autofocus required><br>
-                
+
                 <label for="password"><h6>Password</h6></label><br>
                 <input type="password" id="fname" name="password" placeholder="Masukan Password" required><br>
                 <br>

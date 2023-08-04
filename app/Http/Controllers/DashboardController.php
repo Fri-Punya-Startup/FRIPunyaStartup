@@ -18,7 +18,7 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $team = $user->team()->with('members', 'startup.owner')->first();
-        
+
         if ($team) {
             $teamName = $team->name_team;
             $startup = $team->startup;
@@ -26,7 +26,7 @@ class DashboardController extends Controller
             $leader = $startup->owner;
             // Get all team members, including the leader
             $users = $team->members;
-            
+
             return view('pages.dashboard.home', [
                 'title' => 'Dashboard Home',
                 'leader' => $leader,
@@ -36,7 +36,7 @@ class DashboardController extends Controller
             ]);
         } else {
             $teamData = Team::with('members', 'startup.owner')->get();
-    
+
             return view('pages.dashboard.home', [
                 'title' => 'Dashboard Home',
                 'team' => $teamData
@@ -44,12 +44,12 @@ class DashboardController extends Controller
         }
 
     }
-    
+
     public function team()
     {
         $user = Auth::user();
         $team = $user->team()->with('members', 'startup.owner')->first();
-    
+
         if ($team) {
             $teamName = $team->name_team;
             $startup = $team->startup;
@@ -59,17 +59,24 @@ class DashboardController extends Controller
             $users = $team->members->reject(function ($member) use ($leader) {
                 return $member->name === $leader->name;
             });
-    
+
+
+            // cari team_members berdasarkan user_id
+            $refferal = TeamMember::where('user_id', auth()->user()->id)->first()->refferal;
+
             return view('pages.dashboard.team', [
                 'title' => 'Dashboard Team',
                 'leader' => $leader,
                 'users' => $users,
                 'teamName' => $teamName,
-                'startup' => $startup
+                'startup' => $startup,
+                'refferal' => $refferal
             ]);
         } else {
             $teamData = Team::with('members', 'startup.owner')->get();
-    
+
+            dd($teamData);
+
             return view('pages.dashboard.teamcopy', [
                 'title' => 'Dashboard Team',
                 'team' => $teamData
@@ -127,13 +134,15 @@ class DashboardController extends Controller
             $image = Str::random(32) . '.' . $data['image']->extension();
             $request->file('image')->move(public_path('/images/startup_logo'), $image);
             $data['image'] = "/images/startup_logo/$image";
+        } else {
+            $nama = $startup->startup_name;
+            $data['image'] = "https://api.dicebear.com/6.x/initials/svg?seed=$nama";
         }
-
         $startup->update($data);
 
         return redirect()->back()->with('alert', 'Startup berhasil diupdate.');
     }
-    
+
 
     public function profile()
     {

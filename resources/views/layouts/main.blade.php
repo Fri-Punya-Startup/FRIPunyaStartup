@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../css/navbar/navbar.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <style>
         .header {
             display: flex;
@@ -97,7 +99,7 @@
                                 <h5>Let's join us!</h5>
                             </div>
                             <div class="col-md-6" >
-                                <a href="/register">
+                                <a href="/registration">
                                   <div class="register">
                                     <h5>Register Now!</h5>
                                   </div>

@@ -2,14 +2,20 @@ var checkbox = document.getElementById("check-startup");
 var additionalInputDiv = document.getElementById("additional-input");
 const kode_referal = document.getElementById("kode-referal")
 
+var startupNameInput = document.getElementById("startup-name");
+var startupDescriptionInput = document.getElementById("startup-description");
+const inputRefferal = document.getElementById("referal");
+
   checkbox.addEventListener("change", function() {
     if (checkbox.checked) {
-      additionalInputDiv.style.display = "block";
+        inputRefferal.value = "";
+        additionalInputDiv.style.display = "block";
         kode_referal.style.display = "none"
     } else {
-      additionalInputDiv.style.display = "none";
-      kode_referal.style.display = "block"
-
+        startupNameInput.value = ""; // Menghapus nilai input nama startup
+        startupDescriptionInput.value = ""; // Menghapus nilai input deskripsi startup
+        additionalInputDiv.style.display = "none";
+        kode_referal.style.display = "block"
     }
   });
 

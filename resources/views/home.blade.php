@@ -20,23 +20,23 @@
             <h1>Improve and</h1>
             <h1>Implement !</h1>
             <br/>
-            <h4 class="sentence">We are FPS, we are a 
+            <h4 class="sentence">We are FPS, we are a
                 <div class="slidingVertical">
                     <span>Family</span>
                     <span>Team</span>
-                    <span>Community</span> 
+                    <span>Community</span>
                 </div>
             </h4>
             <br/>
             <h5>Let's join us and improve your startup with Us  !</h5>
             <br/>
             <div class="buttonHome">
-                <a href="/register">
+                <a href="/registration">
                     <button type="submit" class="button2">Register Now</button>
                 </a>
             </div>
         </div>
-        
+
         <!-- poster -->
         <div class="poster-container">
             <div class="poster-element-wrapper">
@@ -46,6 +46,7 @@
                         <img src="/images/home/particle-poster.svg" alt="" class="particle-poster-text">
                     </div>
                     <p class="poster-description">IdeaForge siap membantu mengasah dan mewujudkan ide-ide brilianmu, dengan menyediakan mentor-mentor yang terampil dan berbagai rangkaian acara yang tak akan terlupakan!</p>
+                    <a href="/ideaforge"><button style="width: 200px;" class="btn btn-primary">Info Selengkapnya</button></a>
                 </div>
                 <div class="poster-image-container">
                     <img src="/images/home/posterImage.svg" class="poster-image" alt="">
@@ -65,10 +66,10 @@
                     <div class="aboutContent">
                         <h2 class="heading"><span>|</span> About Us</h2>
                         <p>
-                            FPS merupakan sebuah komunitas yang dibentuk dengan tujuan berkembang dan belajar bersama 
-                            dalam menciptakan sebuah ide bisnis atau startup. Anggota dapat menjalin relasi sesama 
-                            anggota maupun alumni dan berkembang bersama untuk menciptakan karya - karya unggulan di 
-                            bawah naungan Fakultas Rekayasa Industri. FPS menjadi sarana untuk mahasiswa FRI 
+                            FPS merupakan sebuah komunitas yang dibentuk dengan tujuan berkembang dan belajar bersama
+                            dalam menciptakan sebuah ide bisnis atau startup. Anggota dapat menjalin relasi sesama
+                            anggota maupun alumni dan berkembang bersama untuk menciptakan karya - karya unggulan di
+                            bawah naungan Fakultas Rekayasa Industri. FPS menjadi sarana untuk mahasiswa FRI
                             (Fakultas Rekayasa Industri) dalam penciptaan sebuah inovasi,karya atau ide bisnis.
                         </p>
                         <div class="more">
@@ -91,18 +92,18 @@
                             </div>
                         </div>
                         <div class="activityItem">
-                            <image src="/images/home/activity/comunity.svg" class="responsive" /> 
+                            <image src="/images/home/activity/comunity.svg" class="responsive" />
                             <div class="text">
                                 <h4>Sharing Session</h4>
-                                <p>Berbagi pengetahuan,skill & pengalaman sesama anggota FPS yang bertujuan untuk mendekatkan anggota supaya bisa bekerjasama secara teamwork ketika mendevelop sebuah produk.</p>           
-                            </div>        
+                                <p>Berbagi pengetahuan,skill & pengalaman sesama anggota FPS yang bertujuan untuk mendekatkan anggota supaya bisa bekerjasama secara teamwork ketika mendevelop sebuah produk.</p>
+                            </div>
                         </div>
                         <div class="activityItem">
                             <image src="/images/home/activity/bootcamp.svg"  class="responsive"/>
                             <div class="text">
                                 <h4>Startup Exhibition</h4>
                                 <p>Acara pengenalan Startup anggota dan alumni FPS  untuk dipamerkan untuk kepada publik.</p>
-                            </div>    
+                            </div>
                         </div>
                 </div>
             </div>
