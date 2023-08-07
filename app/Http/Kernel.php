@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Mentor;
+use App\Http\Middleware\UserFPS;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -66,5 +68,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin' => \App\Http\Middleware\Admin::class,
         'login' => \App\Http\Middleware\Login::class,
+        'mentor' => Mentor::class,
+        'fps-user' => UserFPS::class,
     ];
 }

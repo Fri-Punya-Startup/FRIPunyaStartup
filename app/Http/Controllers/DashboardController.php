@@ -36,7 +36,7 @@ class DashboardController extends Controller
             ]);
         } else {
             $teamData = Team::with('members', 'startup.owner')->get();
-
+            
             return view('pages.dashboard.home', [
                 'title' => 'Dashboard Home',
                 'team' => $teamData
@@ -74,9 +74,6 @@ class DashboardController extends Controller
             ]);
         } else {
             $teamData = Team::with('members', 'startup.owner')->get();
-
-            dd($teamData);
-
             return view('pages.dashboard.teamcopy', [
                 'title' => 'Dashboard Team',
                 'team' => $teamData
@@ -220,4 +217,6 @@ class DashboardController extends Controller
             return "Kode yang anda masukan salah.";
         }
     }
+
+
 }
