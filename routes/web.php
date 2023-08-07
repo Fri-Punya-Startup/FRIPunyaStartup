@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegistrationFormController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MentorController;
 use App\Http\Controllers\StartupController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\RegistrationFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -130,15 +131,30 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin.'], function () {
 Route::middleware(['auth'])->group(function () {
     //AuthController
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+   
 
     //DashboardController
     Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
         Route::get('/', [DashboardController::class, 'home'])->name('home');
-        Route::get('/team', [DashboardController::class, 'team'])->name('team');
-        Route::post('/team', [DashboardController::class, 'joinTeam'])->name('joinTeam');
-        Route::get('/startup', [DashboardController::class, 'startup'])->name('startup');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
         Route::patch('/profile', [DashboardController::class, 'profile_patch'])->name('profile.patch');
-        Route::patch('/startup', [DashboardController::class, 'startup_patch'])->name('startup.patch');
+
+
+        //fpsuser
+        Route::get('/team', [DashboardController::class, 'team'])->name('team')->middleware('fps-user');
+        Route::post('/team', [DashboardController::class, 'joinTeam'])->name('joinTeam')->middleware('fps-user');
+        Route::get('/startup', [DashboardController::class, 'startup'])->name('startup')->middleware('fps-user');
+        Route::patch('/startup', [DashboardController::class, 'startup_patch'])->name('startup.patch')->middleware('fps-user');
+        
+
+        //mentor
+        Route::get('/ideaforge',[MentorController::class, 'getListIdeaforge'])->name('ideaforge')->middleware('mentor');
+        Route::get('/ideaforge/{startup}',[MentorController::class, 'getDetailIdeaforge'])->name('ideforge')->middleware('mentor');
     });
+
+
 });
+
+
+
+
