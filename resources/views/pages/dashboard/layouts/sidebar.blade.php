@@ -84,12 +84,19 @@
             <li>
                 <a class="{{ Request::is('dashboard') ? 'active-nav' : null }}" href="{{ route('dashboard.home') }}"><i class="ti ti-category me-3"></i>Home</a>
             </li>
+            @if (auth()->user()->role_id != 4 )
             <li>
                 <a class="{{ Request::is('dashboard/team') ? 'active-nav' : null }}" href="{{ route('dashboard.team') }}"><i class="ti ti-users-group me-3"></i>Team</a>
             </li>
             <li>
                 <a class="{{ Request::is('dashboard/startup') ? 'active-nav' : null }}" href="{{ route('dashboard.startup') }}"><i class="ti ti-rocket me-3"></i>Startup</a>
             </li>
+            
+            @else
+            <li>
+                <a class="{{ Request::is('dashboard/ideaforge') ? 'active-nav' : null }}" href="{{ route('dashboard.ideaforge') }}"><i class="ti ti-category me-3"></i>ideforge</a>
+            </li>
+            @endif
             <li>
                 <a class="{{ Request::is('dashboard/profile') ? 'active-nav' : null }}" href="{{ route('dashboard.profile') }}"><i class="ti ti-user me-3"></i>Profile</a>
             </li>
@@ -97,6 +104,7 @@
             <li>
                 <div class="text-danger" id="logout" x-on:click="$('#logout').html(`<span class='spinner-border spinner-border-sm'></span>`); location.href = `{{ route('logout') }}`"><i class="ti ti-logout me-3"></i>Logout</div>
             </li>
+          
         </ul>
     </div>
 
