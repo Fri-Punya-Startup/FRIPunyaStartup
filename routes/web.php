@@ -104,9 +104,9 @@ Route::resource('/registration', RegistrationController::class);
 Route::get('/startup', [StartupController::class, 'index']);
 Route::middleware(['guest'])->group(function () {
     //AuthController
-    Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');
+    // Route::get('/register', [AuthController::class, 'indexRegister'])->name('register.index');
     Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
-    Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+    // Route::post('/register', [AuthController::class, 'register'])->name('register.post');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 });
 
@@ -126,7 +126,7 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin.'], function () {
 });
 
 //Route Register
-Route::resource('/register', RegistrationFormController::class);
+// Route::resource('/register', RegistrationFormController::class);
 Route::middleware(['auth'])->group(function () {
     //AuthController
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
