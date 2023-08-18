@@ -86,6 +86,9 @@
             </li>
             @if (auth()->user()->role_id != 4 )
             <li>
+                <a class="{{ Request::is('dashboard/proposal') ? 'active-nav' : null }}" href="{{ route('dashboard.proposal') }}"><i class="ti ti-category me-3"></i>Proposal</a>
+            </li>
+            <li>
                 <a class="{{ Request::is('dashboard/team') ? 'active-nav' : null }}" href="{{ route('dashboard.team') }}"><i class="ti ti-users-group me-3"></i>Team</a>
             </li>
             <li>
