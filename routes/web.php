@@ -145,11 +145,18 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/team', [DashboardController::class, 'joinTeam'])->name('joinTeam')->middleware('fps-user');
         Route::get('/startup', [DashboardController::class, 'startup'])->name('startup')->middleware('fps-user');
         Route::patch('/startup', [DashboardController::class, 'startup_patch'])->name('startup.patch')->middleware('fps-user');
+
+        //proposal
+        Route::get('/proposal', [DashboardController::class, 'proposal'])->name('proposal')->middleware('fps-user');
+        Route::post('/proposal', [DashboardController::class, 'proposal_post'])->name('proposal.post')->middleware('fps-user');
+        Route::get('/proposal/{slug}', [DashboardController::class, 'detail_proposal'])->name('proposal.detail')->middleware('fps-user');
+        Route::patch('/proposal/{slug}', [DashboardController::class, 'proposal_patch'])->name('proposal.patch')->middleware('fps-user');
         
 
         //mentor
         Route::get('/ideaforge',[MentorController::class, 'getListIdeaforge'])->name('ideaforge')->middleware('mentor');
         Route::get('/ideaforge/{startup}',[MentorController::class, 'getDetailIdeaforge'])->name('ideforge')->middleware('mentor');
+        
     });
 
 
