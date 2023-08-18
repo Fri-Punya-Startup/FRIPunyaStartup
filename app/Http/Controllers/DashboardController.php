@@ -38,7 +38,7 @@ class DashboardController extends Controller
             ]);
         } else {
             $teamData = Team::with('members', 'startup.owner')->get();
-            
+
             return view('pages.dashboard.home', [
                 'title' => 'Dashboard Home',
                 'team' => $teamData
@@ -76,7 +76,7 @@ class DashboardController extends Controller
             ]);
         } else {
             $teamData = Team::with('members', 'startup.owner')->get();
-            return view('pages.dashboard.teamcopy', [
+            return view('pages.dashboard.team', [
                 'title' => 'Dashboard Team',
                 'team' => $teamData
             ]);
@@ -192,11 +192,11 @@ class DashboardController extends Controller
     }
 
     public function proposal(){
-        
-       
+
+
         $data = auth()->user()->team()->with('members', 'startup.owner')->first();
         $proposal = Proposal::where('startup_id', $data->startup->id)->get();
-       
+
         return view('pages.dashboard.proposal',[
             'leader' => $data->startup->owners_id,
             'portofolio' => $proposal
@@ -219,8 +219,8 @@ class DashboardController extends Controller
             }
         }else{
             abort(404);
-        }            
-        
+        }
+
     }
 
 
@@ -242,11 +242,11 @@ class DashboardController extends Controller
         $getStartup = auth()->user()->team()->with('members', 'startup.owner')->first();
         $startupId = $getStartup->startup->id;
         $startupName = $getStartup->startup->startup_name;
-        
+
         $validated = $request->validate([
             'judul' => 'required',
             'keterangan' => 'required',
-            'dokumen' => 'required|file|mimes:pdf|max:10000', 
+            'dokumen' => 'required|file|mimes:pdf|max:10000',
         ], [
             'judul.required' => 'Judul harus diisi.',
             'keterangan.required' => 'Keterangan harus diisi.',
@@ -255,16 +255,16 @@ class DashboardController extends Controller
             'dokumen.mimes' => 'Berkas harus dalam format PDF.',
             'dokumen.max' => 'Ukuran maksimal berkas adalah 10MB.',
         ]);
-        
+
         $dokumenName = Str::slug($validated['judul'], '_') . '.' . $validated['dokumen']->extension();
         $request->file('dokumen')->move(public_path('/proposal'), $dokumenName);
         $validated['dokumen'] = "/proposal/$dokumenName";
-        
-       
+
+
         $validated['status'] = 'Menunggu';
         $validated['slug'] = Str::slug($validated['judul'], '-');
         $validated['startup_id'] = $startupId;
-        
+
         $proposal = Proposal::create($validated);
 
         return redirect()->back()->with('alert', 'Proposal berhasil disubmit.');
@@ -279,7 +279,7 @@ class DashboardController extends Controller
        $validated = $request->validate([
                 'judul' => 'required',
                 'keterangan' => 'required',
-                'dokumen' => 'file|mimes:pdf|max:10000', 
+                'dokumen' => 'file|mimes:pdf|max:10000',
             ], [
                 'judul.required' => 'Judul harus diisi.',
                 'keterangan.required' => 'Keterangan harus diisi.',
@@ -298,7 +298,7 @@ class DashboardController extends Controller
         }
 
 
-        
+
         $validated['status'] = 'Menunggu';
         $validated['slug'] = $slug;
         $validated['startup_id'] = $proposal->startup_id;
@@ -306,7 +306,7 @@ class DashboardController extends Controller
 
         $proposal->update($validated);
         return redirect()->back()->with('alert', 'Proposal berhasil disubmit.');
-      
+
     }
 
     public function joinTeam(Request $request)
