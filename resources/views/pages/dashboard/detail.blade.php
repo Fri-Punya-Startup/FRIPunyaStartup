@@ -26,8 +26,8 @@
         label {
             font-weight: bold;
         }
-        .proposal-section{
-            di
+        .button-lihat-proposal{
+            max-width: 200px
         }
     </style>
 @endsection
@@ -37,10 +37,24 @@
 <div class="container mt-5">
     <h1>Detail Tim</h1>
     {{-- <p>Nama Tim : {{ $team->name_team }}</p> --}}
-    <p>Nama Startup : {{ $team->startup->startup_name }}</p>
-    <p>Deskripsi : {{ $team->startup->description }}</p>
-    <p>Nama Ketua Tim: {{ $team->startup->owner->name }}</p>
-    <div class="flex-column gap-5 ">
+    <div class="card">
+        <div class="card-body">
+            <div class="flex-column gap-0 ">
+                <h5 class="fw-bold ">Nama Startup</h5>
+                <p> {{ $team->startup->startup_name }}</p>
+            </div>
+            <div class="flex-column gap-0 ">
+                <h5 class="fw-bold ">Deskripsi </h5>
+                <p> {{ $team->startup->description }}</p>
+            </div>
+            <div class="flex-column gap-0 ">
+                <h5 class="fw-bold ">Nama Ketua Tim</h5>
+                <p> {{ $team->startup->owner->name }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex-column gap-5 mt-3  ">
         <h2>Anggota Tim</h2>
         <table class="table">
             <tbody>
@@ -57,21 +71,31 @@
 
 <div class="container proposal-section">
     <h1>Proposal</h1>
-    <ul class="flex-column gap-5 ">
-        
-        @foreach ($proposal as $porto )
-            
-            <li>Judul : {{$porto->judul}}</li>
-            <li>Status : <p class="btn btn-warning">{{$porto->status}}</p></li>
-            <li>Keterangan : {{$porto->keterangan}} </li>
-            <div>
-                <object data="{{ $porto->dokumen }}" type="application/pdf" width="300" height="200">
-                alt : <a href="{{ $porto->dokumen }}">lihat</a>
-                </object>
-            </div>
-            <a class="btn btn-primary" href="{{ $porto->dokumen }}">Lihat Proposal</a>  
-        @endforeach
-    </ul>
+    <div class="card">
+       <div class="card-body row ">
+               @foreach ($proposal as $porto )
+                    <div class="flex-column gap-0">
+                        <h5 class="fw-bold ">Judul</h5>
+                        <p>{{$porto->judul}}</p>
+                    </div>
+                    <div class="flex-column gap-0 col ">
+                        <h5 class="fw-bold ">Status</h5>
+                        <p class="btn btn-warning">{{$porto->status}}</p>
+                    </div>
+                    <div class="flex-column gap-0 col">
+                        <h5 class="fw-bold ">keterangan</h5>
+                        <p>{{$porto->keterangan}}</p>
+                    </div>
+                   <div class="d-grid  flex-column  ">
+                       <object data="{{ $porto->dokumen }}" type="application/pdf">
+                       alt : <a href="{{ $porto->dokumen }}">lihat</a>
+                       </object>
+                       <a class="btn btn-primary button-lihat-proposal" href="{{ $porto->dokumen }}">Lihat Proposal</a>
+                   </div>
+                   
+               @endforeach
+       </div>
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
