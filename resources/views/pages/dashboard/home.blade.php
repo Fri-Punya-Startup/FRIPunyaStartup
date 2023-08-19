@@ -89,14 +89,14 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- Kotak Warna Biru -->
-                <div class="bg-primary p-4 rounded">
+                <div class="bg-primary p-4 rounded text-white ">
                     <h2>Start up yang terdaftar</h2>
                     <p>{{$team->count()}}</p>
                 </div>
             </div>
             <div class="col-md-6">
                 <!-- Kotak Warna Pink -->
-                <div class="bg-success p-4 rounded">
+                <div class="bg-success p-4 rounded text-white" >
                     <h2>Team yang terdaftar</h2>
                     <p>{{$team->count()}}</p>
                 </div>

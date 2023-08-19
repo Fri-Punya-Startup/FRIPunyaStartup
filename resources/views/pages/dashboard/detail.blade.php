@@ -26,6 +26,9 @@
         label {
             font-weight: bold;
         }
+        .proposal-section{
+            di
+        }
     </style>
 @endsection
 
@@ -33,22 +36,31 @@
 
 <div class="container mt-5">
     <h1>Detail Tim</h1>
-    {{-- <p>Nama Tim: {{ $team->name_team }}</p> --}}
-    <p>Nama Startup: {{ $team->startup->startup_name }}</p>
-    <p>Description: {{ $team->startup->description }}</p>
-    <p>Nama Owner: {{ $team->startup->owner->name }}</p>
-    <h2>Anggota Tim</h2>
-    <ul>
-        @foreach ($team->members as $member)
-            <li>{{ $member->name }} | {{ $member->role->name }} </li>
-        @endforeach
-    </ul>
+    {{-- <p>Nama Tim : {{ $team->name_team }}</p> --}}
+    <p>Nama Startup : {{ $team->startup->startup_name }}</p>
+    <p>Deskripsi : {{ $team->startup->description }}</p>
+    <p>Nama Ketua Tim: {{ $team->startup->owner->name }}</p>
+    <div class="flex-column gap-5 ">
+        <h2>Anggota Tim</h2>
+        <table class="table">
+            <tbody>
+                @foreach ($team->members as $member)
+                    <tr>
+                        <td>{{ $member->name }} | {{ $member->role->name }}</td>
+                    </tr>
+                @endforeach
+               
+            </tbody>
+        </table>
+    </div>
 </div>
 
-<div>
+<div class="container proposal-section">
     <h1>Proposal</h1>
-    <ul>
+    <ul class="flex-column gap-5 ">
+        
         @foreach ($proposal as $porto )
+            
             <li>Judul : {{$porto->judul}}</li>
             <li>Status : <p class="btn btn-warning">{{$porto->status}}</p></li>
             <li>Keterangan : {{$porto->keterangan}} </li>
@@ -64,6 +76,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+    var index = 1;
     var el = document.getElementById("wrapper");
     var toggleButton = document.getElementById("menu-toggle");
 
