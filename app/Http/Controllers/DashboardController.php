@@ -6,6 +6,8 @@ use Exception;
 use App\Models\Team;
 use App\Models\User;
 use App\Models\Startup;
+use App\Models\Proposal;
+use App\Models\Portfolio;
 use App\Models\TeamMember;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -74,10 +76,7 @@ class DashboardController extends Controller
             ]);
         } else {
             $teamData = Team::with('members', 'startup.owner')->get();
-
-            dd($teamData);
-
-            return view('pages.dashboard.teamcopy', [
+            return view('pages.dashboard.team', [
                 'title' => 'Dashboard Team',
                 'team' => $teamData
             ]);
@@ -192,6 +191,124 @@ class DashboardController extends Controller
         return redirect()->back()->with('alert', 'Profile berhasil diupdate.');
     }
 
+    public function proposal(){
+
+
+        $data = auth()->user()->team()->with('members', 'startup.owner')->first();
+        $proposal = Proposal::where('startup_id', $data->startup->id)->get();
+
+        return view('pages.dashboard.proposal',[
+            'leader' => $data->startup->owners_id,
+            'portofolio' => $proposal
+        ]);
+    }
+
+    public function detail_proposal($slug){
+        $data = auth()->user()->team()->with('members', 'startup.owner')->first();
+        $leader = $data->startup->owners_id;
+
+        $proposal = Proposal::where('slug', $slug)->first();
+
+        if($proposal){
+            if($leader == auth()->user()->id){
+                return view('pages.dashboard.proposal-update',[
+                    'proposal' => $proposal
+                ]);
+            }else{
+                abort(404);
+            }
+        }else{
+            abort(404);
+        }
+
+    }
+
+
+    public function proposal_post(Request $request){
+        // $validationRules = [
+        //     'judul' => ['required'],
+        //     'keterangan' => ['required'],
+        //     'dokumen' => ['required|file|mimes:pdf|max:10000'] // Max 10 MB and only PDF files
+        // ];
+
+        // $messages = [
+        //     'judul.required' => 'Nama harus diisi.',
+        //     'keterangan.required' => 'Keterangan harus diisi',
+        //     'dokumen.required' => 'Dokumen tidak boleh kosong',
+        //     'dokumen.file' => 'Berkas tidak valid. Hanya diperbolehkan berkas PDF.',
+        //     'dokumen.max' => 'Ukuran maksimal avatar adalah 10MB.',
+        // ];
+
+        $getStartup = auth()->user()->team()->with('members', 'startup.owner')->first();
+        $startupId = $getStartup->startup->id;
+        $startupName = $getStartup->startup->startup_name;
+
+        $validated = $request->validate([
+            'judul' => 'required',
+            'keterangan' => 'required',
+            'dokumen' => 'required|file|mimes:pdf|max:10000',
+        ], [
+            'judul.required' => 'Judul harus diisi.',
+            'keterangan.required' => 'Keterangan harus diisi.',
+            'dokumen.required' => 'Dokumen tidak boleh kosong.',
+            'dokumen.file' => 'File tidak valid. Harus berupa berkas.',
+            'dokumen.mimes' => 'Berkas harus dalam format PDF.',
+            'dokumen.max' => 'Ukuran maksimal berkas adalah 10MB.',
+        ]);
+
+        $dokumenName = Str::slug($validated['judul'], '_') . '.' . $validated['dokumen']->extension();
+        $request->file('dokumen')->move(public_path('/proposal'), $dokumenName);
+        $validated['dokumen'] = "/proposal/$dokumenName";
+
+
+        $validated['status'] = 'Menunggu';
+        $validated['slug'] = Str::slug($validated['judul'], '-');
+        $validated['startup_id'] = $startupId;
+
+        $proposal = Proposal::create($validated);
+
+        return redirect()->back()->with('alert', 'Proposal berhasil disubmit.');
+
+        // $data = $request->validate($validationRules, $messages);
+        // dd($data);
+
+    }
+
+    public function proposal_patch(Request $request,$slug){
+       $proposal = Proposal::where('slug', $slug)->firstOrFail();
+       $validated = $request->validate([
+                'judul' => 'required',
+                'keterangan' => 'required',
+                'dokumen' => 'file|mimes:pdf|max:10000',
+            ], [
+                'judul.required' => 'Judul harus diisi.',
+                'keterangan.required' => 'Keterangan harus diisi.',
+                'dokumen.file' => 'File tidak valid. Harus berupa berkas.',
+                'dokumen.mimes' => 'Berkas harus dalam format PDF.',
+                'dokumen.max' => 'Ukuran maksimal berkas adalah 10MB.',
+            ]);
+
+        $validated['dokumen'] = $proposal->dokumen; // Simpan nama dokumen sebelumnya
+
+        if ($request->hasFile('dokumen')) {
+            $uploadedFile = $request->file('dokumen');
+            $dokumenName = Str::slug($validated['judul'], '_') . '.' . $uploadedFile->getClientOriginalExtension();
+            $uploadedFile->move(public_path('/proposal'), $dokumenName);
+            $validated['dokumen'] = "/proposal/$dokumenName";
+        }
+
+
+
+        $validated['status'] = 'Menunggu';
+        $validated['slug'] = $slug;
+        $validated['startup_id'] = $proposal->startup_id;
+
+
+        $proposal->update($validated);
+        return redirect()->back()->with('alert', 'Proposal berhasil disubmit.');
+
+    }
+
     public function joinTeam(Request $request)
     {
         // $validated = $request->validate([
@@ -220,4 +337,6 @@ class DashboardController extends Controller
             return "Kode yang anda masukan salah.";
         }
     }
+
+
 }

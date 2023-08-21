@@ -41,6 +41,17 @@ class RegistrationController extends Controller
             'refferal' => 'nullable'
         ]);
 
+        if ($validated['role'] == "Hustler") {
+            $validated['role'] = 1;
+        } elseif ($validated['role'] == "Hipster") {
+            $validated['role'] = 2;
+        } elseif ($validated['role'] == "Hacker") {
+            $validated['role'] = 3;
+        } else {
+            return back()->with('error', 'Invalid role!');
+        }
+        
+
         $role = Role::find($validated['role']);
         $isStartup = Startup::where('startup_name', $validated['startup'])->first();
         $teamMember = TeamMember::where('refferal', $validated['refferal'])->first();
@@ -73,7 +84,9 @@ class RegistrationController extends Controller
                 "image" => "https://api.dicebear.com/6.x/initials/svg?seed=$startupName"
             ]);
             $randomString = strtoupper(Str::random(8));
-            $teamSave = $startup->team()->create(['name_team' => $validated['startup']." Team"]);
+            $teamSave = $startup->team()->create([
+                'name_team' => Str::slug($validated['startup'])
+            ]);
             $teamSave->members()->attach($user->id, ['refferal' => $randomString]);
             // auto atempt auth
             auth()->attempt($request->only('email', 'password'));

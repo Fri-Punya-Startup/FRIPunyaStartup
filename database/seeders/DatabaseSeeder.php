@@ -36,6 +36,11 @@ class DatabaseSeeder extends Seeder
             "name" => "Hacker"
         ]);
 
+        Role::create([
+            'id' => 4,
+            "name" => "Mentor"
+        ]);
+
         User::create([
             "name" => "User",
             "avatar" => "https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25",
@@ -67,6 +72,15 @@ class DatabaseSeeder extends Seeder
             "password" => bcrypt(123),
             "role_id" => 3,
         ]);
+
+        User::create([
+            "name" => "mentor",
+            "avatar" => "https://api.dicebear.com/6.x/avataaars/png?seed=user&backgroundColor=b6e3f4,c0aede,d1d4f9,ffdfbf,ffd5dc&backgroundType=gradientLinear&accessoriesProbability=25",
+            "email" => "mentor@gmail.com",
+            "password" => bcrypt(123),
+            "role_id" => 4,
+        ]);
+
 
         Startup::create([
             "owners_id" => 1,

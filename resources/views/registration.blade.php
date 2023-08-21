@@ -110,21 +110,21 @@
           <h3>Role</h3>
           <div class="role-option">
             <div class="role">
-              <input type="radio" id="check-hustler" name="role" value="1" required/>
+              <input type="radio" id="check-hustler" name="role" value="Hustler" required/>
               <label for="check-hustler">Hustler</label>
             </div>
             <div class="role">
-              <input type="radio" id="check-hipster" name="role" value="2" required/>
+              <input type="radio" id="check-hipster" name="role" value="Hipster" required/>
               <label for="check-hipster">Hipster</label>
             </div>
             <div class="role">
-              <input type="radio" id="check-hacker" name="role" value="3" required/>
+              <input type="radio" id="check-hacker" name="role" value="Hacker" required/>
               <label for="check-hacker">Hacker</label>
             </div>
         </div>
 
         <div class="role-box">
-            <h3>Sudah ada startup?</h3>
+            <h3>Sudah ada startup ?</h3>
             <div class="role-option">
               <div class="startup">
                 <input type="checkbox" id="check-startup" name="startup" unchecked />
