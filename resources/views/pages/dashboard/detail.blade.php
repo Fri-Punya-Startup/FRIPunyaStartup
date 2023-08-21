@@ -63,7 +63,7 @@
                         <td>{{ $member->name }} | {{ $member->role->name }}</td>
                     </tr>
                 @endforeach
-               
+
             </tbody>
         </table>
     </div>
@@ -86,15 +86,12 @@
                         <h5 class="fw-bold ">keterangan</h5>
                         <p>{{$porto->keterangan}}</p>
                     </div>
+                </div>
                    <div class="d-grid  flex-column  ">
-                       <object data="{{ $porto->dokumen }}" type="application/pdf">
-                       alt : <a href="{{ $porto->dokumen }}">lihat</a>
-                       </object>
-                       <a class="btn btn-primary button-lihat-proposal" href="{{ $porto->dokumen }}">Lihat Proposal</a>
+                       <a class="btn btn-primary button-lihat-proposal" href="{{ $porto->dokumen }}">Download Proposal</a>
                    </div>
-                   
+
                @endforeach
-       </div>
     </div>
 </div>
 

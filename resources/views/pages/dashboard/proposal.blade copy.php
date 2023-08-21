@@ -31,6 +31,12 @@
 
 @section('main')
 
+@if ($leader == auth()->user()->id)
+<div class="container-fluid">
+    <h1>Proposal</h1>
+</div>
+
+
 @if (session()->has('alert'))
 <div class="alert alert-primary alert-dismissible fade show" role="alert">
     {{ session('alert') }}
@@ -47,31 +53,26 @@
     </div>
 @endif
 
-<form id="proposal-form" action="" method="POST" enctype="multipart/form-data">
+<form id="proposal-form" action="{{ route('dashboard.proposal.post') }}" method="POST" enctype="multipart/form-data">
     @csrf
-    @method('PATCH')
+    @method('POST')
     <div class="row">
         <div class="col-lg">
             <div class="mb-3">
                 <label class="form-label" for="judul">Judul</label>
-                <input class="form-control" id="judul" name="judul" type="text"  placeholder="Tuliskan judul..." value="{{$proposal->judul}}" required>
+                <input class="form-control" id="judul" name="judul" type="text"  placeholder="Tuliskan judul..." required>
             </div>
         </div>
         <div class="col-lg">
             <div class="mb-3">
-                <label class="form-label" for="keterangan">Deskripsi</label>
-                <textarea class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan proposal..." required style="width: 100%; height: 150px;">{{$proposal->keterangan}}</textarea>
+                <label class="form-label" for="keterangan">Keterangan</label>
+                <textarea class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan proposal..." required style="width: 100%; height: 150px;"></textarea>
             </div>
-        </div>
+        </div>        
     </div>
     <div class="mb-3">
         <label class="form-label" for="dokumen">Upload Proposal</label>
         <div class="card d-block drag-n-drop justify-content-center p-5 text-center">
-            <div>
-                <object data="{{ $proposal->dokumen }}" type="application/pdf" width="300" height="200">
-                alt : <a href="{{ $proposal->dokumen }}">lihat</a>
-                </object>
-            </div>
             <br>
             <i class="ti ti-cloud-upload fs-2"></i>
             <h6 class="mt-2">Drag and Drop here</h6>
@@ -84,9 +85,30 @@
     </div>
 
     <div class="d-flex justify-content-end">
-        <button class="btn text-light rounded-3" id="submit-btn" type="submit" style="background-color: #212069;">Update</button>
+        <button class="btn text-light rounded-3" id="submit-btn" type="submit" style="background-color: #212069;">Upload</button>
     </div>
 </form>
+@endif
+<div>
+    <h1>Proposal</h1>
+    <ul>
+        @foreach ($portofolio as $porto )
+            <li>Judul : {{$porto->judul}}</li>
+            <li>Status : <p class="btn btn-warning">{{$porto->status}}</p></li>
+            <li>Keterangan : {{$porto->keterangan}} </li>
+            <div>
+                <object data="{{ $porto->dokumen }}" type="application/pdf" width="300" height="200">
+                alt : <a href="{{ $porto->dokumen }}">lihat</a>
+                </object>
+            </div>
+            <a class="btn btn-primary" href="{{ $porto->dokumen }}">Lihat Proposal</a>
+            @if ($leader == auth()->user()->id)
+                <a class="btn btn-primary" href="proposal/{{$porto->slug}}">Update Proposal</a>
+            @endif
+        @endforeach
+    </ul>
+</div>
+
 
 
 
